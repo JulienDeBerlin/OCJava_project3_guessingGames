@@ -3,63 +3,37 @@ package com.berthoud;
 import java.util.Scanner;
 
 public class Jeu1ModeDefense extends Jeu1 {
-    private static String mode = "mode défense";
-    private int nombreEssais = 0;
+
+    private int[][] rangeCodeMysterieux = new int[2][nombreCases];// Array 1 = minValue, Array 2 = maxValue
+
 
     public Jeu1ModeDefense(int pNombreCases, int pNombreEssaisMax) {
         super(pNombreCases, pNombreEssaisMax);
+        super.mode = "mode défense";
+        rangeCodeMysterieux = initRangeCodeMysterieux();
     }
 
     public void play() {
 
         System.out.println("Choisis une combinaison de " + nombreCases + " chiffres.");
-        int[] codeMysterieux = super.saisieCodeJoueur();
+        codeMysterieux = super.saisieCodeJoueur();
 
+        tentativeCode = super.generateurCode(); //1ere réponse de l'ordinateur = chiffre aléatoire
 
-        int rangeCodeMysterieux[][] = new int [2][nombreCases]; // Array 1 = minValue, Array 2 = maxValue
-        for (int x = 0; x < nombreCases; x++){
-            rangeCodeMysterieux [0][x] = 0;
-            rangeCodeMysterieux [1][x] = 9;
-        }
+        while ((super.nombreEssais < super.nombreEssaisMax) && (super.isCodeFound == false)) {
 
-        int [] tentativeCode   = super.generateurCode(); //1ere réponse de l'ordinateur = chiffre aléatoire
-
-        while ((nombreEssais < super.nombreEssaisMax) && (super.isCodeFound == false)) {
-
-                // affichage du code sous forme d'une ligne:
-                String[] tentativeCodeStringArray = new String[nombreCases];
-                for (int x = 0; x < nombreCases; x++) {
-                    tentativeCodeStringArray[x] = String.valueOf(tentativeCode[x]);
-                }
-                System.out.println("Superbrain te répond:");
-                System.out.println(super.arrayToString(tentativeCodeStringArray));
-
+            // affichage du code sous forme d'une ligne:
+            displayTentativeCodeOrdinateur(tentativeCode);
 
             // saisie validation (+/-) par le joueur:
             System.out.println("A toi de saisir le code de validation (+/-)");
 
             Scanner scan = new Scanner(System.in);
-
             String validationJoueur = scan.nextLine();
 
-            // vérifie que la validation (+/-) entrée par le joueur est bien correcte
-            String[] validationOrdinateurStringArray = super.validation(codeMysterieux, tentativeCode);
-            String validationOrdinateur = validationOrdinateurStringArray[0];
-            for (int j = 1; j < nombreCases; j++) {
-                validationOrdinateur += validationOrdinateurStringArray[j];
-            }
+            // vérifie que la validation (+/-) entrée par le joueur est bien correcte et ensuite fait une réponse en retour
+            reponseValidationJoueur(validationJoueur);
 
-            while (!validationJoueur.equals(validationOrdinateur)) {
-                System.out.println("Oups... on dirait que le code (+/-) est erroné. Saisi le à nouveau.");
-                validationJoueur = scan.nextLine();
-            }
-
-            rangeCodeMysterieux = updateRangeCodeMysterieux(rangeCodeMysterieux, tentativeCode, validationOrdinateurStringArray);
-            tentativeCode = newTentativeCode(rangeCodeMysterieux, tentativeCode, validationOrdinateurStringArray);
-
-            //   Définition des conditions de sortie de boucle
-            super.isCodeFound(validationOrdinateurStringArray);
-            nombreEssais ++;
         }
 
         // CE CODE DOIT ETRE ENCORE FACTORISE
@@ -71,8 +45,18 @@ public class Jeu1ModeDefense extends Jeu1 {
 
     }
 
+    // initialisation codeMysterieux
+    private int[][] initRangeCodeMysterieux() {
+        for (int x = 0; x < nombreCases; x++) {
+            rangeCodeMysterieux[0][x] = 0;
+            rangeCodeMysterieux[1][x] = 9;
+        }
+        return rangeCodeMysterieux;
+    }
+
+
     // restriction de rangeCodeMysterieux apres validation d'une tentative:
-    private int [] [] updateRangeCodeMysterieux (int [][]range, int [] tentative, String [] validation ) {
+    private int[][] updateRangeCodeMysterieux(int[][] range, int[] tentative, String[] validation) {
         for (int x = 0; x < nombreCases; x++) {
             if (validation[x] == ">") {
                 range[0][x] = tentative[x];
@@ -80,27 +64,52 @@ public class Jeu1ModeDefense extends Jeu1 {
             if (validation[x] == "<") {
                 range[1][x] = tentative[x];
             }
-        } return range;
+        }
+        return range;
     }
 
     // Proposition d'un nouveau code en réponse à la validation précédente:
-    private int [] newTentativeCode (int [][] newRange, int [] tentative, String [] validation){
-        for (int x = 0; x < nombreCases; x++){
-            if (validation[x] != "="){
-                tentative [x] = (newRange [0][x] + newRange [1][x])/2;
+    private int[] newTentativeCode(int[][] newRange, int[] tentative, String[] validation) {
+        for (int x = 0; x < nombreCases; x++) {
+            if (validation[x] != "=") {
+                tentative[x] = (newRange[0][x] + newRange[1][x]) / 2;
             }
         }
         return tentative;
     }
 
 
-//
-//
-//    // Méthode pour vérifier si un entier est pair
-//    private boolean isPair (int x){
-//        if (x % 2 == 0){
-//            return true;
-//        } return false;
-//    }
+    // affichage d'un int array code sous forme d'une ligne:
+    protected void displayTentativeCodeOrdinateur(int[] tentativeCode) {
+        String[] tentativeCodeStringArray = new String[nombreCases];
+        for (int x = 0; x < nombreCases; x++) {
+            tentativeCodeStringArray[x] = String.valueOf(tentativeCode[x]);
+        }
+        System.out.println("Superbrain te répond:");
+        System.out.println(super.arrayToString(tentativeCodeStringArray));
+
+    }
+
+
+    protected void reponseValidationJoueur(String validationJoueur){
+        String[] validationOrdinateurStringArray = super.validation(codeMysterieux, tentativeCode);
+            String validationOrdinateur = validationOrdinateurStringArray[0];
+            for (int j = 1; j < nombreCases; j++) {
+                validationOrdinateur += validationOrdinateurStringArray[j];
+            }
+
+            while (!validationJoueur.equals(validationOrdinateur)) {
+                System.out.println("Oups... on dirait que le code (+/-) est erroné. Saisi le à nouveau.");
+                Scanner scan = new Scanner(System.in);
+                validationJoueur = scan.nextLine();
+            }
+
+            rangeCodeMysterieux = updateRangeCodeMysterieux(rangeCodeMysterieux, tentativeCode, validationOrdinateurStringArray);
+            tentativeCode = newTentativeCode(rangeCodeMysterieux, tentativeCode, validationOrdinateurStringArray);
+
+            //   Définition des conditions de sortie de boucle
+            super.isCodeFound(validationOrdinateurStringArray);
+            super.nombreEssais++;
+    }
 
 }

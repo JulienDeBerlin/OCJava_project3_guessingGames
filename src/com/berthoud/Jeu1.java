@@ -3,15 +3,21 @@ package com.berthoud;
 import java.util.Scanner;
 
 public abstract class Jeu1 {
-    private String name = "Code secret";
+    private String name;
+    protected String mode;
     protected int nombreCases;
     protected int nombreEssaisMax;
-    boolean isCodeFound;
+    protected int nombreEssais;
+    protected boolean isCodeFound;
+    protected int [] codeMysterieux = new int [nombreCases];
+    protected int [] tentativeCode = new int [nombreCases];
 
 
     public Jeu1(int pNombreCases, int pNombreEssaisMax) {
+        name = "Code +/-";
         nombreCases = pNombreCases;
         nombreEssaisMax = pNombreEssaisMax;
+        nombreEssais = 0;
         isCodeFound = false;
     }
 
@@ -70,7 +76,7 @@ public abstract class Jeu1 {
         return true;
     }
 
-    public int[] generateurCode() {
+    protected int[] generateurCode() {
         // Méthode permettant de générer un code aléatoire de X chiffres
         ////// Génération d'un tableau vide de X cases
         int[] codeMysterieux = new int[nombreCases];
@@ -85,7 +91,7 @@ public abstract class Jeu1 {
     }
 
     // Convertion String array to String
-    public String arrayToString(String myArray[]) {
+    protected String arrayToString(String myArray[]) {
         String myString = myArray[0];
         for (int i = 1; i < (nombreCases); i++) {
             myString += (' ' + myArray[i]);
@@ -95,7 +101,7 @@ public abstract class Jeu1 {
 
 
     // Is code found?
-    public void isCodeFound(String [] validation) {
+    protected void isCodeFound(String [] validation) {
         int k = 0;
         for (String elementValidation : validation) {
             if ((elementValidation == ">") || (elementValidation == "<")) {
@@ -105,6 +111,14 @@ public abstract class Jeu1 {
         if (k == 0) {
            isCodeFound = true;
         }
+
     }
+
+    // Compteur du nombre de coups joués
+    protected int increaseNombreEssais (){
+        this.nombreEssais++;
+        return this.nombreEssais;
+    }
+
 }
 

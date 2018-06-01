@@ -1,10 +1,10 @@
 package com.berthoud;
 
-
 public class Jeu1ModeAttaque extends Jeu1 {
 
     public Jeu1ModeAttaque(int pNombreCases, int pNombreEssaisMax) {
         super(pNombreCases, pNombreEssaisMax);
+        super.mode = "mode attaque";
     }
 
     public void play() {
@@ -12,30 +12,17 @@ public class Jeu1ModeAttaque extends Jeu1 {
         int [] codeMysterieux = super.generateurCode();
 
         // Saisie et validation code joueur
-        int nombreEssais = 0;
+//        int nombreEssais = 0;
 
-        while ((nombreEssais < super.nombreEssaisMax) && (super.isCodeFound == false)) {
-
-            nombreEssais++;
-
+        while ((super.nombreEssais < super.nombreEssaisMax) && (super.isCodeFound == false)) {
             System.out.println("Saisis ton code:");
 
-            int [] tentativeJoueur = super.saisieCodeJoueur();
-            String [] validation = super.validation(codeMysterieux, tentativeJoueur);
+            tentativeCode = super.saisieCodeJoueur();
+            String [] validation = super.validation(codeMysterieux, tentativeCode);
             System.out.println(arrayToString(validation));
 
-
-//             Définition des conditions de sortie de boucle
-//            int k = 0;
-//            for (String elementValidation : validation) {
-//                if ((elementValidation == ">") || (elementValidation == "<")){
-//                    k++;}
-//            }
-//            if (k == 0) {
-//                isCodeFound = true;
-//            }
-
             super.isCodeFound(validation);
+            super.nombreEssais++;
         }
 
         // CE CODE DOIT ETRE ENCORE FACTORISE
