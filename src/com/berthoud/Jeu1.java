@@ -3,7 +3,6 @@ package com.berthoud;
 import java.util.Scanner;
 
 public abstract class Jeu1 {
-    private String name;
     protected String mode;
     protected int nombreCases;
     protected int nombreEssaisMax;
@@ -11,10 +10,12 @@ public abstract class Jeu1 {
     protected boolean isCodeFound;
     protected int [] codeMysterieux = new int [nombreCases];
     protected int [] tentativeCode = new int [nombreCases];
+    protected Scanner scan = new Scanner(System.in);
+
 
 
     public Jeu1(int pNombreCases, int pNombreEssaisMax) {
-        name = "Code +/-";
+        String name = "Code +/-";
         nombreCases = pNombreCases;
         nombreEssaisMax = pNombreEssaisMax;
         nombreEssais = 0;
@@ -27,7 +28,6 @@ public abstract class Jeu1 {
     protected int[] saisieCodeJoueur() {
 
         // Saisie dun code entré par le joueur (code input) de X chiffre
-        Scanner scan = new Scanner(System.in);
         String inputJoueur = scan.nextLine();
 
         // Vérifier que le code saisi contient le bon nombre de caractères ET

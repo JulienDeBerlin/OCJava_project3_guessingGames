@@ -20,7 +20,7 @@ public class Jeu1ModeDefense extends Jeu1 {
 
         tentativeCode = super.generateurCode(); //1ere réponse de l'ordinateur = chiffre aléatoire
 
-        while ((super.nombreEssais < super.nombreEssaisMax) && (super.isCodeFound == false)) {
+        while ((super.nombreEssais < super.nombreEssaisMax) && (!super.isCodeFound)) {
 
             // affichage du code sous forme d'une ligne:
             displayTentativeCodeOrdinateur(tentativeCode);
@@ -28,7 +28,6 @@ public class Jeu1ModeDefense extends Jeu1 {
             // saisie validation (+/-) par le joueur:
             System.out.println("A toi de saisir le code de validation (+/-)");
 
-            Scanner scan = new Scanner(System.in);
             String validationJoueur = scan.nextLine();
 
             // vérifie que la validation (+/-) entrée par le joueur est bien correcte et ensuite fait une réponse en retour
@@ -37,7 +36,7 @@ public class Jeu1ModeDefense extends Jeu1 {
         }
 
         // CE CODE DOIT ETRE ENCORE FACTORISE
-        if (super.isCodeFound == true) {
+        if (super.isCodeFound) {
             System.out.println("Superbrain a gagné!");
         } else {
             System.out.println("Tu as vaincu Superbrain!");
@@ -59,10 +58,10 @@ public class Jeu1ModeDefense extends Jeu1 {
     private int[][] updateRangeCodeMysterieux(int[][] range, int[] tentative, String[] validation) {
         for (int x = 0; x < nombreCases; x++) {
             if (validation[x] == ">") {
-                range[0][x] = tentative[x];
+                range[0][x] = tentative[x]+1;
             }
             if (validation[x] == "<") {
-                range[1][x] = tentative[x];
+                range[1][x] = tentative[x]-1;
             }
         }
         return range;

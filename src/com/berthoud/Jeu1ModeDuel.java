@@ -21,11 +21,12 @@ public class Jeu1ModeDuel  {
         partie1.codeMysterieux = partie1.generateurCode();
 
 
-        System.out.println("Parfait, c'est parti! A toi de jouer ton premier coup en essayant de deviner le code secret de Superbrain: ");
+        System.out.println("Parfait, c'est parti! A toi de jouer ton premier coup en essayant de deviner le code secret de Superbrain ");
 
         while ((!partie1.isCodeFound) && (!partie2.isCodeFound)) {
 
             // Mode joueur attaque Superbrain
+            System.out.println("Partie 1: joueur contre Superbrain");
             partie1.tentativeCode = partie1.saisieCodeJoueur();
             String[] validationTentativeJoueur = partie1.validation(partie1.codeMysterieux, partie1.tentativeCode);
             System.out.println(partie1.arrayToString(validationTentativeJoueur));
@@ -33,7 +34,7 @@ public class Jeu1ModeDuel  {
             partie1.isCodeFound(validationTentativeJoueur);
             partie1.increaseNombreEssais();
 
-            if (partie1.isCodeFound == true) {
+            if (partie1.isCodeFound) {
                 System.out.println("Bravo! Voyons si Superbrain peut égaliser. ");
             } else System.out.println("A Superbrain de jouer! Que dis-tu de: ");
 
@@ -47,8 +48,8 @@ public class Jeu1ModeDuel  {
 
             System.out.println("A toi de saisir le code de validation (+/-)");
 
-            Scanner scan2 = new Scanner(System.in);
-            String validationJoueur = scan2.nextLine();
+            Scanner scan = new Scanner(System.in);
+            String validationJoueur = scan.nextLine();
 
             partie2.reponseValidationJoueur(validationJoueur);
             partie2.increaseNombreEssais();

@@ -2,15 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d7e7b1c-ae00-4eb5-925e-f451e435921a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/berthoud/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BrouillonProjet3/com/berthoud/Jeu1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BrouillonProjet3/com/berthoud/Jeu1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BrouillonProjet3/com/berthoud/Jeu1ModeAttaque.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BrouillonProjet3/com/berthoud/Jeu1ModeAttaque.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BrouillonProjet3/com/berthoud/Jeu1ModeDefense.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BrouillonProjet3/com/berthoud/Jeu1ModeDefense.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BrouillonProjet3/com/berthoud/Jeu1ModeDuel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BrouillonProjet3/com/berthoud/Jeu1ModeDuel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BrouillonProjet3/com/berthoud/Jeu2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BrouillonProjet3/com/berthoud/Jeu2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BrouillonProjet3/com/berthoud/Jeu2ModeAttaque.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BrouillonProjet3/com/berthoud/Jeu2ModeAttaque.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BrouillonProjet3/com/berthoud/Jeu2ModeDefense.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BrouillonProjet3/com/berthoud/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BrouillonProjet3/com/berthoud/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/berthoud/Jeu1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu1ModeAttaque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/berthoud/Jeu1ModeAttaque.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu1ModeDefense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/berthoud/Jeu1ModeDefense.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu1ModeDuel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/berthoud/Jeu1ModeDuel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/berthoud/Jeu2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/berthoud/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/berthoud/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,8 +34,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/berthoud/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+            <state relative-caret-position="120">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -35,8 +43,8 @@
       <file leaf-file-name="Jeu1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1119">
-              <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+            <state relative-caret-position="1695">
+              <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
             </state>
           </provider>
         </entry>
@@ -44,8 +52,8 @@
       <file leaf-file-name="Jeu1ModeAttaque.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu1ModeAttaque.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="42" lean-forward="true" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+            <state relative-caret-position="7">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -53,17 +61,17 @@
       <file leaf-file-name="Jeu1ModeDefense.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu1ModeDefense.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="649">
-              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+            <state relative-caret-position="186">
+              <caret line="100" column="37" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="102" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Jeu1ModeDuel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Jeu1ModeDuel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu1ModeDuel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="52" lean-forward="true" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+            <state relative-caret-position="520">
+              <caret line="72" selection-start-line="72" selection-end-line="72" />
             </state>
           </provider>
         </entry>
@@ -71,8 +79,11 @@
       <file leaf-file-name="Jeu2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            <state relative-caret-position="-744">
+              <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,17 +91,29 @@
       <file leaf-file-name="Jeu2ModeAttaque.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+            <state relative-caret-position="300">
+              <caret line="20" column="60" lean-forward="true" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Jeu2ModeDefense.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Jeu2ModeDefense.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+            <state relative-caret-position="682">
+              <caret line="76" column="33" lean-forward="true" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -110,6 +133,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -120,17 +144,20 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/com/berthoud/Jeu+-.java" />
-        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java" />
-        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu1.java" />
-        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu1ModeAttaque.java" />
-        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu1ModeDefense.java" />
-        <option value="$PROJECT_DIR$/src/com/berthoud/Main.java" />
         <option value="$PROJECT_DIR$/src/com/berthoud/Jeu1ModeDuel.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu1.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu1ModeDefense.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/Game.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu1ModeAttaque.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu2.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="16" />
+    <option name="x" value="40" />
     <option name="y" value="23" />
     <option name="width" value="1400" />
     <option name="height" value="757" />
@@ -143,6 +170,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -166,12 +195,11 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -229,7 +257,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="16" y="23" width="1400" height="757" extended-state="0" />
+    <frame x="40" y="23" width="1400" height="757" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
@@ -254,6 +282,7 @@
       <window_info id="Favorites" order="4" sideWeight="0.50108933" side_tool="true" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.329429" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
@@ -264,13 +293,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -558,13 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDuel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -572,52 +587,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1119">
-          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu1ModeAttaque.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="42" lean-forward="true" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu1ModeDefense.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
-          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu1ModeDuel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="52" lean-forward="true" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+        <state relative-caret-position="520">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu1ModeAttaque.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu1ModeDefense.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="100" column="37" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-744">
+          <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1695">
+          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="60" lean-forward="true" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="76" column="33" lean-forward="true" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
