@@ -5,7 +5,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Jeu2 partie1 = new Jeu2ModeDefense(4, 15, 6);
+        Jeu2 partie1 = new Jeu2ModeDefense(4, 15, 10);
+
+        ((Jeu2ModeDefense) partie1).reponseValidationJoueur();
 
         partie1.play();
 
