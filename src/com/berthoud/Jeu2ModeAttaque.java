@@ -19,6 +19,7 @@ public class Jeu2ModeAttaque extends Jeu2 {
 
             tentativeCode = super.saisieCodeJoueur();
             super.validation(codeMysterieux, tentativeCode);
+
             super.printValidation();
             super.isCodeFound();
             super.nombreEssais++;

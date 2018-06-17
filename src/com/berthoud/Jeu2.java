@@ -80,6 +80,40 @@ public abstract class Jeu2 {
         return validation;
     }
 
+    protected int [] validation(byte[] codeMysterieux, int[] tentativeCode) {
+
+        // Comparaison des 2 codes et affichage du résultat de la comparaison
+        byte[] copieCodeMysterieux = Arrays.copyOf(codeMysterieux, nombreCases);
+
+        bienPlacé = 0;
+        couleurOk = 0;
+
+        for (int i = 0; i < nombreCases; i++) {
+            if (tentativeCode[i] == copieCodeMysterieux[i]) {
+                bienPlacé++;
+            } else {
+                for (int k = 0; k < nombreCases; k++) {
+                    if ((tentativeCode[i] == copieCodeMysterieux[k]) && (i != k ) && (tentativeCode[k] != copieCodeMysterieux[k])) {
+                        couleurOk++;
+                        copieCodeMysterieux[k] = -1;
+                        break;
+                    }
+                }
+            }
+
+        }
+        int [] validation = new int [2];
+        validation [0] = bienPlacé;
+        validation [1] = couleurOk;
+        return validation;
+    }
+
+
+
+
+
+
+
     protected void printValidation() {
         System.out.println(bienPlacé + " couleurs bien placées \n" + couleurOk + " couleurs présentes");
     }
@@ -104,7 +138,7 @@ public abstract class Jeu2 {
         int k = 0;
         for (int j = 0; j < nombreCases; j++) {
             intArray[j] = Character.getNumericValue(inputJoueur.charAt(j));
-            if (intArray[j] > nombreCouleurs) {
+            if (intArray[j] > (nombreCouleurs-1)) {
                 k--;
             }
         }
