@@ -30,11 +30,11 @@ public class Jeu2ModeDefense extends Jeu2 {
 
         creationPoolCombinaisons();
 
-//        nbCombinaisons = (int) Math.pow(nombreCouleurs, nombreCases);
-//        poolCombinaisons = new byte[nbCombinaisons][nombreCases];
+//        nbCombinaisons = (int) Math.pow(nombreCouleurs, nbDigits);
+//        poolCombinaisons = new byte[nbCombinaisons][nbDigits];
 //
 //
-//        for (int i = 0; i < (nombreCases); i++) {
+//        for (int i = 0; i < (nbDigits); i++) {
 //            poolCombinaisons[0][i] = 0;
 //        }
 //
@@ -45,7 +45,7 @@ public class Jeu2ModeDefense extends Jeu2 {
 
 //        // impression du pool de combis
 //        for (int i = 0; i<nbCombinaisons; i++){
-//            for (int k =0 ; k<nombreCases; k++){
+//            for (int k =0 ; k<nbDigits; k++){
 //                System.out.print(poolCombinaisons[i][k] + " ");
 //            }
 //            System.out.println();
@@ -53,7 +53,7 @@ public class Jeu2ModeDefense extends Jeu2 {
         //*****************************************************************//
 
 
-        while ((super.nombreEssais < super.nombreEssaisMax) && (!super.isCodeFound)) {
+        while ((super.nombreEssais <= super.nombreEssaisMax) && (!super.isCodeFound)) {
 
             // affichage du code sous forme d'une ligne:
             displayTentativeCodeOrdinateur(tentativeCode);
@@ -135,7 +135,7 @@ public class Jeu2ModeDefense extends Jeu2 {
 
         // impression du pool de combis
 //        for (int i = 0; i<nbCombinaisons; i++){
-//            for (int k =0 ; k<nombreCases; k++){
+//            for (int k =0 ; k<nbDigits; k++){
 //                System.out.print(poolCombinaisons[i][k] + " ");
 //            }
 //            System.out.println();

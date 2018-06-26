@@ -72,7 +72,6 @@ public abstract class Jeu2 {
                     }
                 }
             }
-
         }
         int [] validation = new int [2];
         validation [0] = bienPlacé;
@@ -100,7 +99,6 @@ public abstract class Jeu2 {
                     }
                 }
             }
-
         }
         int [] validation = new int [2];
         validation [0] = bienPlacé;

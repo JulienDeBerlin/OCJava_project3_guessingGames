@@ -7,14 +7,16 @@ public class Jeu2ModeAttaque extends Jeu2 {
         super.mode = "mode attaque";
     }
 
+
     public void play() {
+
         // Génération d'un code aléatoire et initialisation de ce code sous forme d'un tableau
         codeMysterieux = super.generateurCode();
 
         // Saisie et validation code joueur
-//        int nombreEssais = 0;
+//        int nbGuesses = 0;
 
-        while ((super.nombreEssais < super.nombreEssaisMax) && (!super.isCodeFound)) {
+        while ((super.nombreEssais <= super.nombreEssaisMax) && (!super.isCodeFound)) {
             System.out.println("Saisis ton code:");
 
             tentativeCode = super.saisieCodeJoueur();
@@ -29,7 +31,11 @@ public class Jeu2ModeAttaque extends Jeu2 {
         if (super.isCodeFound) {
             System.out.println("Bravo, tu as trouvé la combinaison secrète!");
         } else {
-            System.out.println("Tu as perdu!");
+            System.out.print("Tu as perdu! La combinaison était ");
+            for (int digit : codeMysterieux) {
+                System.out.print(digit);
+            }
+            System.out.println();
         }
     }
 
