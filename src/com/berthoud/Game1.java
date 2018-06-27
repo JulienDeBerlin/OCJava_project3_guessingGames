@@ -2,6 +2,7 @@ package com.berthoud;
 
 import java.util.Scanner;
 
+
 /**
  *  Abstract class for game "+/-. It contains all the instance fields and methods required for both mode "challenger is computer" and "challenger is user"
  */
@@ -24,8 +25,20 @@ public abstract class Game1 {
         this.maxGuesses = maxGuesses;
     }
 
+    // default constructor
+    public Game1() {
+    }
 
+    /**
+     * This method sets the flow of the game
+     */
     public abstract void play();
+
+
+    /**
+     * This method organizes the end of the game. User (1) wwins or looses AND (2) repeat the same game, play another game or quit
+     */
+    protected abstract void messageEndOfTheGame ();
 
 
     /**
@@ -39,8 +52,8 @@ public abstract class Game1 {
         String inputUser = scan.nextLine();
 
         //test
-        while ((inputUser.length() != nbDigits) || (!isMyStringAnInt(inputUser))) {
-            System.out.println("What do you mean? Please enter a combination of "  + nbDigits + " digits.");
+        while ((inputUser.length() != nbDigits) || (!MyTools.isMyStringAnInt(inputUser))) {
+            System.out.print("What do you mean? Please enter a combination of "  + nbDigits + " digits: ");
             inputUser = scan.nextLine();
         }
 
@@ -79,23 +92,7 @@ public abstract class Game1 {
         }
     }
 
-    /**
-     * This methods tests if the String entered as parameter is only made of digits
-     * @param myString
-     * @return true or false
-     */
-    protected boolean isMyStringAnInt(String myString) {
-        char[] tab = myString.toCharArray(); // conversion d'un String en tableau de chars
-        int k = 0;
-        for (char carac : tab) {
-            if (!Character.isDigit(carac))
-                k--;
-        }
-        if (k < 0) {
-            return false;
-        }
-        return true;
-    }
+
 
     /**
      * This methods generates a random code made of X digits, X being equal to value of {@link #nbDigits}
@@ -151,44 +148,21 @@ public abstract class Game1 {
         return this.nbGuesses;
     }
 
-    /**
-     * This methods insert a break in the game flow, to make the interactions with the computer more human-like
-     * @param lenghtBreak
-     */
-    protected static void makeABreak (int lenghtBreak){
-        try{
-            Thread.sleep(lenghtBreak);
-        } catch (java.lang.InterruptedException e){
-            System.out.println("Everything is fine!");
-        }
-    }
 
-    /**
-     * This method organizes the end of the game. User (1) wwins or looses AND (2) repeat the same game, play another game or quit
-     */
-    protected void endOfTheGame () {
-        if (this.isCodeFound) {
-            System.out.print("Congratulations!!!! You found out the mystery code!");
-        } else {
-            System.out.print("It looks like you couldn't find out the mystery code... It was: ");
-            for (int digit : codeToBeFound) {
-                System.out.print(digit + " ");
-            }
-        }
-        System.out.printf("\n\n%s\n%s\n%s\n%s\n\n%s","Do you want to: ","1: play again this game", "2: come back to the game menu",
-                "3: stop losing you time playing", "Enter your selection: ");
+    protected void endingMenu() {
+        System.out.printf("\n\n%s\n%s\n%s\n%s\n\n%s", "Do you want to: ", "1: play again this game?", "2: come back to the game menu?",
+                "3: stop loosing you time playing?", "Enter your selection: ");
         String selectorEnding = scan.nextLine();
         System.out.println("\n");
 
-        while ((!isMyStringAnInt(selectorEnding)) || (Integer.parseInt(selectorEnding)<1) || (Integer.parseInt(selectorEnding)>3)){
-            System.out.print("What do you mean? Select 1, 2 or 3: " );
+
+        while ((!MyTools.isMyStringAnInt(selectorEnding)) || (Integer.parseInt(selectorEnding) < 1) || (Integer.parseInt(selectorEnding) > 3)) {
+            System.out.print("What do you mean? Select 1, 2 or 3: ");
             selectorEnding = scan.nextLine();
         }
 
         switch (selectorEnding) {
             case "1":
-                this.nbGuesses =1;
-                isCodeFound = false;
                 play();
                 break;
             case "2":

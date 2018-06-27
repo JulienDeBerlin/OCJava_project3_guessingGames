@@ -6,36 +6,70 @@ public class Game1ChallengerIsUser extends Game1 {
         super(nbDigits, maxGuesses);
     }
 
-    /**
-     * This method organizes the flow of the game
-     */
+
+    @Override
     public void play() {
+
+        nbGuesses = 1;
+        isCodeFound = false;
+
         codeToBeFound = super.randomCodeGenerator();
 
-        System.out.println(">>>>> Let's get started with the +/- game! <<<<<" );
+        System.out.println(">>>>> The +/- game, mode challenger <<<<<");
 
-        makeABreak(600);
+        MyTools.makeABreak(400);
 
         System.out.println("Your goal is to find a mystery code made of " + nbDigits + " digits. " +
-                "You have a maximum of " +maxGuesses+ " guesses. \nFor each guess the computer will return a validation code indicating if the digits of the" +
+                "You have a maximum of " + maxGuesses + " guesses. \nFor each guess the computer will return a validation code indicating if the digits of the" +
                 " mystery code are bigger(>) or smaller(<) than your proposal.\n");
 
         while ((super.nbGuesses <= super.maxGuesses) && (!super.isCodeFound)) {
+
+            guessValidationUnit();
+        }
+
+        messageEndOfTheGame();
+
+        MyTools.makeABreak(800);
+
+        endingMenu();
+
+
+    }
+
+        @Override
+        protected void messageEndOfTheGame () {
+
+            if (this.isCodeFound) {
+                System.out.print("Congratulations!!!! You found out the mystery code!");
+            } else {
+                System.out.print("It looks like you couldn't find out the mystery code... It was: ");
+                for (int digit : codeToBeFound) {
+                    System.out.print(digit + " ");
+                }
+            }
+
+        }
+
+
+    /**
+     * This methods takes a guess and display the validation code
+     */
+    public void guessValidationUnit() {
             System.out.print("Guess #" + nbGuesses + ". Enter your proposal: ");
 
             codeProposal = super.codeInputUser();
             String[] validation = super.validation(codeToBeFound, codeProposal);
 
-            makeABreak(200);
+            MyTools.makeABreak(500);
 
-            System.out.println("Validation ------------------> "+ arrayToString(validation) + "\n");
+            System.out.println("Validation ------------------> " + arrayToString(validation) + "\n");
 
             super.testIsCodeFound(validation);
             super.nbGuesses++;
+
         }
-
-        endOfTheGame();
-
-
     }
-}
+
+
+

@@ -7,43 +7,58 @@ public class Game1ChallengerIsComputer extends Game1 {
     private int[][] rangeCodeToBeFound = new int[2][nbDigits];// Array 1 = minValue, Array 2 = maxValue
 
 
-    public Game1ChallengerIsComputer(int pNombreCases, int pNombreEssaisMax) {
-        super(pNombreCases, pNombreEssaisMax);
+    public Game1ChallengerIsComputer(int nbDigits, int maxGuesses) {
+        super(nbDigits, maxGuesses);
         rangeCodeToBeFound = initRangeCodeToBeFound();
     }
 
-    /**
-     * This method sets the flow of the game
-     */
+    @Override
     public void play() {
 
-        System.out.println("Choisis une combinaison de " + nbDigits + " chiffres.");
+        nbGuesses = 1;
+        isCodeFound = false;
+
+        System.out.print(">>>>> The +/- game, mode defender <<<<<\n" );
+
+        MyTools.makeABreak(400);
+
+        System.out.print("You choose a mystery code made of " + nbDigits + " digits. " +
+                "Superbrain the computer will try to break it, with a maximum of " +maxGuesses+ " guesses. " +
+                "\nFor each guess please return a validation code indicating if the digits of the" +
+                " mystery code are correct (=), bigger(>) or smaller(<).\n\n");
+
+        System.out.print("Choose a secret code made of " + nbDigits + " digit: ");
         codeToBeFound = super.codeInputUser();
 
-        codeProposal = super.randomCodeGenerator(); //1ere réponse de l'ordinateur = chiffre aléatoire
+        System.out.print("\n");
+
 
         while ((super.nbGuesses <= super.maxGuesses) && (!super.isCodeFound)) {
 
-            // affichage du code sous forme d'une ligne:
-            displayProposalComputer(codeProposal);
 
-            // saisie validation (+/-) par le joueur:
-            System.out.println("A toi de saisir le code de validation (+/-)");
-
-            String validationJoueur = scan.nextLine();
-
-            // vérifie que la validation (+/-) entrée par le joueur est bien correcte et ensuite fait une réponse en retour
-            answerComputer(validationJoueur);
+            guessValidationUnit();
 
         }
 
-        // CE CODE DOIT ETRE ENCORE FACTORISE
-        if (super.isCodeFound) {
-            System.out.println("Superbrain a gagné!");
-        } else {
-            System.out.println("Tu as vaincu Superbrain!");
-        }
+        messageEndOfTheGame();
+
+        MyTools.makeABreak(800);
+
+        endingMenu();
     }
+
+
+    @Override
+    protected void messageEndOfTheGame() {
+
+        if (this.isCodeFound) {
+            System.out.print("Superbrain made it!");
+        } else {
+            System.out.print("How does it feel to defeat Superbrain? ");
+        }
+
+    }
+
 
     /**
      * The methods is used for the AI part. Set the initial range of each digit of the code to be found to min =0, max =9
@@ -99,18 +114,6 @@ public class Game1ChallengerIsComputer extends Game1 {
         return proposal;
     }
 
-    /**
-     * This methods displays the proposal code of the computer in the expected format
-     * @param tentativeCode
-     */
-    protected void displayProposalComputer(int[] tentativeCode) {
-         System.out.print("Superbrain te répond: ");
-        for (int x : tentativeCode) {
-            System.out.print (x + " ");
-        }
-        System.out.println();
-    }
-
 
     /**
      * This methods is used for the AI part. It tests and inputs the validation code entered by the user and make an appropriate next guess
@@ -126,17 +129,50 @@ public class Game1ChallengerIsComputer extends Game1 {
             }
 
             while (!validationByUser.equals(validationComputer)) {
-                System.out.println("Oups... on dirait que le code (+/-) est erroné. Saisi le à nouveau.");
+                System.out.println("Oops!... it looks like the validation code is wrong. Enter it again: ");
                 Scanner scan = new Scanner(System.in);
                 validationByUser = scan.nextLine();
+                System.out.print("\n");
             }
 
             rangeCodeToBeFound = updateRangeCodeToBeFound(rangeCodeToBeFound, codeProposal, validationByComputerStringArray);
             codeProposal = newProposal(rangeCodeToBeFound, codeProposal, validationByComputerStringArray);
 
-            //   Définition des conditions de sortie de boucle
+            //   Conditions to exit the loop
             super.testIsCodeFound(validationByComputerStringArray);
             super.nbGuesses++;
+    }
+
+
+    /**
+     * This methods displays the proposal code of the computer in the expected format
+     * @param tentativeCode
+     */
+    protected void displayProposalComputer(int[] tentativeCode) {
+        System.out.print("Superbrain's guess #" + nbGuesses + " ------------->  ");
+        for (int x : tentativeCode) {
+            System.out.print (x + " ");
+        }
+        System.out.println();
+    }
+
+
+    /**
+     * This methods takes a guess and display the validation code
+     */
+    public void guessValidationUnit(){
+        if (nbGuesses == 1) {
+            codeProposal = randomCodeGenerator(); //1st answer of computer is random
+        }
+
+        displayProposalComputer(codeProposal);
+
+        System.out.print("Enter the validation code (<, >, =):  ");
+
+        String validationJoueur = scan.nextLine();
+        System.out.print("\n");
+
+        answerComputer(validationJoueur);
     }
 
 }

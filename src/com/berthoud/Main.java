@@ -22,7 +22,7 @@ public class Main {
 
         System.out.printf("%S\n\n%s\n%s\n%s\n%s", "Hello and welcome!",
                 "Which game would you like to play?",
-                "1. Game +/- , find the secret combination using + or - indications",
+                "1. Game +/- , find the secret combination using +/- indications",
                 "2. Digit Mastermind, like the traditional Mastermind but with digits",
                 "Enter your selection: ");
         Scanner scanner = new Scanner(System.in);
