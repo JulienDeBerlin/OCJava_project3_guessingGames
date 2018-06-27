@@ -1,72 +1,81 @@
 package com.berthoud;
 
-import java.util.Scanner;
 
-public class Game1ModeDuel {
-    private Game1ChallengerIsComputer gameA; //OrdinateurAttaque
-    private Game1ChallengerIsUser gameB; //JoueurAttaque
+public class Game1ModeDuel extends Game1 {
+    private Game1ChallengerIsComputer gameA;
+    private Game1ChallengerIsUser gameB;
 
 
-    public Game1ModeDuel(int pNombreCases, int pNombreEssaisMax) {
-        this.gameB = new Game1ChallengerIsUser(pNombreCases, pNombreEssaisMax);
-        this.gameA = new Game1ChallengerIsComputer(pNombreCases, pNombreEssaisMax);
+    public Game1ModeDuel(int nbDigits, int maxGuesses) {
+        this.gameB = new Game1ChallengerIsUser(nbDigits, maxGuesses);
+        this.gameA = new Game1ChallengerIsComputer(nbDigits, maxGuesses);
     }
 
 
+    /**
+     * This method sets the flow of the game
+     */
     public void play() {
 
-        System.out.println("Prêt à défier Superbrain? \nPour commencer, saisis le code secret à "
-                + gameB.nbDigits + " chiffres que Superbrain devra deviner:");
+        System.out.println(">>>>>  The +/- game, mode duel <<<<<" );
+
+        MyTools.makeABreak(400);
+
+        System.out.print("Ready to challenge Superbrain? \nTo start with, choose a mystery code made of "
+                + gameB.nbDigits + " digits that Superbrain will try to break: ");
         gameA.codeToBeFound = gameA.codeInputUser();
         gameB.codeToBeFound = gameB.randomCodeGenerator();
 
 
-        System.out.println("Parfait, c'est parti! A toi de jouer ton premier coup en essayant de deviner le code secret de Superbrain ");
+        System.out.print("Perfect, let's get started!\n\n");
 
         while ((!gameB.isCodeFound) && (!gameA.isCodeFound)) {
 
-            // Mode joueur attaque Superbrain
-            System.out.println("Partie 1: joueur contre Superbrain");
-            gameB.codeProposal = gameB.codeInputUser();
-            String[] validationTentativeJoueur = gameB.validation(gameB.codeToBeFound, gameB.codeProposal);
-            System.out.println(gameB.arrayToString(validationTentativeJoueur));
+            // Game1ChallengerIsUser
+            System.out.print("Mode challenger: player against Superbrain\n");
 
-            gameB.testIsCodeFound(validationTentativeJoueur);
-            gameB.increaseNbGuesses();
+            gameB.guessValidationUnit();
+
+            MyTools.makeABreak(800);
 
             if (gameB.isCodeFound) {
-                System.out.println("Bravo! Voyons si Superbrain peut égaliser. ");
-            } else System.out.println("A Superbrain de jouer! Que dis-tu de: ");
+                System.out.println("Great! You broke the code. Let's see if Superbrain can equalise ");
+            } else System.out.println("Mode defender: Superbrain against player");
 
 
-            // Mode Superbrain attaque joueur
-            if (gameA.nbGuesses == 0) {
-                gameA.codeProposal = gameA.randomCodeGenerator(); //1ere réponse de l'ordinateur = chiffre aléatoire
-            }
-
-            gameA.displayProposalComputer(gameA.codeProposal);
-
-            System.out.println("A toi de saisir le code de validation (+/-)");
-
-            Scanner scan = new Scanner(System.in);
-            String validationJoueur = scan.nextLine();
-
-            gameA.answerComputer(validationJoueur);
-            gameA.increaseNbGuesses();
+            // Game1ChallengerIsComputer
+           gameA.guessValidationUnit();
         }
 
+        messageEndOfTheGame();
+
+        gameA.isCodeFound = false;
+        gameB.isCodeFound = false;
+        gameA.nbGuesses = 1;
+        gameB.nbGuesses= 1;
+
+        endingMenu();
+
+    }
+
+
+    @Override
+    protected void messageEndOfTheGame() {
         if ((gameB.isCodeFound) && (gameA.isCodeFound)) {
-            System.out.println("Ex Aequo!!!");
+            System.out.println("Dead heat!");
         }
 
         if ((gameB.isCodeFound) && (!gameA.isCodeFound)){
-            System.out.println("Tu as vaincu Superbrain!");
+            System.out.println("You won!");
         }
 
         if ((!gameB.isCodeFound) && (gameA.isCodeFound)){
-            System.out.println("Tu as perdu!");
+            System.out.println("Superbrain won!");
         }
+
     }
+
+
 }
 
 
