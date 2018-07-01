@@ -7,15 +7,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d7e7b1c-ae00-4eb5-925e-f451e435921a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/berthoud/MyTools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Games.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Game1ChallengerIsComputer.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Game1ChallengerIsComputer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Game1ChallengerIsUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Game1ChallengerIsUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Game1ModeDuel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Game1ModeDuel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2ModeAttaque.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2ModeAttaque.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2ModeDefense.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2ModeDefense.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2ModeDuel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2ModeDuel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Game1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/berthoud/Game1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsComputer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Game1ModeDuel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/berthoud/Game1ModeDuel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/berthoud/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsComputer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Game1ModeDuel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Game2ModeDuel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/berthoud/oc_project3_menu/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/berthoud/MyTools.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,85 +38,125 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="OC_Java_Projet3_Berthoud" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/berthoud/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_menu/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="57" column="32" lean-forward="true" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+            <state relative-caret-position="-72">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1491#1492#0" expanded="true" />
+                <element signature="e#1523#1524#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Jeu2ModeAttaque.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java">
+      <file leaf-file-name="Games.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Games.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Jeu2ModeDefense.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Jeu2ModeDuel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDuel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="243">
+              <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1350#1351#0" expanded="true" />
+                <element signature="e#1381#1382#0" expanded="true" />
+                <element signature="e#1415#1416#0" expanded="true" />
+                <element signature="e#1448#1449#0" expanded="true" />
+                <element signature="e#1481#1482#0" expanded="true" />
+                <element signature="e#1513#1514#0" expanded="true" />
+                <element signature="e#1549#1550#0" expanded="true" />
+                <element signature="e#1583#1584#0" expanded="true" />
+                <element signature="e#1622#1623#0" expanded="true" />
+                <element signature="e#1658#1659#0" expanded="true" />
+                <element signature="e#1696#1697#0" expanded="true" />
+                <element signature="e#1731#1732#0" expanded="true" />
+                <element signature="e#1796#1797#0" expanded="true" />
+                <element signature="e#1838#1839#0" expanded="true" />
+                <element signature="e#1885#1886#0" expanded="true" />
+                <element signature="e#1927#1928#0" expanded="true" />
+                <element signature="e#1984#1985#0" expanded="true" />
+                <element signature="e#2034#2035#0" expanded="true" />
+                <element signature="e#2089#2090#0" expanded="true" />
+                <element signature="e#2137#2138#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Game1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1.java">
+        <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="34" column="27" lean-forward="true" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+            <state relative-caret-position="-1003">
+              <caret line="13" column="120" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="120" />
+              <folding>
+                <element signature="e#656#657#0" expanded="true" />
+                <element signature="e#699#700#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game1ChallengerIsUser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsUser.java">
+      <file leaf-file-name="Game2.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+            <state relative-caret-position="326">
+              <caret line="94" column="9" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+              <folding>
+                <element signature="e#1296#1297#0" expanded="true" />
+                <element signature="e#1331#1332#0" expanded="true" />
+                <element signature="e#1366#1367#0" expanded="true" />
+                <element signature="e#1400#1401#0" expanded="true" />
+                <element signature="e#1437#1438#0" expanded="true" />
+                <element signature="e#1473#1474#0" expanded="true" />
+                <element signature="e#1526#1527#0" expanded="true" />
+                <element signature="e#1574#1575#0" expanded="true" />
+                <element signature="e#1625#1626#0" expanded="true" />
+                <element signature="e#1671#1672#0" expanded="true" />
+                <element signature="e#1726#1727#0" expanded="true" />
+                <element signature="e#1776#1777#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game1ChallengerIsComputer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsComputer.java">
+      <file leaf-file-name="Game2ModeChallenger.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeChallenger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-222">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            <state relative-caret-position="259">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game1ModeDuel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ModeDuel.java">
+      <file leaf-file-name="Game2ModeDefender.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDefender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+            <state relative-caret-position="1950">
+              <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyTools.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/berthoud/MyTools.java">
+      <file leaf-file-name="config.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+            <state relative-caret-position="165">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game2ModeDuel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDuel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
             </state>
           </provider>
         </entry>
@@ -128,8 +181,6 @@
         <option value="$PROJECT_DIR$/src/com/berthoud/Jeu+-.java" />
         <option value="$PROJECT_DIR$/src/com/berthoud/Jeu1ModeDefense.java" />
         <option value="$PROJECT_DIR$/src/com/berthoud/Game.java" />
-        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDuel.java" />
-        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu2.java" />
         <option value="$PROJECT_DIR$/src/com/berthoud/Jeu1ModeAttaque.java" />
         <option value="$PROJECT_DIR$/src/com/berthoud/Jeu1.java" />
         <option value="$PROJECT_DIR$/src/com/berthoud/Game1ModeAttaque.java" />
@@ -142,19 +193,43 @@
         <option value="$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java" />
         <option value="$PROJECT_DIR$/src/MyTools.java" />
         <option value="$PROJECT_DIR$/src/com/berthoud/MyTools.java" />
-        <option value="$PROJECT_DIR$/src/com/berthoud/Main.java" />
         <option value="$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsUser.java" />
         <option value="$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsComputer.java" />
         <option value="$PROJECT_DIR$/src/com/berthoud/Game1.java" />
         <option value="$PROJECT_DIR$/src/com/berthoud/Game1ModeDuel.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu2.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/Game2ModeAttaque.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/Game2ModeDefense.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/Game2.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDuel.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/Game2ModeDuel.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/Main.java" />
+        <option value="$PROJECT_DIR$/src/game_menu/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_projet3_gameclasses/Game2ModeChallenger.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_projet3_menu/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_projet3_gameclasses/Game1.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ChallengerIsComputer.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ChallengerIsUser.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_project3_menu/config.properties" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeDefender.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeDuel.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDuel.java" />
+        <option value="$PROJECT_DIR$/config.properties" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDefender.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_project3_menu/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Games.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeChallenger.java" />
+        <option value="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="7" />
+    <option name="x" value="202" />
     <option name="y" value="23" />
-    <option name="width" value="1410" />
-    <option name="height" value="817" />
+    <option name="width" value="978" />
+    <option name="height" value="799" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -164,25 +239,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
               <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
@@ -195,10 +259,31 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="berthoud" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="berthoud" type="462c0819:PsiDirectoryNode" />
+              <item name="oc_project3_gameclasses" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="berthoud" type="462c0819:PsiDirectoryNode" />
+              <item name="oc_project3_menu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -207,7 +292,7 @@
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="brouillonprojet3" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -216,6 +301,9 @@
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.berthoud" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -232,9 +320,9 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.berthoud.Main" />
+      <option name="MAIN_CLASS_NAME" value="com.berthoud.oc_project3_menu.Main" />
       <module name="OC_Java_Projet3_Berthoud" />
-      <option name="PROGRAM_PARAMETERS" value="nosecret" />
+      <option name="PROGRAM_PARAMETERS" value="dev" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -285,55 +373,82 @@
       <option name="project" value="LOCAL" />
       <updated>1530030740444</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Menu + code Jeu1Mode1, 2, 3 cleaned">
+      <created>1530123438900</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1530123438900</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Menu + code Jeu1Mode1, 2, 3 cleaned">
+      <created>1530123509233</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1530123509233</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Menu + code Jeu1Mode1, 2, 3 cleaned">
+      <created>1530359942229</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1530359942229</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Menu + code Jeu1Mode1, 2, 3 cleaned">
+      <created>1530359955121</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1530359955121</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="27" y="23" width="1410" height="817" extended-state="0" />
+    <frame x="274" y="23" width="978" height="799" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="TODO" order="9" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.3278302" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32551724" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003579" side_tool="true" weight="0.29946524" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="10" sideWeight="0.4996421" visible="true" weight="0.3270525" />
-      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info active="true" anchor="bottom" id="Run" order="10" sideWeight="0.4996421" visible="true" weight="0.32689655" />
+      <window_info anchor="bottom" id="Version Control" order="2" weight="0.32921812" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" x="534" y="172" width="350" height="459" id="Project" order="5" sideWeight="0.49891067" visible="true" weight="0.21773049" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.328877" />
+      <window_info content_ui="combo" x="534" y="172" width="350" height="459" id="Project" order="5" sideWeight="0.4969325" weight="0.21513665" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
-      <window_info id="Favorites" order="4" sideWeight="0.50108933" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="4" sideWeight="0.5030675" side_tool="true" weight="0.21513665" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.329429" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32784638" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
       <window_info anchor="bottom" id="Run" order="10" sideWeight="0.4996421" weight="0.32796487" />
-      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.329429" />
-      <window_info content_ui="combo" x="534" y="172" width="350" height="459" id="Project" order="5" sideWeight="0.49891067" weight="0.25268432" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info id="Image Layers" order="1" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.329429" />
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="3" />
       <window_info active="true" anchor="bottom" id="Find" order="5" visible="true" weight="0.329429" />
@@ -343,11 +458,12 @@
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003579" side_tool="true" weight="0.32796487" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info id="Favorites" order="4" sideWeight="0.50108933" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32796487" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info id="Favorites" order="4" sideWeight="0.50108933" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" x="534" y="172" width="350" height="459" id="Project" order="5" sideWeight="0.49891067" weight="0.25268432" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -374,364 +490,416 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Jeu1 ok, Jeu2 Mode 1 et 2 ok" />
     <MESSAGE value="Menu + code Jeu1Mode1 cleaned" />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu + code Jeu1Mode1 cleaned" />
+    <MESSAGE value="Menu + code Jeu1Mode1, 2, 3 cleaned" />
+    <option name="LAST_COMMIT_MESSAGE" value="Menu + code Jeu1Mode1, 2, 3 cleaned" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.java</url>
+          <line>5</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsComputer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-start-column="2" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsComputer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ModeDuel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeChallenger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDefender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDuel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDuel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsUser.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_menu/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsUser.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsComputer.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeDefender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ModeDuel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeDuel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="65" selection-start-line="3" selection-start-column="65" selection-end-line="3" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeChallenger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDefender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDuel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDuel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsUser.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsComputer.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeDefender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ModeDuel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeDuel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeChallenger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDefender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDuel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDuel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_menu/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsComputer.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeDefender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ModeDuel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeDuel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeChallenger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDefender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDuel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDuel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsUser.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1335">
           <caret line="89" column="6" selection-start-line="89" selection-start-column="6" selection-end-line="91" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_menu/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_menu/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="945">
           <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_menu/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDuel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/MyTools.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2.class" />
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/MyTools.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsComputer.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/io/FileInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-222">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="1016">
+          <caret line="116" column="32" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Properties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+        <state relative-caret-position="74">
+          <caret line="138" column="6" selection-start-line="138" selection-start-column="6" selection-end-line="138" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1.java">
+    <entry file="file://$PROJECT_DIR$/log4j2.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeDefender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="34" column="27" lean-forward="true" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+        <state relative-caret-position="316">
+          <caret line="161" column="45" lean-forward="true" selection-start-line="161" selection-start-column="45" selection-end-line="161" selection-end-column="45" />
+          <folding>
+            <element signature="e#842#843#0" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+            <element signature="e#952#953#0" expanded="true" />
+            <element signature="e#1012#1013#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="57" column="32" lean-forward="true" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+        <state relative-caret-position="1065">
+          <caret line="71" column="47" lean-forward="true" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
+          <folding>
+            <element signature="e#302#303#0" expanded="true" />
+            <element signature="e#345#346#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsUser.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeDuel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        <state relative-caret-position="187">
+          <caret line="76" column="48" lean-forward="true" selection-start-line="76" selection-start-column="48" selection-end-line="76" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/Game1ModeDuel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDuel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+        <state relative-caret-position="348">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_menu/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-72">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="e#1523#1524#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1003">
+          <caret line="13" column="120" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="120" />
+          <folding>
+            <element signature="e#656#657#0" expanded="true" />
+            <element signature="e#699#700#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Games.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1350#1351#0" expanded="true" />
+            <element signature="e#1381#1382#0" expanded="true" />
+            <element signature="e#1415#1416#0" expanded="true" />
+            <element signature="e#1448#1449#0" expanded="true" />
+            <element signature="e#1481#1482#0" expanded="true" />
+            <element signature="e#1513#1514#0" expanded="true" />
+            <element signature="e#1549#1550#0" expanded="true" />
+            <element signature="e#1583#1584#0" expanded="true" />
+            <element signature="e#1622#1623#0" expanded="true" />
+            <element signature="e#1658#1659#0" expanded="true" />
+            <element signature="e#1696#1697#0" expanded="true" />
+            <element signature="e#1731#1732#0" expanded="true" />
+            <element signature="e#1796#1797#0" expanded="true" />
+            <element signature="e#1838#1839#0" expanded="true" />
+            <element signature="e#1885#1886#0" expanded="true" />
+            <element signature="e#1927#1928#0" expanded="true" />
+            <element signature="e#1984#1985#0" expanded="true" />
+            <element signature="e#2034#2035#0" expanded="true" />
+            <element signature="e#2089#2090#0" expanded="true" />
+            <element signature="e#2137#2138#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDefender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1950">
+          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeChallenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="94" column="9" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+          <folding>
+            <element signature="e#1296#1297#0" expanded="true" />
+            <element signature="e#1331#1332#0" expanded="true" />
+            <element signature="e#1366#1367#0" expanded="true" />
+            <element signature="e#1400#1401#0" expanded="true" />
+            <element signature="e#1437#1438#0" expanded="true" />
+            <element signature="e#1473#1474#0" expanded="true" />
+            <element signature="e#1526#1527#0" expanded="true" />
+            <element signature="e#1574#1575#0" expanded="true" />
+            <element signature="e#1625#1626#0" expanded="true" />
+            <element signature="e#1671#1672#0" expanded="true" />
+            <element signature="e#1726#1727#0" expanded="true" />
+            <element signature="e#1776#1777#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -754,7 +922,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
