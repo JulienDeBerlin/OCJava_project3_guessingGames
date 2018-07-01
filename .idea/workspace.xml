@@ -7,28 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d7e7b1c-ae00-4eb5-925e-f451e435921a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Games.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Game1ChallengerIsComputer.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Game1ChallengerIsComputer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Game1ChallengerIsUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Game1ChallengerIsUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Game1ModeDuel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Game1ModeDuel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2ModeAttaque.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2ModeAttaque.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2ModeDefense.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2ModeDefense.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2ModeDuel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Jeu2ModeDuel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/com/berthoud/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com/berthoud/Main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsComputer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Game1ChallengerIsUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Game1ModeDuel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Game2ModeDuel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu2ModeAttaque.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDefense.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/berthoud/oc_project3_menu/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/MyTools.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/berthoud/Jeu2ModeDuel.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -105,8 +86,8 @@
       <file leaf-file-name="Game2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="94" column="9" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+            <state relative-caret-position="341">
+              <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
               <folding>
                 <element signature="e#1296#1297#0" expanded="true" />
                 <element signature="e#1331#1332#0" expanded="true" />
@@ -401,11 +382,18 @@
       <option name="project" value="LOCAL" />
       <updated>1530359955121</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="all instance fields set to private &#10;+ creation of getters and setters">
+      <created>1530475756409</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1530475756409</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="274" y="23" width="978" height="799" extended-state="0" />
+    <frame x="202" y="23" width="978" height="799" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
@@ -416,8 +404,8 @@
       <window_info anchor="right" id="Capture Analysis" order="2" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003579" side_tool="true" weight="0.29946524" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="10" sideWeight="0.4996421" visible="true" weight="0.32689655" />
-      <window_info anchor="bottom" id="Version Control" order="2" weight="0.32921812" />
+      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.4996421" weight="0.32689655" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="2" visible="true" weight="0.32827586" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
@@ -478,6 +466,14 @@
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
               </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
             </State>
           </value>
         </entry>
@@ -491,13 +487,14 @@
     <MESSAGE value="Jeu1 ok, Jeu2 Mode 1 et 2 ok" />
     <MESSAGE value="Menu + code Jeu1Mode1 cleaned" />
     <MESSAGE value="Menu + code Jeu1Mode1, 2, 3 cleaned" />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu + code Jeu1Mode1, 2, 3 cleaned" />
+    <MESSAGE value="all instance fields set to private &#10;+ creation of getters and setters" />
+    <option name="LAST_COMMIT_MESSAGE" value="all instance fields set to private &#10;+ creation of getters and setters" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.java</url>
+          <url />
           <line>5</line>
           <properties />
         </line-breakpoint>
@@ -884,8 +881,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="94" column="9" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+        <state relative-caret-position="341">
+          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
           <folding>
             <element signature="e#1296#1297#0" expanded="true" />
             <element signature="e#1331#1332#0" expanded="true" />
@@ -922,7 +919,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
