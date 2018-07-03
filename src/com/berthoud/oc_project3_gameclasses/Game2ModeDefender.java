@@ -32,20 +32,7 @@ public class Game2ModeDefender extends Game2 {
 
         while ((super.getNbGuesses() <= super.getMaxGuesses()) && (!super.testIsCodeFound())) {
 
-            // affichage du code sous forme d'une ligne:
-            displayTentativeCodeOrdinateur(getCodeProposal());
-
-            // saisie validation par le joueur:
-            saisieValidationJoueur();
-
-            super.testIsCodeFound();
-            if(!super.testIsCodeFound()) {
-                // Fait une réponse en retour à la validation joueur
-                reponseValidationJoueur();
-            }
-
-
-            setNbGuesses(getNbGuesses()+1);
+            guessValidationUnit();
 
         }
 
@@ -177,5 +164,24 @@ public class Game2ModeDefender extends Game2 {
     @Override
     protected void messageEndOfTheGame() {
 
+    }
+
+
+    @Override
+    protected void guessValidationUnit() {
+        // affichage du code sous forme d'une ligne:
+        displayTentativeCodeOrdinateur(getCodeProposal());
+
+        // saisie validation par le joueur:
+        saisieValidationJoueur();
+
+        super.testIsCodeFound();
+        if(!super.testIsCodeFound()) {
+            // Fait une réponse en retour à la validation joueur
+            reponseValidationJoueur();
+        }
+
+
+        setNbGuesses(getNbGuesses()+1);
     }
 }

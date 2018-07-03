@@ -1,17 +1,18 @@
 package com.berthoud.oc_project3_gameclasses;
 
 /**
- * The program Game1ModeDuel implements the first game (+/-) in the mode duel: two games - one in mode challenger, the other in mode defender -
- * are running at the same time. Player tries to break computer's code and computer tries to break player's code.
- * The first who break the other's code win.
+ * The program GameModeDuel makes possible to play either the " + / - game" or the digit Mastermind in a duel mode.
+ * In this mode the player tries to break computer's code and the computer tries to break player's code, both game runs at the same time.
+ * The first who breaks the other's code wins.
  */
-public class Game1ModeDuel extends Game1{
+public class GameModeDuel{
+
 
 // _____________________________________________________________________________________________________________________
     //INSTANCE FIELDS//
 
-    private Game1ModeDefender gameA;
-    private Game1ModeChallenger gameB;
+    private Games gameA; // mode challenger
+    private Games gameB; // mode defender
 
 
 // _____________________________________________________________________________________________________________________
@@ -22,11 +23,23 @@ public class Game1ModeDuel extends Game1{
      * @param nbDigits number of digits
      * @param maxGuesses max number of guesses allowed
      */
-    public Game1ModeDuel(int nbDigits, int maxGuesses) {
-        this.gameB = new Game1ModeChallenger(nbDigits, maxGuesses);
-        this.gameA = new Game1ModeDefender(nbDigits, maxGuesses);
+    public GameModeDuel(int nbDigits, int maxGuesses) {
+        this.gameA = new Game1ModeChallenger(nbDigits, maxGuesses);
+        this.gameB = new Game1ModeDefender(nbDigits, maxGuesses);
     }
 
+
+    /**
+     * Constructor
+     * @param nbDigits number of digits of the code
+     * @param maxGuesses max number of guesses allowed
+     * @param nbVariations number of value possible for each digit. Min = 4 , Max = 10
+     */
+    public GameModeDuel(int nbDigits, int maxGuesses, int nbVariations) {
+        this.gameA = new Game2ModeChallenger(nbDigits, maxGuesses, nbVariations);
+        this.gameB = new Game2ModeDefender(nbDigits, maxGuesses, nbVariations);
+
+    }
 
 
 // _____________________________________________________________________________________________________________________
@@ -37,7 +50,6 @@ public class Game1ModeDuel extends Game1{
      * All the methods required for the execution of the game are called within this wrapper-method.
      * The implementation is different for each game and mode.
      */
-    @Override
     public void play() {
 
         System.out.printf("%S", ">>>>> The +/- game, mode duel <<<<<\n");
@@ -45,40 +57,42 @@ public class Game1ModeDuel extends Game1{
         MyTools.makeABreak(400);
 
         System.out.print("Ready to challenge Superbrain? \nTo start with, choose a mystery code made of "
-                + gameB.getNbDigits() + " digits that Superbrain will try to break: ");
-        gameA.setCodeToBeFound(gameA.codeInputUser());
-        gameB.setCodeToBeFound(gameB.randomCodeGenerator());
+                + gameA.getNbDigits() + " digits that Superbrain will try to break: ");
+        gameB.setCodeToBeFound(gameB.codeInputUser());
+        gameA.setCodeToBeFound(gameA.randomCodeGenerator());
 
 
         System.out.print("Perfect, let's get started!\n\n");
 
-        while ((!gameB.isCodeFound()) && (!gameA.isCodeFound())) {
+        while ((!gameA.isCodeFound()) && (!gameB.isCodeFound())) {
 
-            // Game1ModeChallenger
+            // ModeChallenger
             System.out.print("Mode challenger: player against Superbrain\n");
-            displayModeDev(gameB.getCodeToBeFound());
+            gameA.displayModeDev(gameA.getCodeToBeFound());
 
-            gameB.guessValidationUnit();
+            gameA.guessValidationUnit();
 
             MyTools.makeABreak(800);
 
-            if (gameB.isCodeFound()) {
+            if (gameA.isCodeFound()) {
                 System.out.println("Great! You broke the code. Let's see if Superbrain can equalise ");
             } else System.out.println("Mode defender: Superbrain against player");
 
 
-            // Game1ModeDefender
-           gameA.guessValidationUnit();
+            // ModeDefender
+           gameB.guessValidationUnit();
         }
 
         messageEndOfTheGame();
 
-        gameA.setCodeFound(false);
         gameB.setCodeFound(false);
-        gameA.setNbGuesses(1);
+        gameA.setCodeFound(false);
         gameB.setNbGuesses(1);
+        gameA.setNbGuesses(1);
 
-        endingMenu();
+
+
+        gameA.endingMenu();
 
     }
 
@@ -86,17 +100,16 @@ public class Game1ModeDuel extends Game1{
      * This method displays the result of the game at the end of the game.
      * TThe implementation is different for each game and mode.
      */
-    @Override
     protected void messageEndOfTheGame() {
-        if ((gameB.isCodeFound()) && (gameA.isCodeFound())) {
+        if ((gameA.isCodeFound()) && (gameB.isCodeFound())) {
             System.out.printf("%S", "Dead heat!");
         }
 
-        if ((gameB.isCodeFound()) && (!gameA.isCodeFound())){
+        if ((gameA.isCodeFound()) && (!gameB.isCodeFound())){
             System.out.printf("%S", "You won!");
         }
 
-        if ((!gameB.isCodeFound()) && (gameA.isCodeFound())){
+        if ((!gameA.isCodeFound()) && (gameB.isCodeFound())){
             System.out.printf("%S", "Superbrain won!");
         }
 

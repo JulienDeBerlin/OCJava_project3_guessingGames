@@ -16,8 +16,16 @@ public class Main {
     private static int maxGuessesGame2 = 10;
     private static int nbVariationsGame2 = 6 ;
     private static boolean devMode = false;
+    private static String choiceGame;
+    private static String choiceMode;
 
+    public static String getChoiceGame() {
+        return choiceGame;
+    }
 
+    public static String getChoiceMode() {
+        return choiceMode;
+    }
 
     public static void main(String[] args) {
 
@@ -72,12 +80,11 @@ public class Main {
                 "2. Digit Mastermind, like the traditional Mastermind but with digits",
                 "Enter your selection: ");
         Scanner scanner = new Scanner(System.in);
-        String choicePlayer1;
-        choicePlayer1 = scanner.nextLine();
+        choiceGame = scanner.nextLine();
 
-        while (!choicePlayer1.equals("1") && !choicePlayer1.equals("2")){
+        while (!choiceGame.equals("1") && !choiceGame.equals("2")){
             System.out.print("What do you mean? Please enter 1 or 2: ");
-            choicePlayer1 = scanner.nextLine();
+            choiceGame = scanner.nextLine();
         }
 
 
@@ -87,18 +94,23 @@ public class Main {
                 "3. Mode duel: the first who breaks the other's code wins!",
                 "Enter your selection: ");
 
-        String choicePlayer2;
-        choicePlayer2 = scanner.nextLine();
+        choiceMode = scanner.nextLine();
 
-        while (!choicePlayer2.equals("1") && !choicePlayer2.equals("2") && !choicePlayer2.equals("3")){
+        while (!choiceMode.equals("1") && !choiceMode.equals("2") && !choiceMode.equals("3")){
             System.out.print("What do you mean? Please enter 1, 2 or 3: ");
-            choicePlayer2 = scanner.nextLine();
+            choiceMode = scanner.nextLine();
         }
 
         System.out.println("\n");
 
-        if (choicePlayer1.equals("1")){
-            switch (choicePlayer2) {
+        startTheGame(choiceGame, choiceMode);
+
+    }
+
+
+    public static void startTheGame(String choiceGame, String choiceMode){
+        if (choiceGame.equals("1")){
+            switch (choiceMode) {
                 case "1":
                     Game1ModeChallenger game1ModeChallenger = new Game1ModeChallenger(nbDigitsGame1, maxGuessesGame1);
                     game1ModeChallenger.play();
@@ -108,14 +120,14 @@ public class Main {
                     game1ModeDefender.play();
                     break;
                 case "3":
-                    Game1ModeDuel game1ModeDuel = new Game1ModeDuel(nbDigitsGame1, maxGuessesGame1);
-                    game1ModeDuel.play();
+                    GameModeDuel gameModeDuel = new GameModeDuel(nbDigitsGame1, maxGuessesGame1);
+                    gameModeDuel.play();
                     break;
             }
         }
 
-        if (choicePlayer1.equals("2")){
-            switch (choicePlayer2) {
+        if (choiceGame.equals("2")){
+            switch (choiceMode) {
                 case "1":
                     Game2ModeChallenger game2ModeChallenger = new Game2ModeChallenger(nbDigitsGame2, maxGuessesGame2, nbVariationsGame2);
                     game2ModeChallenger.play();
@@ -125,15 +137,13 @@ public class Main {
                     game2ModeDefender.play();
                     break;
                 case "3":
-                    Game2ModeDuel game2ModeDuel = new Game2ModeDuel(nbDigitsGame2, maxGuessesGame2, nbVariationsGame2);
-                    game2ModeDuel.play();
+                    GameModeDuel gameModeDuel = new GameModeDuel(nbDigitsGame2, maxGuessesGame2, nbVariationsGame2);
+                    gameModeDuel.play();
                     break;
             }
 
 
         }
-
-
     }
 
 

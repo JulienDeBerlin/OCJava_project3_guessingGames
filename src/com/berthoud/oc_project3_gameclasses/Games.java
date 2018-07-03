@@ -135,6 +135,25 @@ public abstract class Games {
     protected abstract void messageEndOfTheGame ();
 
 
+    /**
+     * This method inputs the code entered by the player on the keyboard, tests that the code is valid and if so returns the valid code
+     * @return a code entered by the player
+     */
+    protected abstract int[] codeInputUser();
+
+
+    /**
+     * This methods generates a random code made of X digits, X being equal to value of {@link #nbDigits}
+     * @return the random code
+     */
+    protected abstract int[] randomCodeGenerator();
+
+
+    /**
+     * This method takes a guess and display the validation code (in challenger mode),
+     * generates a guess, takes a validation code and generate the next guess (in defender mode)
+     */
+    protected abstract void guessValidationUnit();
 
 // _____________________________________________________________________________________________________________________
     //CONCRETE METHODS//
@@ -156,7 +175,7 @@ public abstract class Games {
 
         switch (selectorEnding) {
             case "1":
-                play();
+                Main.startTheGame(Main.getChoiceGame(), Main.getChoiceMode());
                 break;
             case "2":
                 Main.menu();

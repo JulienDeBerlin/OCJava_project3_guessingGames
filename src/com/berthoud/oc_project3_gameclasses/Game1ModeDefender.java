@@ -159,33 +159,7 @@ public class Game1ModeDefender extends Game1 {
     }
 
 
-    /**
-     * This method is used for the AI part. It tests and inputs the validation code entered by the user and make an appropriate next guess
-     * @param validationByUser
-     * @see #updateRangeCodeToBeFound(int[][], int[], String[])
-     * @see #newProposal(int[][], int[], String[])
-     */
-    protected void answerComputer(String validationByUser){
-        String[] validationByComputerStringArray = super.validation(getCodeToBeFound(), getCodeProposal());
-            String validationComputer = validationByComputerStringArray[0];
-            for (int j = 1; j < getNbDigits(); j++) {
-                validationComputer += validationByComputerStringArray[j];
-            }
 
-            while (!validationByUser.equals(validationComputer)) {
-                System.out.println("Oops!... it looks like the validation code is wrong. Enter it again: ");
-                validationByUser = scan.nextLine();
-                System.out.print("\n");
-            }
-
-            rangeCodeToBeFound = updateRangeCodeToBeFound(rangeCodeToBeFound, getCodeProposal(), validationByComputerStringArray);
-            setCodeProposal(newProposal(rangeCodeToBeFound, getCodeProposal(), validationByComputerStringArray));
-
-            //   Conditions to exit the loop
-            super.testIsCodeFound(validationByComputerStringArray);
-        super.setNbGuesses(getNbGuesses()+1);
-
-    }
 
 
     /**
@@ -217,6 +191,35 @@ public class Game1ModeDefender extends Game1 {
         System.out.print("\n");
 
         answerComputer(validationJoueur);
+    }
+
+
+    /**
+     * This method is used for the AI part. It tests and inputs the validation code entered by the user and make an appropriate next guess
+     * @param validationByUser
+     * @see #updateRangeCodeToBeFound(int[][], int[], String[])
+     * @see #newProposal(int[][], int[], String[])
+     */
+    protected void answerComputer(String validationByUser){
+        String[] validationByComputerStringArray = super.validation(getCodeToBeFound(), getCodeProposal());
+        String validationComputer = validationByComputerStringArray[0];
+        for (int j = 1; j < getNbDigits(); j++) {
+            validationComputer += validationByComputerStringArray[j];
+        }
+
+        while (!validationByUser.equals(validationComputer)) {
+            System.out.println("Oops!... it looks like the validation code is wrong. Enter it again: ");
+            validationByUser = scan.nextLine();
+            System.out.print("\n");
+        }
+
+        rangeCodeToBeFound = updateRangeCodeToBeFound(rangeCodeToBeFound, getCodeProposal(), validationByComputerStringArray);
+        setCodeProposal(newProposal(rangeCodeToBeFound, getCodeProposal(), validationByComputerStringArray));
+
+        //   Conditions to exit the loop
+        super.testIsCodeFound(validationByComputerStringArray);
+        super.setNbGuesses(getNbGuesses()+1);
+
     }
 
 }

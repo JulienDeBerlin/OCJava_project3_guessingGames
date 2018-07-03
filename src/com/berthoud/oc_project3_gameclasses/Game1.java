@@ -106,8 +106,6 @@ public abstract class Game1 extends Games{
 
 
 
-
-
     /**
      * This method sets the instance field {@link #isCodeFound} to true if the validation code is only made of = signs
       * @param validation

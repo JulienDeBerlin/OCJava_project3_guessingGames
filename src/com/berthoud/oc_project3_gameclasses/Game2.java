@@ -72,7 +72,8 @@ public abstract class Game2 extends Games{
     // METHODS (SHARED BY ALL MODES)
 
 
-    int[] codeInputUser() {
+
+    protected int[] codeInputUser() {
 
         String inputUser = scan.nextLine();
 
