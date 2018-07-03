@@ -2,7 +2,7 @@ package com.berthoud.oc_project3_gameclasses;
 
 
 /**
- *  Abstract class for "Game +/- ". It contains all the instance fields and methods required for both modes challenger and defender
+ *  Abstract class for "Game +/- ". It contains all the instance fields and methods required for all modes
  */
 public abstract class Game1 extends Games{
 
@@ -15,9 +15,9 @@ public abstract class Game1 extends Games{
     //CONSTRUCTORS//
 
     /**
-     * Constructor
-     * @param nbDigits
-     * @param maxGuesses
+     * Constructor (constructors are chained)
+     * @param nbDigits number of digits
+     * @param maxGuesses max number of guesses allowed
      */
     protected Game1(int nbDigits, int maxGuesses) {
         super(nbDigits, maxGuesses);
@@ -67,8 +67,8 @@ public abstract class Game1 extends Games{
 
     /**
      *This methods compares codeTobeFound to codeProposal and return a +/- validation code
-     * @param codeToBeFound
-     * @param codeProposal
+     * @param codeToBeFound the mystery code
+     * @param codeProposal the code attempt made by the challenger
      * @return +/- validation code
      */
     protected String[] validation(int[] codeToBeFound, int[] codeProposal) {
@@ -94,7 +94,7 @@ public abstract class Game1 extends Games{
 
     /**
      * This methods generates a random code made of X digits, X being equal to value of {@link #nbDigits}
-     * @return
+     * @return the random code
      */
     protected int[] randomCodeGenerator() {
         int[] randomCode = new int[getNbDigits()];
@@ -105,18 +105,7 @@ public abstract class Game1 extends Games{
     }
 
 
-    /**
-     * This method converts a String array to a String and add a space between each element
-     * @param myArray
-     * @return the String made of all the elements of the String array, with space between each element
-     */
-    protected String arrayToString(String myArray[]) {
-        String myString = myArray[0];
-        for (int i = 1; i < (getNbDigits()); i++) {
-            myString += (' ' + myArray[i]);
-        }
-        return myString;
-    }
+
 
 
     /**

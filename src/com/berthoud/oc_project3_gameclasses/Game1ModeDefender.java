@@ -1,15 +1,30 @@
 package com.berthoud.oc_project3_gameclasses;
 
+
+/**
+ * The program Game1ModeDefender implements the first game (+/-) in the mode defender: the user choose a code and the
+ * computer tries to break it
+ */
+
 public class Game1ModeDefender extends Game1 {
 
 // _____________________________________________________________________________________________________________________
     //INSTANCE FIELDS//
-
+    /**
+     * This field is need for the AI part of the program. It refers to the min and max possible value of each digit of the {@link #codeToBeFound)
+     */
     private int[][] rangeCodeToBeFound = new int[2][getNbDigits()];// Array 1 = minValue, Array 2 = maxValue
-
+   // Although the second part of the declaration is meant to be redundant by the IDE, the program throws a NullPointerException if I suppress it.
+   // Same happens if I replace it by initRangeCodeToBeFound(). TBC why.
 
 // _____________________________________________________________________________________________________________________
     //CONSTRUCTORS//
+
+    /**
+     * Constructor (constructors are chained)
+     * @param nbDigits number of digits
+     * @param maxGuesses max number of guesses allowed
+     */
     public Game1ModeDefender(int nbDigits, int maxGuesses) {
         super(nbDigits, maxGuesses);
         rangeCodeToBeFound = initRangeCodeToBeFound();
@@ -26,16 +41,22 @@ public class Game1ModeDefender extends Game1 {
         this.rangeCodeToBeFound = rangeCodeToBeFound;
     }
 
+
     // _____________________________________________________________________________________________________________________
     //IMPLEMENTATION OF ABSTRACT METHODS//
 
+    /**
+     * This method is a wrapper-method that starts and executes the game until the end.
+     * All the methods required for the execution of the game are called within this wrapper-method.
+     * The implementation is different for each game and mode.
+     */
     @Override
     public void play(){
 
         setNbGuesses(1);
         setCodeFound(false);
 
-        System.out.print(">>>>> The +/- game, mode defender <<<<<\n" );
+        System.out.printf("%S", ">>>>> The +/- game, mode defender <<<<<\n");
 
         MyTools.makeABreak(400);
 
@@ -65,6 +86,10 @@ public class Game1ModeDefender extends Game1 {
     }
 
 
+    /**
+     * This method displays the result of the game at the end of the game.
+     * TThe implementation is different for each game and mode.
+     */
     @Override
     protected void messageEndOfTheGame() {
 
@@ -81,7 +106,7 @@ public class Game1ModeDefender extends Game1 {
     //LOCAL METHOD(S)//
 
     /**
-     * The methods is used for the AI part. Set the initial range of each digit of the code to be found to min =0, max =9
+     * The method is used for the AI part. Set the initial range of each digit of the code to be found to min =0, max =9
      * @return the instance field X
      * @see Game1ModeDefender#rangeCodeToBeFound   = X
      */
@@ -94,7 +119,7 @@ public class Game1ModeDefender extends Game1 {
     }
 
     /**
-     * The methods is used for the AI part. Restrict the range of each digit of the code to be found after each validation of a proposal code
+     * The method is used for the AI part. Restrict the range of each digit of the code to be found after each validation of a proposal code
      * @param range this is range before validation
      * @param proposal the proposal code
      * @param validation the validation code
@@ -104,7 +129,6 @@ public class Game1ModeDefender extends Game1 {
      * @see Game1ModeDefender#rangeCodeToBeFound
      *
      */
-
     private int[][] updateRangeCodeToBeFound(int[][] range, int[] proposal, String[] validation) {
         for (int x = 0; x < getNbDigits(); x++) {
             if (validation[x] == ">") {
@@ -119,7 +143,7 @@ public class Game1ModeDefender extends Game1 {
 
 
     /**
-     * The methods is used for the AI part. It updates the instance field {@link #codeProposal} used for the next guess of the computer
+     * The method is used for the AI part. It updates the instance field {@link #codeProposal} used for the next guess of the computer
      * @param newRange   the output of {@link #updateRangeCodeToBeFound(int[][], int[], String[])}
      * @param proposal   the instance field {@link #codeProposal} to be updated
      * @param validation {@link #validation(int[], int[])}
@@ -136,7 +160,7 @@ public class Game1ModeDefender extends Game1 {
 
 
     /**
-     * This methods is used for the AI part. It tests and inputs the validation code entered by the user and make an appropriate next guess
+     * This method is used for the AI part. It tests and inputs the validation code entered by the user and make an appropriate next guess
      * @param validationByUser
      * @see #updateRangeCodeToBeFound(int[][], int[], String[])
      * @see #newProposal(int[][], int[], String[])
@@ -165,7 +189,7 @@ public class Game1ModeDefender extends Game1 {
 
 
     /**
-     * This methods displays the proposal code of the computer in the expected format
+     * This method displays the proposal code of the computer in the expected format
      * @param tentativeCode
      */
     protected void displayProposalComputer(int[] tentativeCode) {
@@ -178,7 +202,7 @@ public class Game1ModeDefender extends Game1 {
 
 
     /**
-     * This methods takes a guess and display the validation code
+     * This method takes a guess and display the validation code
      */
     public void guessValidationUnit(){
         if (getNbGuesses() == 1) {

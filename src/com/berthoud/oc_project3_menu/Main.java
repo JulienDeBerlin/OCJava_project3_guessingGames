@@ -10,30 +10,36 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static int nbDigitsGame1;
-    private static int maxGuessesGame1;
-    private static int nbDigitsGame2;
-    private static int maxGuessesGame2;
-    private static int nbVariationsGame2;
+    private static int nbDigitsGame1 = 4;
+    private static int maxGuessesGame1 = 4;
+    private static int nbDigitsGame2 = 4;
+    private static int maxGuessesGame2 = 10;
+    private static int nbVariationsGame2 = 6 ;
     private static boolean devMode = false;
 
 
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
-        Properties p = new Properties();
-        InputStream inputStream = new FileInputStream("config.properties");
-        p.load(inputStream);
+        try {
+            Properties p = new Properties();
+            InputStream inputStream = new FileInputStream("config.properties");
+            p.load(inputStream);
 
-        nbDigitsGame1 = Integer.parseInt(p.getProperty("nbDigitsGame1"));
-        maxGuessesGame1 = Integer.parseInt(p.getProperty("maxGuessesGame1"));
-        nbDigitsGame2 = Integer.parseInt(p.getProperty("nbDigitsGame1"));
-        maxGuessesGame2 = Integer.parseInt(p.getProperty("maxGuessesGame1"));
-        nbVariationsGame2 = Integer.parseInt(p.getProperty("nbVariationsGame2"));
+            nbDigitsGame1 = Integer.parseInt(p.getProperty("nbDigitsGame1"));
+            maxGuessesGame1 = Integer.parseInt(p.getProperty("maxGuessesGame1"));
+            nbDigitsGame2 = Integer.parseInt(p.getProperty("nbDigitsGame2"));
+            maxGuessesGame2 = Integer.parseInt(p.getProperty("maxGuessesGame2"));
+            nbVariationsGame2 = Integer.parseInt(p.getProperty("nbVariationsGame2"));
 
-        if ( p.getProperty("devMode").equals("Y")){
-            devMode = true;
+            if (p.getProperty("devMode").equals("Y")) {
+                devMode = true;
+            }
+
+        } catch (Exception e){
+            // do not display anything. If an exception is thrown, the game will run with the default field values.
         }
+
 
         if (args.length>0){
             for (int x =0; x< args.length; x++){

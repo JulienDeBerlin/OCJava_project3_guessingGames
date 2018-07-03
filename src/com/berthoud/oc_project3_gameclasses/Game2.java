@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 
 /**
- *  Abstract class for Mastermind. It contains all the instance fields and methods required for both modes challenger and defender
+ *  Abstract class for Mastermind. It contains all the instance fields and methods required for all modes
  */
 public abstract class Game2 extends Games{
 
@@ -41,29 +41,29 @@ public abstract class Game2 extends Games{
 
 
 // _____________________________________________________________________________________________________________________
-    //GETTERS AND SETTERS//
+    //GETTERS AND SETTERS all package-private//
 
-    public int getNbVariations() {
+    int getNbVariations() {
         return nbVariations;
     }
 
-    public int getDigitsFound() {
+    int getDigitsFound() {
         return digitsFound;
     }
 
-    public int getDigitsPresent() {
+    int getDigitsPresent() {
         return digitsPresent;
     }
 
-    public void setNbVariations(int nbVariations) {
+    void setNbVariations(int nbVariations) {
         this.nbVariations = nbVariations;
     }
 
-    public void setDigitsFound(int digitsFound) {
+    void setDigitsFound(int digitsFound) {
         this.digitsFound = digitsFound;
     }
 
-    public void setDigitsPresent(int digitsPresent) {
+    void setDigitsPresent(int digitsPresent) {
         this.digitsPresent = digitsPresent;
     }
 
@@ -72,16 +72,16 @@ public abstract class Game2 extends Games{
     // METHODS (SHARED BY ALL MODES)
 
 
-    protected int[] saisieCodeJoueur() {
+    int[] codeInputUser() {
 
-        String inputJoueur = scan.nextLine();
+        String inputUser = scan.nextLine();
 
         // Vérifier que le code saisi contient le bon nombre de caractères ET
         // uniquement des chiffres de 0 à (x-1) (avec x = nbVariations)
-        while ((inputJoueur.length() != getNbDigits()) || (!isInt(inputJoueur)) || (!isColorValid(inputJoueur, nbVariations))) {
+        while ((inputUser.length() != getNbDigits()) || (!isInt(inputUser)) || (!inputInsideRange(inputUser, nbVariations))) {
             int k = nbVariations - 1;
-            System.out.println("Saisie non valide. Saisis une combinaison de " + getNbDigits() + " chiffres compris entre 0 à " + k);
-            inputJoueur = scan.nextLine();
+            System.out.println("What do you mean? Please enter a combination of " + getNbDigits() + " digits from 0 to " + k);
+            inputUser = scan.nextLine();
         }
 
         // Conversion du String codeInput en un tableau composé de int (codeChallenger)
@@ -91,29 +91,29 @@ public abstract class Game2 extends Games{
         // ****************************************************************************************
 
         for (int j = 0; j < getNbDigits(); j++) {
-            setCodeProposal(j, Character.getNumericValue(inputJoueur.charAt(j)) );
+            setCodeProposal(j, Character.getNumericValue(inputUser.charAt(j)) );
         }
 
         return getCodeProposal();
 
     }
 
-    protected int [] validation(int[] codeMysterieux, int[] tentativeCode) {
+    protected int [] validation(int[] codeToBeFound, int[] codeProposal) {
 
         // Comparaison des 2 codes et affichage du résultat de la comparaison
-        int[] copieCodeMysterieux = Arrays.copyOf(codeMysterieux, getNbDigits());
+        int[] copyCodeToBeFound = Arrays.copyOf(codeToBeFound, getNbDigits());
 
         digitsFound = 0;
         digitsPresent = 0;
 
         for (int i = 0; i < getNbDigits(); i++) {
-            if (tentativeCode[i] == copieCodeMysterieux[i]) {
+            if (codeProposal[i] == copyCodeToBeFound[i]) {
                 digitsFound++;
             } else {
                 for (int k = 0; k < getNbDigits(); k++) {
-                    if ((tentativeCode[i] == copieCodeMysterieux[k]) && (i != k ) && (tentativeCode[k] != copieCodeMysterieux[k])) {
+                    if ((codeProposal[i] == copyCodeToBeFound[k]) && (i != k ) && (codeProposal[k] != copyCodeToBeFound[k])) {
                        digitsPresent++;
-                       copieCodeMysterieux[k] = -1;
+                       copyCodeToBeFound[k] = -1;
                        break;
                     }
                 }
@@ -125,22 +125,22 @@ public abstract class Game2 extends Games{
         return validation;
     }
 
-    protected int [] validation(byte[] codeMysterieux, int[] tentativeCode) {
+    protected int [] validation(byte[] codeToBeFound, int[] codeProposal) {
 
         // Comparaison des 2 codes et affichage du résultat de la comparaison
-        byte[] copieCodeMysterieux = Arrays.copyOf(codeMysterieux, getNbDigits());
+        byte[] copyCodeToBeFound = Arrays.copyOf(codeToBeFound, getNbDigits());
 
         digitsFound = 0;
         digitsPresent = 0;
 
         for (int i = 0; i < getNbDigits(); i++) {
-            if (tentativeCode[i] == copieCodeMysterieux[i]) {
+            if (codeProposal[i] == copyCodeToBeFound[i]) {
                 digitsFound++;
             } else {
                 for (int k = 0; k < getNbDigits(); k++) {
-                    if ((tentativeCode[i] == copieCodeMysterieux[k]) && (i != k ) && (tentativeCode[k] != copieCodeMysterieux[k])) {
+                    if ((codeProposal[i] == copyCodeToBeFound[k]) && (i != k ) && (codeProposal[k] != copyCodeToBeFound[k])) {
                         digitsPresent++;
-                        copieCodeMysterieux[k] = -1;
+                        copyCodeToBeFound[k] = -1;
                         break;
                     }
                 }
@@ -154,14 +154,9 @@ public abstract class Game2 extends Games{
 
 
 
-    protected void printValidation() {
-        System.out.println(digitsFound + " couleurs bien placées \n" + digitsPresent + " couleurs présentes");
-    }
-
-
-    protected boolean isInt(String maChaine) {
+    protected boolean isInt(String myString) {
         // Méthode permettant de tester si une entrée String est aussi un entier
-        char[] tab = maChaine.toCharArray(); // conversion d'un String en tableau de chars
+        char[] tab = myString.toCharArray(); // conversion d'un String en tableau de chars
         int k = 0;
         for (char carac : tab) {
             if ((!Character.isDigit(carac)) || (carac < nbVariations))
@@ -173,12 +168,12 @@ public abstract class Game2 extends Games{
         return true;
     }
 
-    protected boolean isColorValid(String inputJoueur, int nombreCouleurs) {
+    protected boolean inputInsideRange(String inputUser, int nbVariations) {
         int[] intArray = new int[getNbDigits()];
         int k = 0;
         for (int j = 0; j < getNbDigits(); j++) {
-            intArray[j] = Character.getNumericValue(inputJoueur.charAt(j));
-            if (intArray[j] > (nombreCouleurs-1)) {
+            intArray[j] = Character.getNumericValue(inputUser.charAt(j));
+            if (intArray[j] > (nbVariations-1)) {
                 k--;
             }
         }
@@ -188,16 +183,16 @@ public abstract class Game2 extends Games{
         return true;
     }
 
-    protected int[] generateurCode() {
+    protected int[] randomCodeGenerator() {
         // Méthode permettant de générer un code aléatoire de X chiffres compris entre 0 à x (avec x = nbVariations et  3 <= x <= 9 )
         ////// Génération d'un tableau vide de X cases
-        int[] codeAleatoire = new int[getNbDigits()];
+        int[] randomCode = new int[getNbDigits()];
         ////// Remplissage du tableau par des chiffres aléatoires
         for (int i = 0; i < getNbDigits(); i++) {
-            codeAleatoire[i] = (int) (nbVariations * Math.random());
+            randomCode[i] = (int) (nbVariations * Math.random());
         }
 
-        return codeAleatoire;
+        return randomCode;
     }
 
     // Convertion String array to String
@@ -211,7 +206,7 @@ public abstract class Game2 extends Games{
 
 
     // Is code found?
-    protected boolean testAndGetCodeFound() {
+    protected boolean testIsCodeFound() {
         if (digitsFound == getNbDigits())
             setCodeFound(true);
         return isCodeFound();

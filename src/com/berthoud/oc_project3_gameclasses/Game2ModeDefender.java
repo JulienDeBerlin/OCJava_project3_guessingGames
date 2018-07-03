@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public class Game2ModeDefender extends Game2 {
 
-    protected byte [][] poolCombinaisons;
-    protected int nbCombinaisons;
+    protected byte [][] poolCombinations;
+    protected int nbCombinations;
 
     public Game2ModeDefender(int nbDigits, int maxGuesses, int nbVariations) {
         super(nbDigits, maxGuesses, nbVariations);
-        this.poolCombinaisons=null;
-        this.nbCombinaisons=0;
+        this.poolCombinations =null;
+        this.nbCombinations =0;
     }
 
     // il faudrait faire en sorte que l'on ne puisse pas passer un nb de couleurs supérieur à 10
@@ -18,9 +18,9 @@ public class Game2ModeDefender extends Game2 {
     public void play() {
 
         System.out.println("Choisis une combinaison de " + getNbDigits() + " chiffres compris entre 0 et " + (getNbVariations() -1));
-        setCodeToBeFound(super.saisieCodeJoueur());
+        setCodeToBeFound(super.codeInputUser());
 
-        setCodeProposal(super.generateurCode()); //1ere réponse de l'ordinateur = chiffre aléatoire
+        setCodeProposal(super.randomCodeGenerator()); //1ere réponse de l'ordinateur = chiffre aléatoire
 
 
         // création d'un pool de l'ensemble des combinaisons possibles sous la forme d'un tableau multidimensionnel de bytes
@@ -29,30 +29,8 @@ public class Game2ModeDefender extends Game2 {
 
         creationPoolCombinaisons();
 
-//        nbCombinaisons = (int) Math.pow(nbVariations, nbDigits);
-//        poolCombinaisons = new byte[nbCombinaisons][nbDigits];
-//
-//
-//        for (int i = 0; i < (nbDigits); i++) {
-//            poolCombinaisons[0][i] = 0;
-//        }
-//
-//        for (int j = 1; j < nbCombinaisons ; j++) {
-//            poolCombinaisons[j] = remplissagePoolCombinaisons(poolCombinaisons [j-1]);
-//
-//        }
 
-//        // impression du pool de combis
-//        for (int i = 0; i<nbCombinaisons; i++){
-//            for (int k =0 ; k<nbDigits; k++){
-//                System.out.print(poolCombinaisons[i][k] + " ");
-//            }
-//            System.out.println();
-//        }
-        //*****************************************************************//
-
-
-        while ((super.getNbGuesses() <= super.getMaxGuesses()) && (!super.testAndGetCodeFound())) {
+        while ((super.getNbGuesses() <= super.getMaxGuesses()) && (!super.testIsCodeFound())) {
 
             // affichage du code sous forme d'une ligne:
             displayTentativeCodeOrdinateur(getCodeProposal());
@@ -60,8 +38,8 @@ public class Game2ModeDefender extends Game2 {
             // saisie validation par le joueur:
             saisieValidationJoueur();
 
-            super.testAndGetCodeFound();
-            if(!super.testAndGetCodeFound()) {
+            super.testIsCodeFound();
+            if(!super.testIsCodeFound()) {
                 // Fait une réponse en retour à la validation joueur
                 reponseValidationJoueur();
             }
@@ -72,7 +50,7 @@ public class Game2ModeDefender extends Game2 {
         }
 
         // CE CODE DOIT ETRE ENCORE FACTORISE
-        if (super.testAndGetCodeFound()) {
+        if (super.testIsCodeFound()) {
             System.out.println("Superbrain a gagné!");
         } else {
             System.out.println("Tu as vaincu Superbrain!");
@@ -101,7 +79,7 @@ public class Game2ModeDefender extends Game2 {
         // la combi est changé en "-1"
 
 
-        int [][]testPoolCombi = new int [nbCombinaisons][2];
+        int [][]testPoolCombi = new int [nbCombinations][2];
 
         // Fixer la les valeurs bienplacé et présente pour pouvoir les comparer ensuite aux retours de chaque combi:
         int [] validation = new int[2];
@@ -114,47 +92,27 @@ public class Game2ModeDefender extends Game2 {
         }
 
 
-        for (int i=0; i<nbCombinaisons; i++){
-           testPoolCombi[i] = validation(poolCombinaisons[i], getCodeProposal());
-            if (Arrays.equals(poolCombinaisons[i], tentativeCodeByte)) {
-                poolCombinaisons [i][0] = -1;
+        for (int i = 0; i< nbCombinations; i++){
+           testPoolCombi[i] = validation(poolCombinations[i], getCodeProposal());
+            if (Arrays.equals(poolCombinations[i], tentativeCodeByte)) {
+                poolCombinations[i][0] = -1;
             }
            if (!Arrays.equals(testPoolCombi[i], (validation))){
-               poolCombinaisons [i][0] = -1;
+               poolCombinations[i][0] = -1;
            }
         }
-//        System.out.println("validation[0] = " + validation[0] + " et validation[1] = " + validation[1]);
-//
-//        System.out.println("Liste des retours pour chaque combi");
-//        for (int i = 0; i<nbCombinaisons; i++){
-//            for (int k=0; k<2; k++){
-//                System.out.print( testPoolCombi[i][k] + " ");
-//            }        System.out.println();
-//
-//        }
-
-        // impression du pool de combis
-//        for (int i = 0; i<nbCombinaisons; i++){
-//            for (int k =0 ; k<nbDigits; k++){
-//                System.out.print(poolCombinaisons[i][k] + " ");
-//            }
-//            System.out.println();
-//        }
 
 
-        // La prochaine tentative de code sera la premiere des combis restantes
-        // qui ne comment pas par -1
-
-        for (int i =0; i<nbCombinaisons; i++){
-            if (poolCombinaisons[i][0] != -1){
+        for (int i = 0; i< nbCombinations; i++){
+            if (poolCombinations[i][0] != -1){
                 for (int k = 0; k < getNbDigits(); k++){
-                    setCodeProposal(k, (int)(poolCombinaisons [i][k]));
+                    setCodeProposal(k, (int)(poolCombinations[i][k]));
                 }break;
             }
         }
 
 
-        super.testAndGetCodeFound();
+        super.testIsCodeFound();
 
         }
 
@@ -202,16 +160,16 @@ public class Game2ModeDefender extends Game2 {
     }
 
     protected void creationPoolCombinaisons(){
-        nbCombinaisons = (int) Math.pow(getNbVariations(), getNbDigits());
-        poolCombinaisons = new byte[nbCombinaisons][getNbDigits()];
+        nbCombinations = (int) Math.pow(getNbVariations(), getNbDigits());
+        poolCombinations = new byte[nbCombinations][getNbDigits()];
 
 
         for (int i = 0; i < (getNbDigits()); i++) {
-            poolCombinaisons[0][i] = 0;
+            poolCombinations[0][i] = 0;
         }
 
-        for (int j = 1; j < nbCombinaisons ; j++) {
-            poolCombinaisons[j] = remplissagePoolCombinaisons(poolCombinaisons [j-1]);
+        for (int j = 1; j < nbCombinations; j++) {
+            poolCombinations[j] = remplissagePoolCombinaisons(poolCombinations[j-1]);
 
         }
     }

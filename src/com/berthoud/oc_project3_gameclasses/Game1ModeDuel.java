@@ -1,6 +1,10 @@
 package com.berthoud.oc_project3_gameclasses;
 
-
+/**
+ * The program Game1ModeDuel implements the first game (+/-) in the mode duel: two games - one in mode challenger, the other in mode defender -
+ * are running at the same time. Player tries to break computer's code and computer tries to break player's code.
+ * The first who break the other's code win.
+ */
 public class Game1ModeDuel extends Game1{
 
 // _____________________________________________________________________________________________________________________
@@ -12,19 +16,31 @@ public class Game1ModeDuel extends Game1{
 
 // _____________________________________________________________________________________________________________________
     //CONSTRUCTORS//
+
+    /**
+     * Constructor (constructors are chained)
+     * @param nbDigits number of digits
+     * @param maxGuesses max number of guesses allowed
+     */
     public Game1ModeDuel(int nbDigits, int maxGuesses) {
         this.gameB = new Game1ModeChallenger(nbDigits, maxGuesses);
         this.gameA = new Game1ModeDefender(nbDigits, maxGuesses);
     }
 
 
+
 // _____________________________________________________________________________________________________________________
     //IMPLEMENTATION OF ABSTRACT METHODS//
 
+    /**
+     * This method is a wrapper-method that starts and executes the game until the end.
+     * All the methods required for the execution of the game are called within this wrapper-method.
+     * The implementation is different for each game and mode.
+     */
     @Override
     public void play() {
 
-        System.out.println(">>>>>  The +/- game, mode duel <<<<<" );
+        System.out.printf("%S", ">>>>> The +/- game, mode duel <<<<<\n");
 
         MyTools.makeABreak(400);
 
@@ -66,7 +82,10 @@ public class Game1ModeDuel extends Game1{
 
     }
 
-
+    /**
+     * This method displays the result of the game at the end of the game.
+     * TThe implementation is different for each game and mode.
+     */
     @Override
     protected void messageEndOfTheGame() {
         if ((gameB.isCodeFound()) && (gameA.isCodeFound())) {

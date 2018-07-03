@@ -1,11 +1,19 @@
 package com.berthoud.oc_project3_gameclasses;
 
+/**
+ * The program Game1ModeChallenger implements the first game (+/-) in the mode challenger: the user tries to break the computer's code
+ */
 
 public class Game1ModeChallenger extends Game1 {
 
 // _____________________________________________________________________________________________________________________
     //CONSTRUCTORS//
 
+    /**
+     * Constructor (constructors are chained)
+     * @param nbDigits number of digits
+     * @param maxGuesses max number of guesses allowed
+     */
     public Game1ModeChallenger(int nbDigits, int maxGuesses) {
         super(nbDigits, maxGuesses);
     }
@@ -13,6 +21,11 @@ public class Game1ModeChallenger extends Game1 {
 // _____________________________________________________________________________________________________________________
     //IMPLEMENTATION OF ABSTRACT METHODS//
 
+    /**
+     * This method is a wrapper-method that starts and executes the game until the end.
+     * All the methods required for the execution of the game are called within this wrapper-method.
+     * The implementation is different for each game and mode.
+     */
     @Override
     public void play() {
 
@@ -21,7 +34,7 @@ public class Game1ModeChallenger extends Game1 {
 
         setCodeToBeFound(super.randomCodeGenerator());
 
-        System.out.println(">>>>> The +/- game, mode challenger <<<<<");
+        System.out.printf("%S", ">>>>> The +/- game, mode challenger <<<<<\n");
 
         MyTools.makeABreak(400);
 
@@ -44,7 +57,10 @@ public class Game1ModeChallenger extends Game1 {
 
     }
 
-
+    /**
+     * This method displays the result of the game at the end of the game.
+     * TThe implementation is different for each game and mode.
+     */
     @Override
     protected void messageEndOfTheGame() {
 
@@ -63,7 +79,7 @@ public class Game1ModeChallenger extends Game1 {
     //LOCAL METHOD(S)//
 
     /**
-     * This methods takes a guess and display the validation code
+     * This method takes a guess and displays the validation code
      */
     public void guessValidationUnit() {
         System.out.print("Guess #" + getNbGuesses() + ". Enter your proposal: ");
@@ -73,7 +89,7 @@ public class Game1ModeChallenger extends Game1 {
 
         MyTools.makeABreak(500);
 
-        System.out.println("Validation ------------------> " + arrayToString(validation) + "\n");
+        System.out.println("Validation ------------------> " + MyTools.arrayToString(validation) + "\n");
 
         super.testIsCodeFound(validation);
         super.setNbGuesses(getNbGuesses()+1);

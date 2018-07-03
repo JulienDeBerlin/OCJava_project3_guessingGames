@@ -11,13 +11,40 @@ public abstract class Games {
 // _____________________________________________________________________________________________________________________
     //INSTANCE FIELDS//
 
-
+    /**
+     * number of digits
+     */
     private int nbDigits;
+
+    /**
+     * max number of guesses allowed
+     */
     private int maxGuesses;
-    private int nbGuesses = 1;
-    private boolean codeFound = false;
+
+    /**
+     * This is the mystery code to be found, created by the computer (mode challenger) or by the player (mode defender)
+     */
     private int [] codeToBeFound = new int [nbDigits];
+
+    /**
+     * This is code attempt made by the player (mode challenger) or the computer (mode defender)
+     */
     private int [] codeProposal = new int [nbDigits];
+
+
+    /**
+     * counts the number of guesses used by the challenger
+     */
+    private int nbGuesses = 1;
+
+    /**
+     * is true when  the mystery code has been broken by the challenger
+     */
+    private boolean codeFound = false;
+
+    /**
+     * Object scanner, need for user inputs
+     */
     public static Scanner scan = new Scanner(System.in);
 
 
@@ -26,8 +53,8 @@ public abstract class Games {
 
     /**
      * Constructor
-     * @param nbDigits
-     * @param maxGuesses
+     * @param nbDigits number of digits
+     * @param maxGuesses max number of guesses allowed
      */
     protected Games(int nbDigits, int maxGuesses) {
         this.nbDigits = nbDigits;
@@ -42,49 +69,49 @@ public abstract class Games {
 
 
 // _____________________________________________________________________________________________________________________
-    //GETTERS and SETTERS//
+    //GETTERS and SETTERS (all package-private)//
 
-    protected int getNbDigits() {
+    int getNbDigits() {
         return nbDigits;
     }
 
-    protected int getMaxGuesses() {
+    int getMaxGuesses() {
         return maxGuesses;
     }
 
-    protected int getNbGuesses() {
+    int getNbGuesses() {
         return nbGuesses;
     }
 
-    protected boolean isCodeFound() {
+    boolean isCodeFound() {
         return codeFound;
     }
 
-    protected int[] getCodeToBeFound() {
+    int[] getCodeToBeFound() {
         return codeToBeFound;
     }
 
-    protected int[] getCodeProposal() {
+    int[] getCodeProposal() {
         return codeProposal;
     }
 
-    protected void setCodeFound(boolean codeFound) {
+    void setCodeFound(boolean codeFound) {
         this.codeFound = codeFound;
     }
 
-    protected void setNbGuesses(int nbGuesses) {
+    void setNbGuesses(int nbGuesses) {
         this.nbGuesses = nbGuesses;
     }
 
-    protected void setCodeToBeFound(int[] codeToBeFound) {
+    void setCodeToBeFound(int[] codeToBeFound) {
         this.codeToBeFound = codeToBeFound;
     }
 
-    protected void setCodeProposal(int[] codeProposal) {
+    void setCodeProposal(int[] codeProposal) {
         this.codeProposal = codeProposal;
     }
 
-    protected void setCodeProposal(int index, int value) { {
+    void setCodeProposal(int index, int value) { {
             this.codeProposal[index] = value;
         }
     }
@@ -95,13 +122,14 @@ public abstract class Games {
 
     /**
      * This method is a wrapper-method that starts and executes the game until the end.
-     * TThe implementation is different for each game and mode.
+     * All the methods required for the execution of the game are called within this wrapper-method.
+     * The implementation is different for each game and mode.
      */
     public abstract void play();
 
 
     /**
-     * This method displays a message at the end of the game.
+     * This method displays the result of the game at the end of the game.
      * TThe implementation is different for each game and mode.
      */
     protected abstract void messageEndOfTheGame ();
@@ -112,7 +140,7 @@ public abstract class Games {
     //CONCRETE METHODS//
 
     /**
-     * This methods call the selection menu at the end of the game.
+     * This method calls the selection menu at the end of the game.
      */
     protected void endingMenu() {
         System.out.printf("\n\n%s\n%s\n%s\n%s\n\n%s", "Do you want to: ", "1: play again this game?", "2: come back to the game menu?",
@@ -140,13 +168,16 @@ public abstract class Games {
 
     }
 
+
+
     /**
-     * This methods displays the instance variable {@link #codeToBeFound) when developer mode is activated
+     * This method displays the instance variable {@link #codeToBeFound) when the developer mode is activated
+     * @param codeToBeFound
      */
-    protected void displayModeDev(int [] myIntArray) {
+    protected void displayModeDev(int [] codeToBeFound) {
         if (Main.isDevMode()) {
             System.out.print("###### DEVELOPER MODE ###### \n###### Superbrain's secret code = ");
-            for (int x : myIntArray) {
+            for (int x : codeToBeFound) {
                 System.out.print (x + " ");
             }
             System.out.println("######\n");
