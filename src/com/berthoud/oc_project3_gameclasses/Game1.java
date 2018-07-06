@@ -2,13 +2,9 @@ package com.berthoud.oc_project3_gameclasses;
 
 
 /**
- *  Abstract class for "Game +/- ". It contains all the instance fields and methods required for all modes
+ *  Abstract class for "Game +/- ". It contains all the instance fields and methods required for all modes of Game1
  */
 public abstract class Game1 extends Games{
-
-// _____________________________________________________________________________________________________________________
-    //INSTANCE FIELDS//
-
 
 
 // _____________________________________________________________________________________________________________________
@@ -24,45 +20,9 @@ public abstract class Game1 extends Games{
     }
 
 
-    /**
-     * Default constructor
-     */
-    protected Game1() {
-    }
-
-
-// _____________________________________________________________________________________________________________________
-    //GETTERS//
-
-
 
 // _____________________________________________________________________________________________________________________
     //METHODS (SHARED BY ALL MODES)//
-
-
-    /**
-     * This method inputs the code entered by the player on the keyboard, tests that the code is only made of digits
-     * and that the length of the input is identical to the value of instance field {@link #nbDigits} and returns the valid code
-     * @return a code entered by the player made of X digits, X being equal to value of {@link #nbDigits}
-     */
-    protected int[] codeInputUser() {
-
-        // input
-        String inputUser = scan.nextLine();
-
-        //test
-        while ((inputUser.length() != getNbDigits()) || (!MyTools.isMyStringAnInt(inputUser))) {
-            System.out.print("What do you mean? Please enter a combination of "  + getNbDigits() + " digits: ");
-            inputUser = scan.nextLine();
-        }
-
-        // Conversion String into int array
-        int[] codeInputUser = new int[getNbDigits()];
-        for (int j = 0; j < getNbDigits(); j++) {
-            codeInputUser[j] = Character.getNumericValue(inputUser.charAt(j));
-        }
-        return codeInputUser;
-    }
 
 
     /**
@@ -96,6 +56,7 @@ public abstract class Game1 extends Games{
      * This methods generates a random code made of X digits, X being equal to value of {@link #nbDigits}
      * @return the random code
      */
+    @Override
     protected int[] randomCodeGenerator() {
         int[] randomCode = new int[getNbDigits()];
         for (int i = 0; i < getNbDigits(); i++) {
@@ -104,6 +65,29 @@ public abstract class Game1 extends Games{
         return randomCode;
     }
 
+
+    /**
+     * This method inputs the code entered by the player on the keyboard, tests that the code is only made of digits
+     * and that the length of the input is identical to the value of instance field {@link #nbDigits} and returns the valid code.
+     * @return a code entered by the player made of X digits, X being equal to value of {@link #nbDigits}
+     */
+    @Override
+    protected int[] codeInputUser() {
+            String inputUser = scan.nextLine();
+
+            while ((inputUser.length() != getNbDigits()) || (!MyTools.isMyStringAnInt(inputUser))) {
+                System.out.println("What do you mean? Please enter a combination of " + getNbDigits() + " digits.");
+                inputUser = scan.nextLine();
+            }
+
+            // Conversion String into int array
+            int[] codeInputUser = new int[getNbDigits()];
+            for (int j = 0; j < getNbDigits(); j++) {
+                codeInputUser[j] = Character.getNumericValue(inputUser.charAt(j));
+            }
+            return codeInputUser;
+
+    }
 
 
     /**
@@ -122,15 +106,6 @@ public abstract class Game1 extends Games{
            setCodeFound(true);
         }
 
-    }
-
-    /**
-     * This methods increments the instance field {@link #nbGuesses}
-      * @return the increased instance field {@link #nbGuesses}
-     */
-    protected int increaseNbGuesses(){
-        setNbGuesses(getNbGuesses()+1);
-        return this.getNbGuesses();
     }
 
 

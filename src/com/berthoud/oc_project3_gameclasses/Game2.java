@@ -4,15 +4,22 @@ import java.util.Arrays;
 
 
 /**
- *  Abstract class for Mastermind. It contains all the instance fields and methods required for all modes
+ *  Abstract class for Mastermind. It contains all the instance fields and methods required for all modes of Game2
  */
 public abstract class Game2 extends Games{
 
 // _____________________________________________________________________________________________________________________
     //INSTANCE FIELDS//
 
-    private int nbVariations;
+
+    /**
+     * Number of digits found (right value and right position)
+     */
     private int digitsFound;
+
+    /**
+     * Number of digits present (right value but wrong position)
+     */
     private int digitsPresent;
 
 
@@ -20,32 +27,22 @@ public abstract class Game2 extends Games{
     //CONSTRUCTORS//
 
     /**
-     * Default constructor
-     */
-    public Game2() {
-    }
-
-
-    /**
      * Constructor
-     * @param nbDigits
-     * @param maxGuesses
-     * @param nbVariations
+     * @param nbDigits number of digits of the code
+     * @param maxGuesses max number of guesses allowed
+     * @param nbVariations number of value possible for each digit. Min = 4 , Max = 10
      */
     public Game2(int nbDigits, int maxGuesses, int nbVariations) {
-        super(nbDigits, maxGuesses);
-        this.nbVariations = nbVariations;
+        super(nbDigits, maxGuesses, nbVariations);
         digitsFound = 0;
         digitsPresent = 0;
     }
 
 
 // _____________________________________________________________________________________________________________________
-    //GETTERS AND SETTERS all package-private//
+    //GETTERS all package-private//
 
-    int getNbVariations() {
-        return nbVariations;
-    }
+
 
     int getDigitsFound() {
         return digitsFound;
@@ -55,53 +52,20 @@ public abstract class Game2 extends Games{
         return digitsPresent;
     }
 
-    void setNbVariations(int nbVariations) {
-        this.nbVariations = nbVariations;
-    }
 
-    void setDigitsFound(int digitsFound) {
-        this.digitsFound = digitsFound;
-    }
-
-    void setDigitsPresent(int digitsPresent) {
-        this.digitsPresent = digitsPresent;
-    }
+// _____________________________________________________________________________________________________________________
+    //METHODS (SHARED BY ALL MODES)//
 
 
-    // _____________________________________________________________________________________________________________________
-    // METHODS (SHARED BY ALL MODES)
-
-
-
-    protected int[] codeInputUser() {
-
-        String inputUser = scan.nextLine();
-
-        // Vérifier que le code saisi contient le bon nombre de caractères ET
-        // uniquement des chiffres de 0 à (x-1) (avec x = nbVariations)
-        while ((inputUser.length() != getNbDigits()) || (!isInt(inputUser)) || (!inputInsideRange(inputUser, nbVariations))) {
-            int k = nbVariations - 1;
-            System.out.println("What do you mean? Please enter a combination of " + getNbDigits() + " digits from 0 to " + k);
-            inputUser = scan.nextLine();
-        }
-
-        // Conversion du String codeInput en un tableau composé de int (codeChallenger)
-        // ****************************************************************************************
-        // POURQUOI ÇA MARCE PAS SANS CETTE LIGNE:
-        setCodeProposal(new int[getNbDigits()]);
-        // ****************************************************************************************
-
-        for (int j = 0; j < getNbDigits(); j++) {
-            setCodeProposal(j, Character.getNumericValue(inputUser.charAt(j)) );
-        }
-
-        return getCodeProposal();
-
-    }
-
+    /**
+     * This methods compares codeTobeFound to codeProposal and return a validation indicating the number of digits found
+     * (right digits on the right positions) and digits present (right digits on the wrong position)
+     * @param codeToBeFound the secret code
+     * @param codeProposal the code attempt
+     * @return a two dimensional int array. 1st array for number of digits found and 2nd array for numbers of digit present
+     */
     protected int [] validation(int[] codeToBeFound, int[] codeProposal) {
 
-        // Comparaison des 2 codes et affichage du résultat de la comparaison
         int[] copyCodeToBeFound = Arrays.copyOf(codeToBeFound, getNbDigits());
 
         digitsFound = 0;
@@ -126,9 +90,14 @@ public abstract class Game2 extends Games{
         return validation;
     }
 
+    /**
+     * This method overloads {@link #validation(int[], int[])} and takes as parameter codetobefound as a byte array instead of int array.
+     * @param codeToBeFound the secret code
+     * @param codeProposal the code attempt
+     * @return a two dimensional int array. 1st array for number of digits found and 2nd array for numbers of digit present
+     */
     protected int [] validation(byte[] codeToBeFound, int[] codeProposal) {
 
-        // Comparaison des 2 codes et affichage du résultat de la comparaison
         byte[] copyCodeToBeFound = Arrays.copyOf(codeToBeFound, getNbDigits());
 
         digitsFound = 0;
@@ -155,20 +124,65 @@ public abstract class Game2 extends Games{
 
 
 
-    protected boolean isInt(String myString) {
-        // Méthode permettant de tester si une entrée String est aussi un entier
-        char[] tab = myString.toCharArray(); // conversion d'un String en tableau de chars
-        int k = 0;
-        for (char carac : tab) {
-            if ((!Character.isDigit(carac)) || (carac < nbVariations))
-                k--;
+    /**
+     * This methods generates a random code made of X digits, X being equal to value of {@link #nbDigits}. Each digit can take
+     * {@link #nbVariations} different values.
+     * @return the random code
+     */
+    @Override
+    protected int[] randomCodeGenerator() {
+        int[] randomCode = new int[getNbDigits()];
+        for (int i = 0; i < getNbDigits(); i++) {
+            randomCode[i] = (int) (getNbVariations() * Math.random());
         }
-        if (k < 0) {
-            return false;
-        }
-        return true;
+        return randomCode;
     }
 
+
+    /**
+     *  This method sets the instance field {@link #isCodeFound} to true if all the digits have been found at the right position
+      * @return
+     */
+    protected boolean testIsCodeFound() {
+        if (digitsFound == getNbDigits())
+            setCodeFound(true);
+        return isCodeFound();
+    }
+
+
+    /**
+     * This method inputs the code entered by the player on the keyboard, tests that the code is only made of digits,
+     * that the length of the input is identical to the value of instance field {@link #nbDigits}and additionally tests
+     * that the nb of variations is valid {@link #nbVariations}
+     * @return a valid code entered by the player
+     */
+    @Override
+    protected int[] codeInputUser(){
+
+        String inputUser = scan.nextLine();
+
+        while ((inputUser.length() != getNbDigits()) || (!MyTools.isMyStringAnInt(inputUser)) || (!inputInsideRange(inputUser, getNbVariations()))){
+            int k = getNbVariations() - 1;
+            System.out.println("What do you mean? Please enter a combination of " + getNbDigits() + " digits from 0 to " + k);
+            inputUser = scan.nextLine();
+
+        }
+
+        // Conversion String into int array
+        int[] codeInputUser = new int[getNbDigits()];
+        for (int j = 0; j < getNbDigits(); j++) {
+            codeInputUser[j] = Character.getNumericValue(inputUser.charAt(j));
+        }
+        return codeInputUser;
+    }
+
+
+    /**
+     * This method is only required to test the validity of input player for game 2. The method is called within the method {@link #codeInputUser()}
+     * @param inputUser Code entered by the player
+     * @param nbVariations Number of values that each digit can possibly take. Only required for game 2
+     * @return
+     */
     protected boolean inputInsideRange(String inputUser, int nbVariations) {
         int[] intArray = new int[getNbDigits()];
         int k = 0;
@@ -182,41 +196,6 @@ public abstract class Game2 extends Games{
             return false;
         }
         return true;
-    }
-
-    protected int[] randomCodeGenerator() {
-        // Méthode permettant de générer un code aléatoire de X chiffres compris entre 0 à x (avec x = nbVariations et  3 <= x <= 9 )
-        ////// Génération d'un tableau vide de X cases
-        int[] randomCode = new int[getNbDigits()];
-        ////// Remplissage du tableau par des chiffres aléatoires
-        for (int i = 0; i < getNbDigits(); i++) {
-            randomCode[i] = (int) (nbVariations * Math.random());
-        }
-
-        return randomCode;
-    }
-
-    // Convertion String array to String
-    protected String arrayToString(String myArray[]) {
-        String myString = myArray[0];
-        for (int i = 1; i < (getNbDigits()); i++) {
-            myString += (' ' + myArray[i]);
-        }
-        return myString;
-    }
-
-
-    // Is code found?
-    protected boolean testIsCodeFound() {
-        if (digitsFound == getNbDigits())
-            setCodeFound(true);
-        return isCodeFound();
-    }
-
-    // Compteur du nombre de coups joués
-    protected int increaseNombreEssais() {
-        setNbGuesses(getNbGuesses()+1);
-        return this.getNbGuesses();
     }
 
 // _____________________________________________________________________________________________________________________

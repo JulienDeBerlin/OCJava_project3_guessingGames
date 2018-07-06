@@ -22,6 +22,11 @@ public abstract class Games {
     private int maxGuesses;
 
     /**
+     * Number of values that each digit can possibly take
+     */
+    private int nbVariations;
+
+    /**
      * This is the mystery code to be found, created by the computer (mode challenger) or by the player (mode defender)
      */
     private int [] codeToBeFound = new int [nbDigits];
@@ -37,6 +42,7 @@ public abstract class Games {
      */
     private int nbGuesses = 1;
 
+
     /**
      * is true when  the mystery code has been broken by the challenger
      */
@@ -48,11 +54,12 @@ public abstract class Games {
     public static Scanner scan = new Scanner(System.in);
 
 
+
 // _____________________________________________________________________________________________________________________
     //CONSTRUCTORS//
 
     /**
-     * Constructor
+     * Constructor for game 1
      * @param nbDigits number of digits
      * @param maxGuesses max number of guesses allowed
      */
@@ -61,14 +68,20 @@ public abstract class Games {
         this.maxGuesses = maxGuesses;
     }
 
+
     /**
-     * Default constructor
+     * Constructor for game 2
+     * @param nbDigits number of digits
+     * @param maxGuesses max number of guesses allowed
+     * @param nbVariations nb of values that each digit can take
      */
-    protected Games() {
+    public Games(int nbDigits, int maxGuesses, int nbVariations) {
+        this.nbDigits = nbDigits;
+        this.maxGuesses = maxGuesses;
+        this.nbVariations = nbVariations;
     }
 
-
-// _____________________________________________________________________________________________________________________
+    // _____________________________________________________________________________________________________________________
     //GETTERS and SETTERS (all package-private)//
 
     int getNbDigits() {
@@ -95,6 +108,8 @@ public abstract class Games {
         return codeProposal;
     }
 
+    int getNbVariations() { return nbVariations; }
+
     void setCodeFound(boolean codeFound) {
         this.codeFound = codeFound;
     }
@@ -117,7 +132,7 @@ public abstract class Games {
     }
 
 
-    // _____________________________________________________________________________________________________________________
+// _____________________________________________________________________________________________________________________
     //ABSTRACT METHODS//
 
     /**
@@ -128,19 +143,6 @@ public abstract class Games {
     public abstract void play();
 
 
-    /**
-     * This method displays the result of the game at the end of the game.
-     * TThe implementation is different for each game and mode.
-     */
-    protected abstract void messageEndOfTheGame ();
-
-
-    /**
-     * This method inputs the code entered by the player on the keyboard, tests that the code is valid and if so returns the valid code
-     * @return a code entered by the player
-     */
-    protected abstract int[] codeInputUser();
-
 
     /**
      * This methods generates a random code made of X digits, X being equal to value of {@link #nbDigits}
@@ -149,11 +151,21 @@ public abstract class Games {
     protected abstract int[] randomCodeGenerator();
 
 
+
     /**
      * This method takes a guess and display the validation code (in challenger mode),
      * generates a guess, takes a validation code and generate the next guess (in defender mode)
      */
     protected abstract void guessValidationUnit();
+
+
+
+    /**
+     * This method inputs the code entered by the player on the keyboard test its validity and return it
+     * @return the valid code entered by the player
+     */
+    protected abstract int[] codeInputUser();
+
 
 // _____________________________________________________________________________________________________________________
     //CONCRETE METHODS//
@@ -168,7 +180,7 @@ public abstract class Games {
         System.out.println("\n");
 
 
-        while ((!MyTools.isMyStringAnInt(selectorEnding)) || (Integer.parseInt(selectorEnding) < 1) || (Integer.parseInt(selectorEnding) > 3)) {
+        while ((!selectorEnding.equals("1") && !selectorEnding.equals("2") && !selectorEnding.equals("3"))) {
             System.out.print("What do you mean? Select 1, 2 or 3: ");
             selectorEnding = scan.nextLine();
         }
@@ -188,14 +200,13 @@ public abstract class Games {
     }
 
 
-
     /**
      * This method displays the instance variable {@link #codeToBeFound) when the developer mode is activated
      * @param codeToBeFound
      */
     protected void displayModeDev(int [] codeToBeFound) {
         if (Main.isDevMode()) {
-            System.out.print("###### DEVELOPER MODE ###### \n###### Superbrain's secret code = ");
+            System.out.print("###### DEVELOPER MODE ! Superbrain's secret code = ");
             for (int x : codeToBeFound) {
                 System.out.print (x + " ");
             }
@@ -203,5 +214,19 @@ public abstract class Games {
         }
 
     }
+
+
+
+    /**
+     * This method displays the result of the game at the end of the game.
+     */
+    protected  void messageEndOfTheGame (){
+        if (this.isCodeFound()) {
+            System.out.print("Superbrain made it!");
+        } else {
+            System.out.print("How does it feel to defeat Superbrain? ");
+        }
+    }
+
 
 }

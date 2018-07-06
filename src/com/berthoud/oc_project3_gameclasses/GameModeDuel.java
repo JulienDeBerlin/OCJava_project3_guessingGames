@@ -1,5 +1,7 @@
 package com.berthoud.oc_project3_gameclasses;
 
+import com.berthoud.oc_project3_menu.Main;
+
 /**
  * The program GameModeDuel makes possible to play either the " + / - game" or the digit Mastermind in a duel mode.
  * In this mode the player tries to break computer's code and the computer tries to break player's code, both game runs at the same time.
@@ -52,34 +54,46 @@ public class GameModeDuel{
      */
     public void play() {
 
-        System.out.printf("%S", ">>>>> The +/- game, mode duel <<<<<\n");
+        if(Main.getChoiceGame().equals("1")){
+            System.out.printf("%S", ">>>>> The +/- game, mode duel <<<<<\n");
+        }else{
+            System.out.printf("%S", ">>>>> The digit Mastermind, mode duel <<<<<\n");
+        }
 
-        MyTools.makeABreak(400);
-
-        System.out.print("Ready to challenge Superbrain? \nTo start with, choose a mystery code made of "
-                + gameA.getNbDigits() + " digits that Superbrain will try to break: ");
-        gameB.setCodeToBeFound(gameB.codeInputUser());
         gameA.setCodeToBeFound(gameA.randomCodeGenerator());
 
+        gameA.displayModeDev(gameA.getCodeToBeFound());
 
-        System.out.print("Perfect, let's get started!\n\n");
 
         while ((!gameA.isCodeFound()) && (!gameB.isCodeFound())) {
 
             // ModeChallenger
-            System.out.print("Mode challenger: player against Superbrain\n");
-            gameA.displayModeDev(gameA.getCodeToBeFound());
-
+            System.out.print("Mode challenger: player tries to guess Superbrain's combination\n");
             gameA.guessValidationUnit();
 
             MyTools.makeABreak(800);
 
             if (gameA.isCodeFound()) {
-                System.out.println("Great! You broke the code. Let's see if Superbrain can equalise ");
-            } else System.out.println("Mode defender: Superbrain against player");
+                System.out.println("Great! You found the code. Let's see if Superbrain can equalise ");
+            } else System.out.println("Mode defender: Superbrain tries to guess your combination ");
 
 
             // ModeDefender
+
+            if (gameB.getNbGuesses() ==1){
+                if(Main.getChoiceGame().equals("1")){
+                    System.out.print("To start with, choose the mystery code made of "
+                            + gameA.getNbDigits() + " digits\nthat Superbrain will try to break ------------->  ");
+                }else{
+                    System.out.print("To start with, choose the combination of \n"
+                            + gameA.getNbDigits() + " digits from 0 to "+ (gameA.getNbVariations()-1)+ " that Superbrain will try to break: ");
+                }
+
+                gameB.setCodeToBeFound(gameB.codeInputUser());
+                System.out.println();
+            }
+
+            MyTools.makeABreak(300);
            gameB.guessValidationUnit();
         }
 

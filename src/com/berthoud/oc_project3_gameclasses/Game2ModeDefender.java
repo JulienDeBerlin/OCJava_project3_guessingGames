@@ -1,33 +1,64 @@
 package com.berthoud.oc_project3_gameclasses;
 
+
 import java.util.Arrays;
 
+
+/**
+ * The program Game2ModeDefender implements the Mastermind in the mode defender: the computer tries to break the player's code
+ */
 public class Game2ModeDefender extends Game2 {
 
+    /**
+     * This field is required for the AI part. This byte array stores all the combinaisons possible
+     * based on {@link #nbVariations} and {@link #nbDigits}
+     */
     protected byte [][] poolCombinations;
+
+
+    /**
+     * This is the number of combinations
+     */
     protected int nbCombinations;
 
+
+// _____________________________________________________________________________________________________________________
+    //CONSTRUCTORS//
     public Game2ModeDefender(int nbDigits, int maxGuesses, int nbVariations) {
         super(nbDigits, maxGuesses, nbVariations);
         this.poolCombinations =null;
         this.nbCombinations =0;
     }
 
-    // il faudrait faire en sorte que l'on ne puisse pas passer un nb de couleurs supérieur à 10
 
+
+// _____________________________________________________________________________________________________________________
+    //IMPLEMENTATION OF ABSTRACT METHODS//
+
+    /**
+     * This method is a wrapper-method that starts and executes the game until the end.
+     * All the methods required for the execution of the game are called within this wrapper-method.
+     * The implementation is different for each game and mode.
+     */
+    @Override
     public void play() {
 
-        System.out.println("Choisis une combinaison de " + getNbDigits() + " chiffres compris entre 0 et " + (getNbVariations() -1));
+
+        setNbGuesses(1);
+        setCodeFound(false);
+
+        System.out.printf("%S", ">>>>> The digit Mastermind, mode defender <<<<<\n");
+
+        MyTools.makeABreak(400);
+
+        System.out.print("Choose a combination of " + getNbDigits() + " digits from 0 to " + (getNbVariations() -1) + ". " +
+                "Superbrain the computer will try to find it, with a maximum of " +getMaxGuesses()+ " guesses. " +
+                "\nFor each of Superbrain's guess please enter:\n" +
+                "- the number of digits found (right value and right position)\n" +
+                "- the number of digits present (right value but wrong position)\n\n");
+
+        System.out.print("Please enter your secret combination: ");
         setCodeToBeFound(super.codeInputUser());
-
-        setCodeProposal(super.randomCodeGenerator()); //1ere réponse de l'ordinateur = chiffre aléatoire
-
-
-        // création d'un pool de l'ensemble des combinaisons possibles sous la forme d'un tableau multidimensionnel de bytes
-        // chaque ligne inclut une combinaison + 2 bytes pour validation (bien placés/digitsPresent)
-
-
-        creationPoolCombinaisons();
 
 
         while ((super.getNbGuesses() <= super.getMaxGuesses()) && (!super.testIsCodeFound())) {
@@ -36,29 +67,35 @@ public class Game2ModeDefender extends Game2 {
 
         }
 
-        // CE CODE DOIT ETRE ENCORE FACTORISE
-        if (super.testIsCodeFound()) {
-            System.out.println("Superbrain a gagné!");
-        } else {
-            System.out.println("Tu as vaincu Superbrain!");
-        }
+        messageEndOfTheGame();
+
+        MyTools.makeABreak(800);
+
+        endingMenu();
 
     }
 
 
-    // affichage d'un int array code sous forme d'une ligne:
-    protected void displayTentativeCodeOrdinateur(int[] tentativeCode) {
-        String[] tentativeCodeStringArray = new String[getNbDigits()];
+    /**
+     * This method displays the proposal code of the computer in the expected format
+     * @param codeProposal
+     */
+    protected void displayProposalComputer(int[] codeProposal) {
+        String[] codeProposalStringArray = new String[getNbDigits()];
         for (int x = 0; x < getNbDigits(); x++) {
-            tentativeCodeStringArray[x] = String.valueOf(tentativeCode[x]);
+            codeProposalStringArray[x] = String.valueOf(codeProposal[x]);
         }
-        System.out.println("Superbrain te répond:");
-        System.out.println(super.arrayToString(tentativeCodeStringArray));
+        System.out.print ("Superbrain's guess #" + getNbGuesses() + " --------------------------------> ");
+        System.out.println(MyTools.arrayToString(codeProposalStringArray));
 
     }
 
 
-    protected void reponseValidationJoueur() {
+    /**
+     * This method is used for the AI part. It tests and inputs the validation code entered by the user and makes an appropriate next guess
+     * Description of the algorithm
+     */
+    protected void answerComputer() {
 
         // Réduction du pool de combinaisons possibles à celles qui auraient donné le même résultat que celui obtenu
         // Pour ce faire, création dún tableau de bytes dans lequel on va enregsitrer le résultat que donnerait chaque combi
@@ -98,7 +135,6 @@ public class Game2ModeDefender extends Game2 {
             }
         }
 
-
         super.testIsCodeFound();
 
         }
@@ -128,6 +164,8 @@ public class Game2ModeDefender extends Game2 {
             couleursOKJoueur = scan.nextInt();
         }
 
+        System.out.println();
+
 
     }
 
@@ -146,7 +184,7 @@ public class Game2ModeDefender extends Game2 {
         return nextTab;
     }
 
-    protected void creationPoolCombinaisons(){
+    public void creationPoolCombinaisons(){
         nbCombinations = (int) Math.pow(getNbVariations(), getNbDigits());
         poolCombinations = new byte[nbCombinations][getNbDigits()];
 
@@ -161,16 +199,18 @@ public class Game2ModeDefender extends Game2 {
         }
     }
 
-    @Override
-    protected void messageEndOfTheGame() {
-
-    }
-
 
     @Override
     protected void guessValidationUnit() {
+
+        if (getNbGuesses() == 1) {
+            setCodeProposal(randomCodeGenerator()); //1st answer of computer is random
+            creationPoolCombinaisons();
+
+        }
+
         // affichage du code sous forme d'une ligne:
-        displayTentativeCodeOrdinateur(getCodeProposal());
+        displayProposalComputer(getCodeProposal());
 
         // saisie validation par le joueur:
         saisieValidationJoueur();
@@ -178,7 +218,7 @@ public class Game2ModeDefender extends Game2 {
         super.testIsCodeFound();
         if(!super.testIsCodeFound()) {
             // Fait une réponse en retour à la validation joueur
-            reponseValidationJoueur();
+            answerComputer();
         }
 
 

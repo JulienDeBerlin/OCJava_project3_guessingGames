@@ -82,14 +82,14 @@ public class Game1ModeChallenger extends Game1 {
      * This method takes a guess and displays the validation code
      */
     public void guessValidationUnit() {
-        System.out.print("Guess #" + getNbGuesses() + ". Enter your proposal: ");
+        System.out.print("Your guess #" + getNbGuesses() + ". Enter your proposal: ");
 
         setCodeProposal(super.codeInputUser());
         String[] validation = super.validation(getCodeToBeFound(), getCodeProposal());
 
-        MyTools.makeABreak(500);
+        MyTools.makeABreak(300);
 
-        System.out.println("Validation ------------------> " + MyTools.arrayToString(validation) + "\n");
+        System.out.println("Validation -----------------------> " + MyTools.arrayToString(validation) + "\n");
 
         super.testIsCodeFound(validation);
         super.setNbGuesses(getNbGuesses()+1);

@@ -2,7 +2,7 @@ package com.berthoud.oc_project3_gameclasses;
 
 
 /**
- * The program Game1ModeChallenger implements the Mastermind in the mode challenger: the user tries to break the computer's code
+ * The program Game2ModeChallenger implements the Mastermind in the mode challenger: the user tries to break the computer's code
  */
  public class Game2ModeChallenger extends Game2 {
 
@@ -82,21 +82,21 @@ package com.berthoud.oc_project3_gameclasses;
      }
 
 
-// _____________________________________________________________________________________________________________________
-    //LOCAL METHOD(S)//
-
     /**
      * This method takes a guess and displays the validation code
      */
+    @Override
     public void guessValidationUnit() {
-        System.out.print("Guess #" + getNbGuesses() + ". Enter your proposal: ");
+        System.out.print("Your guess #" + getNbGuesses() + ". Enter your proposal: ");
 
-        setCodeProposal(codeInputUser());
+        setCodeProposal(super.codeInputUser());
 
 
         super.validation(getCodeToBeFound(), getCodeProposal());
 
-        System.out.println("----------->"+ getDigitsFound() + " digit(s) found and " + getDigitsPresent() + " digit(s) present");
+        MyTools.makeABreak(300);
+
+        System.out.println("--------------------------------->  "+ getDigitsFound() + " digit(s) found and " + getDigitsPresent() + " digit(s) present\n");
 
         super.testIsCodeFound();
         super.setNbGuesses(getNbGuesses()+1);

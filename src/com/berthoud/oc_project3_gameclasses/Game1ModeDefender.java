@@ -86,21 +86,6 @@ public class Game1ModeDefender extends Game1 {
     }
 
 
-    /**
-     * This method displays the result of the game at the end of the game.
-     * TThe implementation is different for each game and mode.
-     */
-    @Override
-    protected void messageEndOfTheGame() {
-
-        if (this.isCodeFound()) {
-            System.out.print("Superbrain made it!");
-        } else {
-            System.out.print("How does it feel to defeat Superbrain? ");
-        }
-
-    }
-
 
 // _____________________________________________________________________________________________________________________
     //LOCAL METHOD(S)//
@@ -164,11 +149,11 @@ public class Game1ModeDefender extends Game1 {
 
     /**
      * This method displays the proposal code of the computer in the expected format
-     * @param tentativeCode
+     * @param codeProposal
      */
-    protected void displayProposalComputer(int[] tentativeCode) {
-        System.out.print("Superbrain's guess #" + getNbGuesses() + " ------------->  ");
-        for (int x : tentativeCode) {
+    protected void displayProposalComputer(int[] codeProposal) {
+        System.out.print("Superbrain's guess #" + getNbGuesses() + " ------------------------->  ");
+        for (int x : codeProposal) {
             System.out.print (x + " ");
         }
         System.out.println();
@@ -185,7 +170,7 @@ public class Game1ModeDefender extends Game1 {
 
         displayProposalComputer(getCodeProposal());
 
-        System.out.print("Enter the validation code (<, >, =):  ");
+        System.out.print("Enter the validation code (<, >, =): ---------->  ");
 
         String validationJoueur = scan.nextLine();
         System.out.print("\n");
