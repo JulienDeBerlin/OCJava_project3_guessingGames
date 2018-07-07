@@ -103,8 +103,8 @@ public class Main {
 
         // Activation of the developer mode through the command line
         if (args.length>0){
-            for (int x =0; x< args.length; x++){
-                if(args[x].equals("dev")){
+            for (String arg : args) {
+                if (arg.equals("dev")) {
                     devMode = true;
                     break;
                 }
@@ -167,7 +167,7 @@ public class Main {
      * The method instantiate a game-instance, according to the selection game/mode made by the player and start the game through
      * the method {@link Games#play()}.
      * @param choiceGame Game 1 (+/-) or 2 (Digit Mastermind)
-     * @param choiceMode Mode challenger, developper or duel
+     * @param choiceMode Mode challenger, defender or duel
      */
     public static void startTheGame(String choiceGame, String choiceMode){
         if (choiceGame.equals("1")){

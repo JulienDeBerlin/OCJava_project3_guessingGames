@@ -17,10 +17,7 @@ public class MyTools {
             if (!Character.isDigit(carac))
                 k--;
         }
-        if (k < 0) {
-            return false;
-        }
-        return true;
+        return k >= 0;
     }
 
 

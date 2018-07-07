@@ -15,7 +15,7 @@ public class Game1ModeDefender extends Game1 {
      */
     private int[][] rangeCodeToBeFound = new int[2][getNbDigits()];// Array 1 = minValue, Array 2 = maxValue
    // Although the second part of the declaration is meant to be redundant by the IDE, the program throws a NullPointerException if I suppress it.
-   // Same happens if I replace it by initRangeCodeToBeFound(). TBC why.
+   // Same happens if I replace it by initRangeCodeToBeFound().  Why?
 
 // _____________________________________________________________________________________________________________________
     //CONSTRUCTORS//
@@ -33,16 +33,8 @@ public class Game1ModeDefender extends Game1 {
 // _____________________________________________________________________________________________________________________
     //GETTERS//
 
-    public int[][] getRangeCodeToBeFound() {
-        return rangeCodeToBeFound;
-    }
 
-    public void setRangeCodeToBeFound(int[][] rangeCodeToBeFound) {
-        this.rangeCodeToBeFound = rangeCodeToBeFound;
-    }
-
-
-    // _____________________________________________________________________________________________________________________
+// _____________________________________________________________________________________________________________________
     //IMPLEMENTATION OF ABSTRACT METHODS//
 
     /**
@@ -70,9 +62,7 @@ public class Game1ModeDefender extends Game1 {
 
         System.out.print("\n");
 
-
         while ((super.getNbGuesses() <= super.getMaxGuesses()) && (!super.isCodeFound())) {
-
 
             guessValidationUnit();
 
@@ -84,7 +74,6 @@ public class Game1ModeDefender extends Game1 {
 
         endingMenu();
     }
-
 
 
 // _____________________________________________________________________________________________________________________
@@ -103,55 +92,12 @@ public class Game1ModeDefender extends Game1 {
         return rangeCodeToBeFound;
     }
 
-    /**
-     * The method is used for the AI part. Restrict the range of each digit of the code to be found after each validation of a proposal code
-     * @param range this is range before validation
-     * @param proposal the proposal code
-     * @param validation the validation code
-     * @return the updated (restricted) range after validation
-     * @see Game1ModeDefender#codeProposal
-     * @see Game1ModeDefender#validation(int[], int[])
-     * @see Game1ModeDefender#rangeCodeToBeFound
-     *
-     */
-    private int[][] updateRangeCodeToBeFound(int[][] range, int[] proposal, String[] validation) {
-        for (int x = 0; x < getNbDigits(); x++) {
-            if (validation[x] == ">") {
-                range[0][x] = proposal[x]+1;
-            }
-            if (validation[x] == "<") {
-                range[1][x] = proposal[x]-1;
-            }
-        }
-        return range;
-    }
-
-
-    /**
-     * The method is used for the AI part. It updates the instance field {@link #codeProposal} used for the next guess of the computer
-     * @param newRange   the output of {@link #updateRangeCodeToBeFound(int[][], int[], String[])}
-     * @param proposal   the instance field {@link #codeProposal} to be updated
-     * @param validation {@link #validation(int[], int[])}
-     * @return  an updated instance field {@link #codeProposal}
-     */
-    private int[] newProposal(int[][] newRange, int[] proposal, String[] validation) {
-        for (int x = 0; x < getNbDigits(); x++) {
-            if (validation[x] != "=") {
-                proposal[x] = (newRange[0][x] + newRange[1][x]) / 2;
-            }
-        }
-        return proposal;
-    }
-
-
-
-
 
     /**
      * This method displays the proposal code of the computer in the expected format
-     * @param codeProposal
+     * @param codeProposal guess attempt
      */
-    protected void displayProposalComputer(int[] codeProposal) {
+    private void displayProposalComputer(int[] codeProposal) {
         System.out.print("Superbrain's guess #" + getNbGuesses() + " ------------------------->  ");
         for (int x : codeProposal) {
             System.out.print (x + " ");
@@ -170,41 +116,97 @@ public class Game1ModeDefender extends Game1 {
 
         displayProposalComputer(getCodeProposal());
 
-        System.out.print("Enter the validation code (<, >, =): ---------->  ");
+        inputValidationAndAnswerComputer();
 
-        String validationJoueur = scan.nextLine();
-        System.out.print("\n");
-
-        answerComputer(validationJoueur);
     }
 
 
     /**
-     * This method is used for the AI part. It tests and inputs the validation code entered by the user and make an appropriate next guess
-     * @param validationByUser
+     * This method is used for the AI part. It inputs and tests the validation code entered by the user and make an appropriate next guess
      * @see #updateRangeCodeToBeFound(int[][], int[], String[])
      * @see #newProposal(int[][], int[], String[])
      */
-    protected void answerComputer(String validationByUser){
-        String[] validationByComputerStringArray = super.validation(getCodeToBeFound(), getCodeProposal());
-        String validationComputer = validationByComputerStringArray[0];
+    private void inputValidationAndAnswerComputer(){
+
+
+        // PART 1: INPUT AND TEST
+
+        System.out.print("Enter the validation code (<, >, =): ---------->  ");
+
+        String validationByUser = scan.nextLine();
+        System.out.print("\n");
+
+        String [] validationByComputerStringArray =  super.validation(getCodeToBeFound(), getCodeProposal());
+
+        String validationByComputer = validationByComputerStringArray[0];
         for (int j = 1; j < getNbDigits(); j++) {
-            validationComputer += validationByComputerStringArray[j];
+            validationByComputer += validationByComputerStringArray[j];
         }
 
-        while (!validationByUser.equals(validationComputer)) {
+        while (!validationByUser.equals(validationByComputer)) {
             System.out.println("Oops!... it looks like the validation code is wrong. Enter it again: ");
             validationByUser = scan.nextLine();
             System.out.print("\n");
         }
 
+        // PART 2: NEW GUESS
+
         rangeCodeToBeFound = updateRangeCodeToBeFound(rangeCodeToBeFound, getCodeProposal(), validationByComputerStringArray);
+
         setCodeProposal(newProposal(rangeCodeToBeFound, getCodeProposal(), validationByComputerStringArray));
 
         //   Conditions to exit the loop
         super.testIsCodeFound(validationByComputerStringArray);
         super.setNbGuesses(getNbGuesses()+1);
 
+
+        // HELP! I TRIED TO SPLIT THIS METHOD IN 2 METHODS (PART 1 AND PART 2), BUT THEN IT DIDN'T WORK ANYMORE. CAN'T UNDERSTAND WHY!
+       /*
+       Also, if  String [] validationByComputerStringArray =  super.validation(getCodeToBeFound(), getCodeProposal());
+       Why is "returns validationByComputerStringArray" different than "return super.validation(getCodeToBeFound(), getCodeProposal())"
+        */
+
+    }
+
+
+    /**
+     * The method is used for the AI part. Restrict the range of each digit of the code to be found after each validation of a proposal code
+     * @param range this is range before validation
+     * @param proposal the proposal code
+     * @param validation the validation code
+     * @return the updated (restricted) range after validation
+     * @see Game1ModeDefender#codeProposal
+     * @see Game1ModeDefender#validation(int[], int[])
+     * @see Game1ModeDefender#rangeCodeToBeFound
+     *
+     */
+    private int[][] updateRangeCodeToBeFound(int[][] range, int[] proposal, String[] validation) {
+        for (int x = 0; x < getNbDigits(); x++) {
+            if (validation[x].equals(">")) {
+                range[0][x] = proposal[x]+1;
+            }
+            if (validation[x].equals("<")) {
+                range[1][x] = proposal[x]-1;
+            }
+        }
+        return range;
+    }
+
+
+    /**
+     * The method is used for the AI part. It updates the instance field {@link #codeProposal} used for the next guess of the computer
+     * @param newRange   the output of {@link #updateRangeCodeToBeFound(int[][], int[], String[])}
+     * @param proposal   the instance field {@link #codeProposal} to be updated
+     * @param validation {@link #validation(int[], int[])}
+     * @return  an updated instance field {@link #codeProposal}
+     */
+    private int[] newProposal(int[][] newRange, int[] proposal, String[] validation) {
+        for (int x = 0; x < getNbDigits(); x++) {
+            if (!validation[x].equals("=")) {
+                proposal[x] = (newRange[0][x] + newRange[1][x]) / 2;
+            }
+        }
+        return proposal;
     }
 
 }

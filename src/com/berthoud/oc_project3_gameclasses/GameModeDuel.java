@@ -114,7 +114,7 @@ public class GameModeDuel{
      * This method displays the result of the game at the end of the game.
      * TThe implementation is different for each game and mode.
      */
-    protected void messageEndOfTheGame() {
+    private void messageEndOfTheGame() {
         if ((gameA.isCodeFound()) && (gameB.isCodeFound())) {
             System.out.printf("%S", "Dead heat!");
         }

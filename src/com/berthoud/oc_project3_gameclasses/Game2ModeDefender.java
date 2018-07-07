@@ -10,16 +10,16 @@ import java.util.Arrays;
 public class Game2ModeDefender extends Game2 {
 
     /**
-     * This field is required for the AI part. This byte array stores all the combinaisons possible
+     * This field is required for the AI part. This byte array stores all the combinations possible
      * based on {@link #nbVariations} and {@link #nbDigits}
      */
-    protected byte [][] poolCombinations;
+    private byte [][] poolCombinations;
 
 
     /**
      * This is the number of combinations
      */
-    protected int nbCombinations;
+    private int nbCombinations;
 
 
 // _____________________________________________________________________________________________________________________
@@ -78,9 +78,9 @@ public class Game2ModeDefender extends Game2 {
 
     /**
      * This method displays the proposal code of the computer in the expected format
-     * @param codeProposal
+     * @param codeProposal the guess attempt
      */
-    protected void displayProposalComputer(int[] codeProposal) {
+    private void displayProposalComputer(int[] codeProposal) {
         String[] codeProposalStringArray = new String[getNbDigits()];
         for (int x = 0; x < getNbDigits(); x++) {
             codeProposalStringArray[x] = String.valueOf(codeProposal[x]);
@@ -91,11 +91,59 @@ public class Game2ModeDefender extends Game2 {
     }
 
 
+
+    /**
+     * This method is used for the AI part. It tests and inputs the validation code entered by the user.
+     */
+    private void inputValidation() {
+
+        int[] validationComputer = super.validation(getCodeToBeFound(), getCodeProposal());
+
+
+        //*******************
+        System.out.print("Enter the number of digits found = ");
+        String digitsFoundPlayerString = scan.nextLine();
+
+        while (!MyTools.isMyStringAnInt(digitsFoundPlayerString) || (digitsFoundPlayerString.equals(""))){
+            System.out.println("Oops, wrong entry. Enter again the number of digits found:");
+            digitsFoundPlayerString = scan.nextLine();
+        }
+
+        int digitsFoundPlayerInt = Integer.parseInt(digitsFoundPlayerString);
+
+        while (digitsFoundPlayerInt != validationComputer[0]) {
+            System.out.println("Oops, wrong entry. Enter again the number of digits found:");
+            digitsFoundPlayerInt = scan.nextInt();
+        }
+
+        //********************
+        System.out.print("Enter the number of digits present = ");
+        String digitsPresentPlayerString = scan.nextLine();
+
+        while (!MyTools.isMyStringAnInt(digitsPresentPlayerString) || (digitsPresentPlayerString.equals(""))){
+            System.out.println("Oops, wrong entry. Enter again the number of digits present:");
+            digitsPresentPlayerString = scan.nextLine();
+        }
+
+        int digitsPresentPlayerInt = Integer.parseInt(digitsPresentPlayerString);
+
+        while (digitsPresentPlayerInt != validationComputer[1]) {
+            System.out.println("Oops, wrong entry. Enter again the number of digits present:");
+            digitsPresentPlayerInt = scan.nextInt();
+            scan.nextLine();
+        }
+
+        System.out.println();
+
+
+    }
+
+
     /**
      * This method is used for the AI part. It tests and inputs the validation code entered by the user and makes an appropriate next guess
      * Description of the algorithm
      */
-    protected void answerComputer() {
+    private void answerComputer() {
 
         // Réduction du pool de combinaisons possibles à celles qui auraient donné le même résultat que celui obtenu
         // Pour ce faire, création dún tableau de bytes dans lequel on va enregsitrer le résultat que donnerait chaque combi
@@ -117,13 +165,13 @@ public class Game2ModeDefender extends Game2 {
 
 
         for (int i = 0; i< nbCombinations; i++){
-           testPoolCombi[i] = validation(poolCombinations[i], getCodeProposal());
+            testPoolCombi[i] = validation(poolCombinations[i], getCodeProposal());
             if (Arrays.equals(poolCombinations[i], tentativeCodeByte)) {
                 poolCombinations[i][0] = -1;
             }
-           if (!Arrays.equals(testPoolCombi[i], (validation))){
-               poolCombinations[i][0] = -1;
-           }
+            if (!Arrays.equals(testPoolCombi[i], (validation))){
+                poolCombinations[i][0] = -1;
+            }
         }
 
 
@@ -137,38 +185,7 @@ public class Game2ModeDefender extends Game2 {
 
         super.testIsCodeFound();
 
-        }
-
-
-    protected void saisieValidationJoueur() {
-
-        //Validation ordi pour vérifier entrées du joueur
-        int[] validationOrdi = super.validation(getCodeToBeFound(), getCodeProposal());
-
-        int bienPlaceJoueur;
-        int couleursOKJoueur;
-
-        System.out.print("Nombre de couleurs bien placées = ");
-        bienPlaceJoueur = scan.nextInt();
-
-        while (bienPlaceJoueur != validationOrdi[0]) {
-            System.out.println("Saisie incorrecte. Entre à nouveau le nb de couleurs bien placées:");
-            bienPlaceJoueur = scan.nextInt();
-        }
-
-        System.out.print("Nombre de couleurs présentes = ");
-        couleursOKJoueur = scan.nextInt();
-
-        while (couleursOKJoueur != validationOrdi[1]) {
-            System.out.println("Saisie incorrecte. Entre à nouveau le nb de couleurs présentes:");
-            couleursOKJoueur = scan.nextInt();
-        }
-
-        System.out.println();
-
-
     }
-
     private byte[] remplissagePoolCombinaisons(byte[] tab) {
         byte[] nextTab = Arrays.copyOf(tab, tab.length);
 
@@ -184,7 +201,7 @@ public class Game2ModeDefender extends Game2 {
         return nextTab;
     }
 
-    public void creationPoolCombinaisons(){
+    private void creationPoolCombinations(){
         nbCombinations = (int) Math.pow(getNbVariations(), getNbDigits());
         poolCombinations = new byte[nbCombinations][getNbDigits()];
 
@@ -205,7 +222,7 @@ public class Game2ModeDefender extends Game2 {
 
         if (getNbGuesses() == 1) {
             setCodeProposal(randomCodeGenerator()); //1st answer of computer is random
-            creationPoolCombinaisons();
+            creationPoolCombinations();
 
         }
 
@@ -213,7 +230,7 @@ public class Game2ModeDefender extends Game2 {
         displayProposalComputer(getCodeProposal());
 
         // saisie validation par le joueur:
-        saisieValidationJoueur();
+        inputValidation();
 
         super.testIsCodeFound();
         if(!super.testIsCodeFound()) {

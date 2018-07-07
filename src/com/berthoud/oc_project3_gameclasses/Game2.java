@@ -32,7 +32,7 @@ public abstract class Game2 extends Games{
      * @param maxGuesses max number of guesses allowed
      * @param nbVariations number of value possible for each digit. Min = 4 , Max = 10
      */
-    public Game2(int nbDigits, int maxGuesses, int nbVariations) {
+    Game2(int nbDigits, int maxGuesses, int nbVariations) {
         super(nbDigits, maxGuesses, nbVariations);
         digitsFound = 0;
         digitsPresent = 0;
@@ -90,6 +90,7 @@ public abstract class Game2 extends Games{
         return validation;
     }
 
+
     /**
      * This method overloads {@link #validation(int[], int[])} and takes as parameter codetobefound as a byte array instead of int array.
      * @param codeToBeFound the secret code
@@ -141,9 +142,9 @@ public abstract class Game2 extends Games{
 
     /**
      *  This method sets the instance field {@link #isCodeFound} to true if all the digits have been found at the right position
-      * @return
+      * @return true if the code has been found
      */
-    protected boolean testIsCodeFound() {
+    boolean testIsCodeFound() {
         if (digitsFound == getNbDigits())
             setCodeFound(true);
         return isCodeFound();
@@ -181,9 +182,9 @@ public abstract class Game2 extends Games{
      * This method is only required to test the validity of input player for game 2. The method is called within the method {@link #codeInputUser()}
      * @param inputUser Code entered by the player
      * @param nbVariations Number of values that each digit can possibly take. Only required for game 2
-     * @return
+     * @return true or false
      */
-    protected boolean inputInsideRange(String inputUser, int nbVariations) {
+    private boolean inputInsideRange(String inputUser, int nbVariations) {
         int[] intArray = new int[getNbDigits()];
         int k = 0;
         for (int j = 0; j < getNbDigits(); j++) {
@@ -192,10 +193,7 @@ public abstract class Game2 extends Games{
                 k--;
             }
         }
-        if (k < 0) {
-            return false;
-        }
-        return true;
+        return k == 0;
     }
 
 // _____________________________________________________________________________________________________________________

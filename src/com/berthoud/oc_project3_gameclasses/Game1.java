@@ -95,10 +95,10 @@ public abstract class Game1 extends Games{
       * @param validation
      *          the ouput of the method {@link #validation(int[], int[])}
      */
-    protected void testIsCodeFound(String [] validation) {
+    void testIsCodeFound(String [] validation) {
         int k = 0;
         for (String elementValidation : validation) {
-            if ((elementValidation == ">") || (elementValidation == "<")) {
+            if ((elementValidation.equals(">")) || (elementValidation.equals("<"))) {
                 k++;
             }
         }

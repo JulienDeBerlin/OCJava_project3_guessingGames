@@ -63,7 +63,7 @@ public abstract class Games {
      * @param nbDigits number of digits
      * @param maxGuesses max number of guesses allowed
      */
-    protected Games(int nbDigits, int maxGuesses) {
+    Games(int nbDigits, int maxGuesses) {
         this.nbDigits = nbDigits;
         this.maxGuesses = maxGuesses;
     }
@@ -75,7 +75,7 @@ public abstract class Games {
      * @param maxGuesses max number of guesses allowed
      * @param nbVariations nb of values that each digit can take
      */
-    public Games(int nbDigits, int maxGuesses, int nbVariations) {
+    Games(int nbDigits, int maxGuesses, int nbVariations) {
         this.nbDigits = nbDigits;
         this.maxGuesses = maxGuesses;
         this.nbVariations = nbVariations;
@@ -173,7 +173,7 @@ public abstract class Games {
     /**
      * This method calls the selection menu at the end of the game.
      */
-    protected void endingMenu() {
+     void endingMenu() {
         System.out.printf("\n\n%s\n%s\n%s\n%s\n\n%s", "Do you want to: ", "1: play again this game?", "2: come back to the game menu?",
                 "3: stop loosing your time playing?", "Enter your selection: ");
         String selectorEnding = scan.nextLine();
@@ -204,7 +204,7 @@ public abstract class Games {
      * This method displays the instance variable {@link #codeToBeFound) when the developer mode is activated
      * @param codeToBeFound
      */
-    protected void displayModeDev(int [] codeToBeFound) {
+     void displayModeDev(int [] codeToBeFound) {
         if (Main.isDevMode()) {
             System.out.print("###### DEVELOPER MODE ! Superbrain's secret code = ");
             for (int x : codeToBeFound) {
