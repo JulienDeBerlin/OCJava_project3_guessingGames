@@ -1,10 +1,12 @@
 package com.berthoud.oc_project3_gameclasses;
+
 import com.berthoud.oc_project3_menu.Main;
+
 import java.util.Scanner;
 
 /**
- *  *  Abstract class for both games ("Game +/- " and Mastermind)
- *  It contains all the instance fields and methods shared by both games
+ * *  Abstract class for both games ("Game +/- " and Mastermind)
+ * It contains all the instance fields and methods shared by both games
  */
 public abstract class Games {
 
@@ -29,12 +31,12 @@ public abstract class Games {
     /**
      * This is the mystery code to be found, created by the computer (mode challenger) or by the player (mode defender)
      */
-    private int [] codeToBeFound = new int [nbDigits];
+    private int[] codeToBeFound = new int[nbDigits];
 
     /**
      * This is code attempt made by the player (mode challenger) or the computer (mode defender)
      */
-    private int [] codeProposal = new int [nbDigits];
+    private int[] codeProposal = new int[nbDigits];
 
 
     /**
@@ -54,13 +56,13 @@ public abstract class Games {
     public static Scanner scan = new Scanner(System.in);
 
 
-
 // _____________________________________________________________________________________________________________________
     //CONSTRUCTORS//
 
     /**
      * Constructor for game 1
-     * @param nbDigits number of digits
+     *
+     * @param nbDigits   number of digits
      * @param maxGuesses max number of guesses allowed
      */
     Games(int nbDigits, int maxGuesses) {
@@ -71,8 +73,9 @@ public abstract class Games {
 
     /**
      * Constructor for game 2
-     * @param nbDigits number of digits
-     * @param maxGuesses max number of guesses allowed
+     *
+     * @param nbDigits     number of digits
+     * @param maxGuesses   max number of guesses allowed
      * @param nbVariations nb of values that each digit can take
      */
     Games(int nbDigits, int maxGuesses, int nbVariations) {
@@ -108,7 +111,9 @@ public abstract class Games {
         return codeProposal;
     }
 
-    int getNbVariations() { return nbVariations; }
+    int getNbVariations() {
+        return nbVariations;
+    }
 
     void setCodeFound(boolean codeFound) {
         this.codeFound = codeFound;
@@ -126,7 +131,8 @@ public abstract class Games {
         this.codeProposal = codeProposal;
     }
 
-    void setCodeProposal(int index, int value) { {
+    void setCodeProposal(int index, int value) {
+        {
             this.codeProposal[index] = value;
         }
     }
@@ -143,13 +149,12 @@ public abstract class Games {
     public abstract void play();
 
 
-
     /**
      * This methods generates a random code made of X digits, X being equal to value of {@link #nbDigits}
+     *
      * @return the random code
      */
     protected abstract int[] randomCodeGenerator();
-
 
 
     /**
@@ -159,9 +164,9 @@ public abstract class Games {
     protected abstract void guessValidationUnit();
 
 
-
     /**
      * This method inputs the code entered by the player on the keyboard test its validity and return it
+     *
      * @return the valid code entered by the player
      */
     protected abstract int[] codeInputUser();
@@ -173,7 +178,7 @@ public abstract class Games {
     /**
      * This method calls the selection menu at the end of the game.
      */
-     void endingMenu() {
+    void endingMenu() {
         System.out.printf("\n\n%s\n%s\n%s\n%s\n\n%s", "Do you want to: ", "1: play again this game?", "2: come back to the game menu?",
                 "3: stop loosing your time playing?", "Enter your selection: ");
         String selectorEnding = scan.nextLine();
@@ -201,14 +206,15 @@ public abstract class Games {
 
 
     /**
-     * This method displays the instance variable {@link #codeToBeFound) when the developer mode is activated
-     * @param codeToBeFound
+     * This method displays the instance variable {@link #codeToBeFound} when the developer mode is activated
+     *
+     * @param codeToBeFound the mystery code
      */
-     void displayModeDev(int [] codeToBeFound) {
+    void displayModeDev(int[] codeToBeFound) {
         if (Main.isDevMode()) {
             System.out.print("###### DEVELOPER MODE ! Superbrain's secret code = ");
             for (int x : codeToBeFound) {
-                System.out.print (x + " ");
+                System.out.print(x + " ");
             }
             System.out.println("######\n");
         }
@@ -216,11 +222,10 @@ public abstract class Games {
     }
 
 
-
     /**
      * This method displays the result of the game at the end of the game.
      */
-    protected  void messageEndOfTheGame (){
+    protected void messageEndOfTheGame() {
         if (this.isCodeFound()) {
             System.out.print("Superbrain made it!");
         } else {

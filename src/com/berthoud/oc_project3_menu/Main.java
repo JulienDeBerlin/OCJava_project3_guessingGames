@@ -1,4 +1,5 @@
 package com.berthoud.oc_project3_menu;
+
 import com.berthoud.oc_project3_gameclasses.*;
 
 import java.io.FileInputStream;
@@ -9,6 +10,8 @@ import java.util.Scanner;
 /**
  * This program implements two guessing games: Game 1 (+/-) and Game 2 (Mastermind). Each game can be played in 3 modes
  * challenger, defender and duel. For more details on the specific games:
+ *
+ * @author Julien Berthoud
  * @see Games
  * @see Game1
  * @see Game2
@@ -17,21 +20,20 @@ import java.util.Scanner;
  * @see Game1ModeDefender
  * @see Game2ModeChallenger
  * @see Game2ModeDefender
- * @author Julien Berthoud
- *
  */
 public class Main {
 
-// Default game parameters in case the configuration through the config.properties file doesn't work.
+    // Default game parameters in case the configuration through the config.properties file doesn't work.
     private static int nbDigitsGame1 = 4;
     private static int maxGuessesGame1 = 4;
     private static int nbDigitsGame2 = 4;
     private static int maxGuessesGame2 = 10;
-    private static int nbVariationsGame2 = 6 ; // min = 4, max = 10
+    private static int nbVariationsGame2 = 6; // min = 4, max = 10
 
     /**
      * All games can be executed in a mode developer, in which the code to be found is displayed. It makes possible to check
-     * if everything works properly.
+     * if everything works properly. This mode can be activated through the confi properties file or by entering the parameter "dev"
+     * in the command line
      */
     private static boolean devMode = false;
 
@@ -61,48 +63,53 @@ public class Main {
 
     /**
      * The main method loads the configuration parameters from the config.properties file and calls the menu
+     *
      * @param args takes the argument "dev" to launch the developer mode from the command line.
      *             The developer mode can also be activated
      *             through the config.properties file.
      */
     public static void main(String[] args) {
 
+        String test = "";
+        System.out.println(MyTools.isMyStringAnInt(test));
+
         try {
             Properties p = new Properties();
             InputStream inputStream = new FileInputStream("config.properties");
             p.load(inputStream);
 
-            if (Integer.parseInt(p.getProperty("nbDigitsGame1"))>0){
+            if (Integer.parseInt(p.getProperty("nbDigitsGame1")) > 0) {
                 nbDigitsGame1 = Integer.parseInt(p.getProperty("nbDigitsGame1"));
             }
 
-            if (Integer.parseInt(p.getProperty("maxGuessesGame1"))>0){
+            if (Integer.parseInt(p.getProperty("maxGuessesGame1")) > 0) {
                 maxGuessesGame1 = Integer.parseInt(p.getProperty("maxGuessesGame1"));
             }
 
-            if (Integer.parseInt(p.getProperty("nbDigitsGame2"))>0){
+            if (Integer.parseInt(p.getProperty("nbDigitsGame2")) > 0) {
                 nbDigitsGame2 = Integer.parseInt(p.getProperty("nbDigitsGame2"));
             }
 
-            if (Integer.parseInt(p.getProperty("maxGuessesGame2"))>0){
+            if (Integer.parseInt(p.getProperty("maxGuessesGame2")) > 0) {
                 maxGuessesGame2 = Integer.parseInt(p.getProperty("maxGuessesGame2"));
             }
 
-            if (Integer.parseInt(p.getProperty("nbVariationsGame2"))>4 && (Integer.parseInt(p.getProperty("nbVariationsGame2"))<11)){
-            nbVariationsGame2 = Integer.parseInt(p.getProperty("nbVariationsGame2"));}
+            if (Integer.parseInt(p.getProperty("nbVariationsGame2")) > 4 && (Integer.parseInt(p.getProperty("nbVariationsGame2")) < 11)) {
+                nbVariationsGame2 = Integer.parseInt(p.getProperty("nbVariationsGame2"));
+            }
 
 
-         // Activation of the developer mode through the config.properties file
+            // Activation of the developer mode through the config.properties file
             if (p.getProperty("devMode").equals("Y")) {
                 devMode = true;
             }
 
-        } catch (Exception e){
+        } catch (Exception e) {
             // do not display anything. If an exception is thrown, the game will run with the default field values.
         }
 
         // Activation of the developer mode through the command line
-        if (args.length>0){
+        if (args.length > 0) {
             for (String arg : args) {
                 if (arg.equals("dev")) {
                     devMode = true;
@@ -124,8 +131,8 @@ public class Main {
      */
     public static void menu() {
 
-        if (devMode){
-           System.out.println("\n###### DEVELOPER MODE ######\n");
+        if (devMode) {
+            System.out.println("\n###### DEVELOPER MODE ######\n");
         }
 
 
@@ -137,7 +144,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         choiceGame = scanner.nextLine();
 
-        while (!choiceGame.equals("1") && !choiceGame.equals("2")){
+        while (!choiceGame.equals("1") && !choiceGame.equals("2")) {
             System.out.print("What do you mean? Please enter 1 or 2: ");
             choiceGame = scanner.nextLine();
         }
@@ -151,7 +158,7 @@ public class Main {
 
         choiceMode = scanner.nextLine();
 
-        while (!choiceMode.equals("1") && !choiceMode.equals("2") && !choiceMode.equals("3")){
+        while (!choiceMode.equals("1") && !choiceMode.equals("2") && !choiceMode.equals("3")) {
             System.out.print("What do you mean? Please enter 1, 2 or 3: ");
             choiceMode = scanner.nextLine();
         }
@@ -166,11 +173,12 @@ public class Main {
     /**
      * The method instantiate a game-instance, according to the selection game/mode made by the player and start the game through
      * the method {@link Games#play()}.
+     *
      * @param choiceGame Game 1 (+/-) or 2 (Digit Mastermind)
      * @param choiceMode Mode challenger, defender or duel
      */
-    public static void startTheGame(String choiceGame, String choiceMode){
-        if (choiceGame.equals("1")){
+    public static void startTheGame(String choiceGame, String choiceMode) {
+        if (choiceGame.equals("1")) {
             switch (choiceMode) {
                 case "1":
                     Game1ModeChallenger game1ModeChallenger = new Game1ModeChallenger(nbDigitsGame1, maxGuessesGame1);
@@ -187,7 +195,7 @@ public class Main {
             }
         }
 
-        if (choiceGame.equals("2")){
+        if (choiceGame.equals("2")) {
             switch (choiceMode) {
                 case "1":
                     Game2ModeChallenger game2ModeChallenger = new Game2ModeChallenger(nbDigitsGame2, maxGuessesGame2, nbVariationsGame2);

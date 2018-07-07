@@ -4,7 +4,7 @@ package com.berthoud.oc_project3_gameclasses;
 /**
  * The program Game2ModeChallenger implements the Mastermind in the mode challenger: the user tries to break the computer's code
  */
- public class Game2ModeChallenger extends Game2 {
+public class Game2ModeChallenger extends Game2 {
 
 
 // _____________________________________________________________________________________________________________________
@@ -12,8 +12,9 @@ package com.berthoud.oc_project3_gameclasses;
 
     /**
      * Constructor
-     * @param nbDigits number of digits of the code
-     * @param maxGuesses max number of guesses allowed
+     *
+     * @param nbDigits     number of digits of the code
+     * @param maxGuesses   max number of guesses allowed
      * @param nbVariations number of value possible for each digit. Min = 4 , Max = 10
      */
     public Game2ModeChallenger(int nbDigits, int maxGuesses, int nbVariations) {
@@ -35,14 +36,14 @@ package com.berthoud.oc_project3_gameclasses;
         setNbGuesses(1);
         setCodeFound(false);
 
-        setCodeToBeFound(super.randomCodeGenerator());
+        setCodeToBeFound(randomCodeGenerator());
 
         System.out.printf("%S", ">>>>> The digit Mastermind, mode challenger <<<<<\n");
 
         MyTools.makeABreak(400);
 
         System.out.println("The goal is to find out the secret combination made of " + getNbDigits() + " digits, " +
-                "given that each digit can take one of "+ getNbVariations() + " possible values.\n" +
+                "given that each digit can take one of " + getNbVariations() + " possible values.\n" +
                 "You have a maximum of " + getMaxGuesses() + " guesses. For each guess the computer will return two values:\n" +
                 "- the number of digits found (right value and right position)\n" +
                 "- the number of digits present (right value but wrong position)\n");
@@ -50,8 +51,8 @@ package com.berthoud.oc_project3_gameclasses;
 
         displayModeDev(getCodeToBeFound());
 
-        while ((super.getNbGuesses() <= super.getMaxGuesses()) && (!super.testIsCodeFound())) {
-          guessValidationUnit();
+        while ((getNbGuesses() <= getMaxGuesses()) && (!testIsCodeFound())) {
+            guessValidationUnit();
 
         }
 
@@ -68,18 +69,18 @@ package com.berthoud.oc_project3_gameclasses;
      * This method displays the result of the game at the end of the game.
      * TThe implementation is different for each game and mode.
      */
-     @Override
-     protected void messageEndOfTheGame() {
-         if (this.isCodeFound()) {
-             System.out.print("Well done!!!! You found out the secret combination!");
-         } else {
-             System.out.print("Sorry, you didn't make it this time... The combination was: ");
-             for (int digit : getCodeToBeFound()) {
-                 System.out.print(digit + " ");
-             }
-         }
+    @Override
+    protected void messageEndOfTheGame() {
+        if (this.isCodeFound()) {
+            System.out.print("Well done!!!! You found out the secret combination!");
+        } else {
+            System.out.print("Sorry, you didn't make it this time... The combination was: ");
+            for (int digit : getCodeToBeFound()) {
+                System.out.print(digit + " ");
+            }
+        }
 
-     }
+    }
 
 
     /**
@@ -89,20 +90,19 @@ package com.berthoud.oc_project3_gameclasses;
     public void guessValidationUnit() {
         System.out.print("Your guess #" + getNbGuesses() + ". Enter your proposal: ");
 
-        setCodeProposal(super.codeInputUser());
+        setCodeProposal(codeInputUser());
 
 
-        super.validation(getCodeToBeFound(), getCodeProposal());
+        validation(getCodeToBeFound(), getCodeProposal());
 
         MyTools.makeABreak(300);
 
-        System.out.println("--------------------------------->  "+ getDigitsFound() + " digit(s) found and " + getDigitsPresent() + " digit(s) present\n");
+        System.out.println("--------------------------------->  " + getDigitsFound() + " digit(s) found and " + getDigitsPresent() + " digit(s) present\n");
 
-        super.testIsCodeFound();
-        super.setNbGuesses(getNbGuesses()+1);
+        testIsCodeFound();
+        setNbGuesses(getNbGuesses() + 1);
 
     }
 
 
-
- }
+}

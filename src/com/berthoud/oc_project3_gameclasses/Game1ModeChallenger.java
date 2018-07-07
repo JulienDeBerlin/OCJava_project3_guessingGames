@@ -11,7 +11,8 @@ public class Game1ModeChallenger extends Game1 {
 
     /**
      * Constructor (constructors are chained)
-     * @param nbDigits number of digits
+     *
+     * @param nbDigits   number of digits
      * @param maxGuesses max number of guesses allowed
      */
     public Game1ModeChallenger(int nbDigits, int maxGuesses) {
@@ -32,7 +33,7 @@ public class Game1ModeChallenger extends Game1 {
         setNbGuesses(1);
         setCodeFound(false);
 
-        setCodeToBeFound(super.randomCodeGenerator());
+        setCodeToBeFound(randomCodeGenerator());
 
         System.out.printf("%S", ">>>>> The +/- game, mode challenger <<<<<\n");
 
@@ -44,7 +45,7 @@ public class Game1ModeChallenger extends Game1 {
 
         displayModeDev(getCodeToBeFound());
 
-        while ((super.getNbGuesses() <= super.getMaxGuesses()) && (!super.isCodeFound())) {
+        while ((getNbGuesses() <= getMaxGuesses()) && (!isCodeFound())) {
 
             guessValidationUnit();
         }
@@ -84,15 +85,15 @@ public class Game1ModeChallenger extends Game1 {
     public void guessValidationUnit() {
         System.out.print("Your guess #" + getNbGuesses() + ". Enter your proposal: ");
 
-        setCodeProposal(super.codeInputUser());
-        String[] validation = super.validation(getCodeToBeFound(), getCodeProposal());
+        setCodeProposal(codeInputUser());
+        String[] validation = validation(getCodeToBeFound(), getCodeProposal());
 
         MyTools.makeABreak(300);
 
         System.out.println("Validation -----------------------> " + MyTools.arrayToString(validation) + "\n");
 
-        super.testIsCodeFound(validation);
-        super.setNbGuesses(getNbGuesses()+1);
+        testIsCodeFound(validation);
+        setNbGuesses(getNbGuesses() + 1);
 
     }
 }

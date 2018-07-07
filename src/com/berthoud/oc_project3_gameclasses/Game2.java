@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 
 /**
- *  Abstract class for Mastermind. It contains all the instance fields and methods required for all modes of Game2
+ * Abstract class for Mastermind. It contains all the instance fields and methods required for all modes of Game2
  */
-public abstract class Game2 extends Games{
+public abstract class Game2 extends Games {
 
 // _____________________________________________________________________________________________________________________
     //INSTANCE FIELDS//
@@ -28,8 +28,9 @@ public abstract class Game2 extends Games{
 
     /**
      * Constructor
-     * @param nbDigits number of digits of the code
-     * @param maxGuesses max number of guesses allowed
+     *
+     * @param nbDigits     number of digits of the code
+     * @param maxGuesses   max number of guesses allowed
      * @param nbVariations number of value possible for each digit. Min = 4 , Max = 10
      */
     Game2(int nbDigits, int maxGuesses, int nbVariations) {
@@ -41,7 +42,6 @@ public abstract class Game2 extends Games{
 
 // _____________________________________________________________________________________________________________________
     //GETTERS all package-private//
-
 
 
     int getDigitsFound() {
@@ -60,11 +60,12 @@ public abstract class Game2 extends Games{
     /**
      * This methods compares codeTobeFound to codeProposal and return a validation indicating the number of digits found
      * (right digits on the right positions) and digits present (right digits on the wrong position)
+     *
      * @param codeToBeFound the secret code
-     * @param codeProposal the code attempt
+     * @param codeProposal  the code attempt
      * @return a two dimensional int array. 1st array for number of digits found and 2nd array for numbers of digit present
      */
-    protected int [] validation(int[] codeToBeFound, int[] codeProposal) {
+    protected int[] validation(int[] codeToBeFound, int[] codeProposal) {
 
         int[] copyCodeToBeFound = Arrays.copyOf(codeToBeFound, getNbDigits());
 
@@ -76,28 +77,29 @@ public abstract class Game2 extends Games{
                 digitsFound++;
             } else {
                 for (int k = 0; k < getNbDigits(); k++) {
-                    if ((codeProposal[i] == copyCodeToBeFound[k]) && (i != k ) && (codeProposal[k] != copyCodeToBeFound[k])) {
-                       digitsPresent++;
-                       copyCodeToBeFound[k] = -1;
-                       break;
+                    if ((codeProposal[i] == copyCodeToBeFound[k]) && (i != k) && (codeProposal[k] != copyCodeToBeFound[k])) {
+                        digitsPresent++;
+                        copyCodeToBeFound[k] = -1;
+                        break;
                     }
                 }
             }
         }
-        int [] validation = new int [2];
-        validation [0] = digitsFound;
-        validation [1] = digitsPresent;
+        int[] validation = new int[2];
+        validation[0] = digitsFound;
+        validation[1] = digitsPresent;
         return validation;
     }
 
 
     /**
      * This method overloads {@link #validation(int[], int[])} and takes as parameter codetobefound as a byte array instead of int array.
+     *
      * @param codeToBeFound the secret code
-     * @param codeProposal the code attempt
+     * @param codeProposal  the code attempt
      * @return a two dimensional int array. 1st array for number of digits found and 2nd array for numbers of digit present
      */
-    protected int [] validation(byte[] codeToBeFound, int[] codeProposal) {
+    protected int[] validation(byte[] codeToBeFound, int[] codeProposal) {
 
         byte[] copyCodeToBeFound = Arrays.copyOf(codeToBeFound, getNbDigits());
 
@@ -109,7 +111,7 @@ public abstract class Game2 extends Games{
                 digitsFound++;
             } else {
                 for (int k = 0; k < getNbDigits(); k++) {
-                    if ((codeProposal[i] == copyCodeToBeFound[k]) && (i != k ) && (codeProposal[k] != copyCodeToBeFound[k])) {
+                    if ((codeProposal[i] == copyCodeToBeFound[k]) && (i != k) && (codeProposal[k] != copyCodeToBeFound[k])) {
                         digitsPresent++;
                         copyCodeToBeFound[k] = -1;
                         break;
@@ -117,17 +119,17 @@ public abstract class Game2 extends Games{
                 }
             }
         }
-        int [] validation = new int [2];
-        validation [0] = digitsFound;
-        validation [1] = digitsPresent;
+        int[] validation = new int[2];
+        validation[0] = digitsFound;
+        validation[1] = digitsPresent;
         return validation;
     }
-
 
 
     /**
      * This methods generates a random code made of X digits, X being equal to value of {@link #nbDigits}. Each digit can take
      * {@link #nbVariations} different values.
+     *
      * @return the random code
      */
     @Override
@@ -141,8 +143,9 @@ public abstract class Game2 extends Games{
 
 
     /**
-     *  This method sets the instance field {@link #isCodeFound} to true if all the digits have been found at the right position
-      * @return true if the code has been found
+     * This method sets the instance field {@link #isCodeFound} to true if all the digits have been found at the right position
+     *
+     * @return true if the code has been found
      */
     boolean testIsCodeFound() {
         if (digitsFound == getNbDigits())
@@ -155,14 +158,15 @@ public abstract class Game2 extends Games{
      * This method inputs the code entered by the player on the keyboard, tests that the code is only made of digits,
      * that the length of the input is identical to the value of instance field {@link #nbDigits}and additionally tests
      * that the nb of variations is valid {@link #nbVariations}
+     *
      * @return a valid code entered by the player
      */
     @Override
-    protected int[] codeInputUser(){
+    protected int[] codeInputUser() {
 
         String inputUser = scan.nextLine();
 
-        while ((inputUser.length() != getNbDigits()) || (!MyTools.isMyStringAnInt(inputUser)) || (!inputInsideRange(inputUser, getNbVariations()))){
+        while ((inputUser.length() != getNbDigits()) || (!MyTools.isMyStringAnInt(inputUser)) || (!inputInsideRange(inputUser, getNbVariations()))) {
             int k = getNbVariations() - 1;
             System.out.println("What do you mean? Please enter a combination of " + getNbDigits() + " digits from 0 to " + k);
             inputUser = scan.nextLine();
@@ -180,7 +184,8 @@ public abstract class Game2 extends Games{
 
     /**
      * This method is only required to test the validity of input player for game 2. The method is called within the method {@link #codeInputUser()}
-     * @param inputUser Code entered by the player
+     *
+     * @param inputUser    Code entered by the player
      * @param nbVariations Number of values that each digit can possibly take. Only required for game 2
      * @return true or false
      */
@@ -189,7 +194,7 @@ public abstract class Game2 extends Games{
         int k = 0;
         for (int j = 0; j < getNbDigits(); j++) {
             intArray[j] = Character.getNumericValue(inputUser.charAt(j));
-            if (intArray[j] > (nbVariations-1)) {
+            if (intArray[j] > (nbVariations - 1)) {
                 k--;
             }
         }

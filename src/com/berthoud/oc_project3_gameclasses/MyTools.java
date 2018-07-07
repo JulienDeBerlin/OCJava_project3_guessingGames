@@ -13,9 +13,13 @@ public class MyTools {
     public static boolean  isMyStringAnInt(String myString) {
         char[] tab = myString.toCharArray();
         int k = 0;
-        for (char carac : tab) {
-            if (!Character.isDigit(carac))
+        for (char c : tab) {
+            if (!Character.isDigit(c))
                 k--;
+        }
+
+        if (myString.equals("")) {
+            k--;
         }
         return k >= 0;
     }

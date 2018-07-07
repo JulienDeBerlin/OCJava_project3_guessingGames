@@ -7,7 +7,7 @@ import com.berthoud.oc_project3_menu.Main;
  * In this mode the player tries to break computer's code and the computer tries to break player's code, both game runs at the same time.
  * The first who breaks the other's code wins.
  */
-public class GameModeDuel{
+public class GameModeDuel {
 
 
 // _____________________________________________________________________________________________________________________
@@ -22,24 +22,26 @@ public class GameModeDuel{
 
     /**
      * Constructor (constructors are chained)
-     * @param nbDigits number of digits
+     *
+     * @param nbDigits   number of digits
      * @param maxGuesses max number of guesses allowed
      */
     public GameModeDuel(int nbDigits, int maxGuesses) {
-        this.gameA = new Game1ModeChallenger(nbDigits, maxGuesses);
-        this.gameB = new Game1ModeDefender(nbDigits, maxGuesses);
+        gameA = new Game1ModeChallenger(nbDigits, maxGuesses);
+        gameB = new Game1ModeDefender(nbDigits, maxGuesses);
     }
 
 
     /**
      * Constructor
-     * @param nbDigits number of digits of the code
-     * @param maxGuesses max number of guesses allowed
+     *
+     * @param nbDigits     number of digits of the code
+     * @param maxGuesses   max number of guesses allowed
      * @param nbVariations number of value possible for each digit. Min = 4 , Max = 10
      */
     public GameModeDuel(int nbDigits, int maxGuesses, int nbVariations) {
-        this.gameA = new Game2ModeChallenger(nbDigits, maxGuesses, nbVariations);
-        this.gameB = new Game2ModeDefender(nbDigits, maxGuesses, nbVariations);
+        gameA = new Game2ModeChallenger(nbDigits, maxGuesses, nbVariations);
+        gameB = new Game2ModeDefender(nbDigits, maxGuesses, nbVariations);
 
     }
 
@@ -54,9 +56,9 @@ public class GameModeDuel{
      */
     public void play() {
 
-        if(Main.getChoiceGame().equals("1")){
+        if (Main.getChoiceGame().equals("1")) {
             System.out.printf("%S", ">>>>> The +/- game, mode duel <<<<<\n");
-        }else{
+        } else {
             System.out.printf("%S", ">>>>> The digit Mastermind, mode duel <<<<<\n");
         }
 
@@ -80,13 +82,13 @@ public class GameModeDuel{
 
             // ModeDefender
 
-            if (gameB.getNbGuesses() ==1){
-                if(Main.getChoiceGame().equals("1")){
+            if (gameB.getNbGuesses() == 1) {
+                if (Main.getChoiceGame().equals("1")) {
                     System.out.print("To start with, choose the mystery code made of "
                             + gameA.getNbDigits() + " digits\nthat Superbrain will try to break ------------->  ");
-                }else{
+                } else {
                     System.out.print("To start with, choose the combination of \n"
-                            + gameA.getNbDigits() + " digits from 0 to "+ (gameA.getNbVariations()-1)+ " that Superbrain will try to break: ");
+                            + gameA.getNbDigits() + " digits from 0 to " + (gameA.getNbVariations() - 1) + " that Superbrain will try to break: ");
                 }
 
                 gameB.setCodeToBeFound(gameB.codeInputUser());
@@ -94,7 +96,7 @@ public class GameModeDuel{
             }
 
             MyTools.makeABreak(300);
-           gameB.guessValidationUnit();
+            gameB.guessValidationUnit();
         }
 
         messageEndOfTheGame();
@@ -103,7 +105,6 @@ public class GameModeDuel{
         gameA.setCodeFound(false);
         gameB.setNbGuesses(1);
         gameA.setNbGuesses(1);
-
 
 
         gameA.endingMenu();
@@ -119,11 +120,11 @@ public class GameModeDuel{
             System.out.printf("%S", "Dead heat!");
         }
 
-        if ((gameA.isCodeFound()) && (!gameB.isCodeFound())){
+        if ((gameA.isCodeFound()) && (!gameB.isCodeFound())) {
             System.out.printf("%S", "You won!");
         }
 
-        if ((!gameA.isCodeFound()) && (gameB.isCodeFound())){
+        if ((!gameA.isCodeFound()) && (gameB.isCodeFound())) {
             System.out.printf("%S", "Superbrain won!");
         }
 

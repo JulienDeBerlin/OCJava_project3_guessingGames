@@ -2,9 +2,9 @@ package com.berthoud.oc_project3_gameclasses;
 
 
 /**
- *  Abstract class for "Game +/- ". It contains all the instance fields and methods required for all modes of Game1
+ * Abstract class for "Game +/- ". It contains all the instance fields and methods required for all modes of Game1
  */
-public abstract class Game1 extends Games{
+public abstract class Game1 extends Games {
 
 
 // _____________________________________________________________________________________________________________________
@@ -12,7 +12,8 @@ public abstract class Game1 extends Games{
 
     /**
      * Constructor (constructors are chained)
-     * @param nbDigits number of digits
+     *
+     * @param nbDigits   number of digits
      * @param maxGuesses max number of guesses allowed
      */
     protected Game1(int nbDigits, int maxGuesses) {
@@ -20,15 +21,15 @@ public abstract class Game1 extends Games{
     }
 
 
-
 // _____________________________________________________________________________________________________________________
     //METHODS (SHARED BY ALL MODES)//
 
 
     /**
-     *This methods compares codeTobeFound to codeProposal and return a +/- validation code
+     * This methods compares codeTobeFound to codeProposal and return a +/- validation code
+     *
      * @param codeToBeFound the mystery code
-     * @param codeProposal the code attempt made by the challenger
+     * @param codeProposal  the code attempt made by the challenger
      * @return +/- validation code
      */
     protected String[] validation(int[] codeToBeFound, int[] codeProposal) {
@@ -54,6 +55,7 @@ public abstract class Game1 extends Games{
 
     /**
      * This methods generates a random code made of X digits, X being equal to value of {@link #nbDigits}
+     *
      * @return the random code
      */
     @Override
@@ -69,33 +71,34 @@ public abstract class Game1 extends Games{
     /**
      * This method inputs the code entered by the player on the keyboard, tests that the code is only made of digits
      * and that the length of the input is identical to the value of instance field {@link #nbDigits} and returns the valid code.
+     *
      * @return a code entered by the player made of X digits, X being equal to value of {@link #nbDigits}
      */
     @Override
     protected int[] codeInputUser() {
-            String inputUser = scan.nextLine();
+        String inputUser = scan.nextLine();
 
-            while ((inputUser.length() != getNbDigits()) || (!MyTools.isMyStringAnInt(inputUser))) {
-                System.out.println("What do you mean? Please enter a combination of " + getNbDigits() + " digits.");
-                inputUser = scan.nextLine();
-            }
+        while ((inputUser.length() != getNbDigits()) || (!MyTools.isMyStringAnInt(inputUser))) {
+            System.out.println("What do you mean? Please enter a combination of " + getNbDigits() + " digits.");
+            inputUser = scan.nextLine();
+        }
 
-            // Conversion String into int array
-            int[] codeInputUser = new int[getNbDigits()];
-            for (int j = 0; j < getNbDigits(); j++) {
-                codeInputUser[j] = Character.getNumericValue(inputUser.charAt(j));
-            }
-            return codeInputUser;
+        // Conversion String into int array
+        int[] codeInputUser = new int[getNbDigits()];
+        for (int j = 0; j < getNbDigits(); j++) {
+            codeInputUser[j] = Character.getNumericValue(inputUser.charAt(j));
+        }
+        return codeInputUser;
 
     }
 
 
     /**
      * This method sets the instance field {@link #isCodeFound} to true if the validation code is only made of = signs
-      * @param validation
-     *          the ouput of the method {@link #validation(int[], int[])}
+     *
+     * @param validation the ouput of the method {@link #validation(int[], int[])}
      */
-    void testIsCodeFound(String [] validation) {
+    void testIsCodeFound(String[] validation) {
         int k = 0;
         for (String elementValidation : validation) {
             if ((elementValidation.equals(">")) || (elementValidation.equals("<"))) {
@@ -103,7 +106,7 @@ public abstract class Game1 extends Games{
             }
         }
         if (k == 0) {
-           setCodeFound(true);
+            setCodeFound(true);
         }
 
     }
