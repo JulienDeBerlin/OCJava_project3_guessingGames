@@ -69,10 +69,7 @@ public class Main {
      *             through the config.properties file.
      */
     public static void main(String[] args) {
-
-        String test = "";
-        System.out.println(MyTools.isMyStringAnInt(test));
-
+        
         try {
             Properties p = new Properties();
             InputStream inputStream = new FileInputStream("config.properties");
