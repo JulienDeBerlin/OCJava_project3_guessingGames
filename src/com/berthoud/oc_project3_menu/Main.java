@@ -2,10 +2,14 @@ package com.berthoud.oc_project3_menu;
 
 import com.berthoud.oc_project3_gameclasses.*;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
 import java.util.Scanner;
+
 
 /**
  * This program implements two guessing games: Game 1 (+/-) and Game 2 (Mastermind). Each game can be played in 3 modes
@@ -32,13 +36,16 @@ public class Main {
 
     /**
      * All games can be executed in a mode developer, in which the code to be found is displayed. It makes possible to check
-     * if everything works properly. This mode can be activated through the confi properties file or by entering the parameter "dev"
+     * if everything works properly. This mode can be activated through the config properties file or by entering the parameter "dev"
      * in the command line
      */
     private static boolean devMode = false;
 
     private static String choiceGame;
     private static String choiceMode;
+
+    static final Logger logger = LogManager.getLogger();
+
 
 
 // _____________________________________________________________________________________________________________________
@@ -69,7 +76,7 @@ public class Main {
      *             through the config.properties file.
      */
     public static void main(String[] args) {
-        
+
         try {
             Properties p = new Properties();
             InputStream inputStream = new FileInputStream("config.properties");
@@ -91,7 +98,7 @@ public class Main {
                 maxGuessesGame2 = Integer.parseInt(p.getProperty("maxGuessesGame2"));
             }
 
-            if (Integer.parseInt(p.getProperty("nbVariationsGame2")) > 4 && (Integer.parseInt(p.getProperty("nbVariationsGame2")) < 11)) {
+            if (Integer.parseInt(p.getProperty("nbVariationsGame2")) > 3 && (Integer.parseInt(p.getProperty("nbVariationsGame2")) < 11)) {
                 nbVariationsGame2 = Integer.parseInt(p.getProperty("nbVariationsGame2"));
             }
 
@@ -102,7 +109,8 @@ public class Main {
             }
 
         } catch (Exception e) {
-            // do not display anything. If an exception is thrown, the game will run with the default field values.
+            System.out.println("The config properties file is missing or can not be imported correctly. " +
+                    "The program will be executed with the default parameters.\n\n");
         }
 
         // Activation of the developer mode through the command line
@@ -116,6 +124,8 @@ public class Main {
         }
 
         menu();
+
+        startTheGame(choiceGame, choiceMode);
 
     }
 
@@ -162,7 +172,6 @@ public class Main {
 
         System.out.println("\n");
 
-        startTheGame(choiceGame, choiceMode);
 
     }
 

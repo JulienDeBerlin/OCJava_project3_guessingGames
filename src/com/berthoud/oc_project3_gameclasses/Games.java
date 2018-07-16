@@ -46,7 +46,7 @@ public abstract class Games {
 
 
     /**
-     * is true when  the mystery code has been broken by the challenger
+     * is true when the mystery code has been broken by the challenger
      */
     private boolean codeFound = false;
 
