@@ -1,0 +1,56 @@
+2018-07-28 13:17:05.730 [main] INFO  com.berthoud.oc_project3_menu.Main - config file loaded
+2018-07-28 13:17:05.732 [main] INFO  com.berthoud.oc_project3_menu.Main - Developer mode activated through config file
+2018-07-28 13:17:08.799 [main] DEBUG com.berthoud.oc_project3_menu.Main - choiceGame = 1
+2018-07-28 13:17:09.303 [main] DEBUG com.berthoud.oc_project3_menu.Main - choiceMode = 2
+2018-07-28 13:17:09.305 [main] TRACE com.berthoud.oc_project3_menu.Main - Entering play()
+2018-07-28 13:17:19.953 [main] DEBUG com.berthoud.oc_project3_menu.Main - User input: 9999
+2018-07-28 13:17:19.953 [main] TRACE com.berthoud.oc_project3_menu.Main - Entering guessValidationUnit()
+2018-07-28 13:17:19.954 [main] DEBUG com.berthoud.oc_project3_menu.Main - random code = [4, 6, 0, 4]
+2018-07-28 13:17:19.954 [main] TRACE com.berthoud.oc_project3_menu.Main - Entering inputValidation()
+2018-07-28 13:17:25.352 [main] DEBUG com.berthoud.oc_project3_menu.Main - Validation code = >>>>
+2018-07-28 13:17:25.353 [main] TRACE com.berthoud.oc_project3_menu.Main - Entering validation()
+2018-07-28 13:17:25.353 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:25.353 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:25.353 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:25.353 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:25.354 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:25.354 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:25.354 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:25.354 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:25.354 [main] TRACE com.berthoud.oc_project3_menu.Main - Entering guessValidationUnit()
+2018-07-28 13:17:25.354 [main] TRACE com.berthoud.oc_project3_menu.Main - Entering inputValidation()
+2018-07-28 13:17:27.128 [main] DEBUG com.berthoud.oc_project3_menu.Main - Validation code = >>>>
+2018-07-28 13:17:27.128 [main] TRACE com.berthoud.oc_project3_menu.Main - Entering validation()
+2018-07-28 13:17:27.129 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:27.129 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:27.129 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:27.129 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:27.129 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:27.129 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:27.129 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:27.130 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:27.130 [main] TRACE com.berthoud.oc_project3_menu.Main - Entering guessValidationUnit()
+2018-07-28 13:17:27.130 [main] TRACE com.berthoud.oc_project3_menu.Main - Entering inputValidation()
+2018-07-28 13:17:31.073 [main] DEBUG com.berthoud.oc_project3_menu.Main - Validation code = >=>>
+2018-07-28 13:17:31.073 [main] TRACE com.berthoud.oc_project3_menu.Main - Entering validation()
+2018-07-28 13:17:31.073 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:31.073 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:31.073 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:31.074 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:31.074 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:31.074 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:31.074 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:31.075 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:31.075 [main] TRACE com.berthoud.oc_project3_menu.Main - Entering guessValidationUnit()
+2018-07-28 13:17:31.075 [main] TRACE com.berthoud.oc_project3_menu.Main - Entering inputValidation()
+2018-07-28 13:17:34.072 [main] DEBUG com.berthoud.oc_project3_menu.Main - Validation code = ==>=
+2018-07-28 13:17:34.073 [main] TRACE com.berthoud.oc_project3_menu.Main - Entering validation()
+2018-07-28 13:17:34.073 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:34.073 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:34.073 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:34.073 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:34.073 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:34.073 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:34.073 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeTobeFound = 4
+2018-07-28 13:17:34.074 [main] DEBUG com.berthoud.oc_project3_menu.Main - length codeProposal = 4
+2018-07-28 13:17:36.640 [main] DEBUG com.berthoud.oc_project3_menu.Main - Choice @end of the game=3
