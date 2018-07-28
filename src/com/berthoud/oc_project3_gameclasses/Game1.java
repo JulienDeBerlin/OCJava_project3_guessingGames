@@ -38,6 +38,8 @@ public abstract class Game1 extends Games {
      * @return +/- validation code
      */
     protected String[] validation(int[] codeToBeFound, int[] codeProposal) {
+        Main.logger.trace("Entering validation()");
+
         if ((codeToBeFound.length) != (codeProposal.length)) {
             System.out.println("Input arrays must have same length!");
             return null;
@@ -45,6 +47,9 @@ public abstract class Game1 extends Games {
         } else {
             String[] validation = new String[getNbDigits()];
             for (int i = 0; i < getNbDigits(); i++) {
+                Main.logger.debug("length codeTobeFound = " + getCodeToBeFound().length);
+                Main.logger.debug("length codeProposal = " + getCodeProposal().length);
+
                 if (codeToBeFound[i] > codeProposal[i]) {
                     validation[i] = ">";
                 } else if (codeToBeFound[i] < codeProposal[i]) {

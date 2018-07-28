@@ -22,6 +22,10 @@ public class Game1ModeDefender extends Game1 {
     // Same happens if I replace it by initRangeCodeToBeFound(). Why?
     // UPDATE 17.17.18: initialisation has to happen somewhere, or in the declaration or in the method initRangeCodeToBeFound()
 
+
+    private String[] validationByComputerStringArray;
+
+
 // _____________________________________________________________________________________________________________________
     //CONSTRUCTORS//
 
@@ -50,6 +54,7 @@ public class Game1ModeDefender extends Game1 {
      */
     @Override
     public void play() {
+        Main.logger.trace("Entering play()");
 
         setNbGuesses(1);
         setCodeFound(false);
@@ -87,13 +92,15 @@ public class Game1ModeDefender extends Game1 {
      */
     @Override
     public void guessValidationUnit() {
+        Main.logger.trace("Entering guessValidationUnit()");
         if (getNbGuesses() == 1) {
             setCodeProposal(randomCodeGenerator()); //1st answer of computer is random
         }
 
         displayProposalComputer(getCodeProposal());
 
-        inputValidationAndAnswerComputer();
+        inputValidation();
+        setNewProposal();
 
     }
 
@@ -138,8 +145,8 @@ public class Game1ModeDefender extends Game1 {
      * @see #updateRangeCodeToBeFound(int[][], int[], String[])
      * @see #newProposal(int[][], int[], String[])
      */
-    private void inputValidationAndAnswerComputer() {
-
+    private void inputValidation() {
+        Main.logger.trace("Entering inputValidation()");
 
         // PART 1: INPUT AND TEST
 
@@ -149,8 +156,7 @@ public class Game1ModeDefender extends Game1 {
         Main.logger.debug("Validation code = " + validationByUser);
         System.out.print("\n");
 
-        String[] validationByComputerStringArray = validation(getCodeToBeFound(), getCodeProposal());
-
+        validationByComputerStringArray = validation(getCodeToBeFound(), getCodeProposal());
         String validationByComputer = validationByComputerStringArray[0];
         for (int j = 1; j < getNbDigits(); j++) {
             validationByComputer += validationByComputerStringArray[j];
@@ -165,16 +171,21 @@ public class Game1ModeDefender extends Game1 {
             System.out.print("\n");
         }
 
+    }
+
         // PART 2: NEW GUESS
 
-        rangeCodeToBeFound = updateRangeCodeToBeFound(rangeCodeToBeFound, getCodeProposal(), validationByComputerStringArray);
+        private void setNewProposal() {
 
-        setCodeProposal(newProposal(rangeCodeToBeFound, getCodeProposal(), validationByComputerStringArray));
 
-        //   Conditions to exit the loop
-        testIsCodeFound(validationByComputerStringArray);
-        setNbGuesses(getNbGuesses() + 1);
+            rangeCodeToBeFound = updateRangeCodeToBeFound(rangeCodeToBeFound, getCodeProposal(), validationByComputerStringArray);
 
+            setCodeProposal(newProposal(rangeCodeToBeFound, getCodeProposal(), validationByComputerStringArray));
+
+            //   Conditions to exit the loop
+            testIsCodeFound(validationByComputerStringArray);
+            setNbGuesses(getNbGuesses() + 1);
+        }
 
         // HELP! I TRIED TO SPLIT THIS METHOD IN 2 METHODS (PART 1 AND PART 2), BUT THEN IT DIDN'T WORK ANYMORE. CAN'T UNDERSTAND WHY!
        /*
@@ -182,7 +193,7 @@ public class Game1ModeDefender extends Game1 {
        Why is "returns validationByComputerStringArray" different than "return super.validation(getCodeToBeFound(), getCodeProposal())"
         */
 
-    }
+
 
 
     /**
