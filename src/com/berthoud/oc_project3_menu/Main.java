@@ -201,7 +201,7 @@ public class Main {
         Properties p = new Properties();
 
         try {
-            InputStream inputStream = ClassLoader.getSystemResourceAsStream("config/config.properties");
+            InputStream inputStream = ClassLoader.getSystemResourceAsStream("config.properties");
             p.load(inputStream);
 
             if (Integer.parseInt(p.getProperty("nbDigitsGame1")) > 0) {
