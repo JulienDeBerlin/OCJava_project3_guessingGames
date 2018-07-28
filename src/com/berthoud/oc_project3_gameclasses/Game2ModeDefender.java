@@ -1,5 +1,5 @@
 package com.berthoud.oc_project3_gameclasses;
-
+import com.berthoud.oc_project3_menu.Main;
 
 import java.util.Arrays;
 
@@ -8,6 +8,8 @@ import java.util.Arrays;
  * The program Game2ModeDefender implements the Mastermind in the mode defender: the computer tries to break the player's code
  */
 public class Game2ModeDefender extends Game2 {
+
+
 
     /**
      * This field is required for the AI part. This byte array stores all the combinations possible
@@ -132,35 +134,54 @@ public class Game2ModeDefender extends Game2 {
         //*******************
         System.out.print("Enter the number of digits found = ");
         String digitsFoundPlayerString = scan.nextLine();
+        Main.logger.debug("Input user: number of digits found = "+ digitsFoundPlayerString);
 
         while (!MyTools.isMyStringAnInt(digitsFoundPlayerString)) {
             System.out.println("Oops, wrong entry. Enter again the number of digits found:");
+            Main.logger.debug("Entry not valid.");
+
             digitsFoundPlayerString = scan.nextLine();
+            Main.logger.debug("New input user: number of digits found = "+ digitsFoundPlayerString);
+
         }
 
         int digitsFoundPlayerInt = Integer.parseInt(digitsFoundPlayerString);
 
         while (digitsFoundPlayerInt != validationComputer[0]) {
             System.out.println("Oops, wrong entry. Enter again the number of digits found:");
+            Main.logger.debug("Entry not valid.");
+
             digitsFoundPlayerInt = scan.nextInt();
             scan.nextLine();
+            Main.logger.debug("New input user: number of digits found = "+ digitsFoundPlayerString);
+
         }
 
         //********************
         System.out.print("Enter the number of digits present = ");
         String digitsPresentPlayerString = scan.nextLine();
+        Main.logger.debug("Input user: number of digits present = "+ digitsPresentPlayerString);
+
 
         while (!MyTools.isMyStringAnInt(digitsPresentPlayerString)) {
             System.out.println("Oops, wrong entry. Enter again the number of digits present:");
+            Main.logger.debug("Entry not valid.");
+
             digitsPresentPlayerString = scan.nextLine();
+            Main.logger.debug("New input user: number of digits present = "+ digitsPresentPlayerString);
+
         }
 
         int digitsPresentPlayerInt = Integer.parseInt(digitsPresentPlayerString);
 
         while (digitsPresentPlayerInt != validationComputer[1]) {
             System.out.println("Oops, wrong entry. Enter again the number of digits present:");
+            Main.logger.debug("Entry not valid.");
+
             digitsPresentPlayerInt = scan.nextInt();
             scan.nextLine();
+            Main.logger.debug("New input user: number of digits present = "+ digitsPresentPlayerString);
+
         }
 
         System.out.println();

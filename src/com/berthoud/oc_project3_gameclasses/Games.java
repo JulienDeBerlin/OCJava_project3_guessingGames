@@ -2,6 +2,7 @@ package com.berthoud.oc_project3_gameclasses;
 
 import com.berthoud.oc_project3_menu.Main;
 
+
 import java.util.Scanner;
 
 /**
@@ -9,6 +10,7 @@ import java.util.Scanner;
  * It contains all the instance fields and methods shared by both games
  */
 public abstract class Games {
+
 
 // _____________________________________________________________________________________________________________________
     //INSTANCE FIELDS//
@@ -182,12 +184,16 @@ public abstract class Games {
         System.out.printf("\n\n%s\n%s\n%s\n%s\n\n%s", "Do you want to: ", "1: play again this game?", "2: come back to the game menu?",
                 "3: stop loosing your time playing?", "Enter your selection: ");
         String selectorEnding = scan.nextLine();
+        Main.logger.debug("Choice @end of the game=" + selectorEnding);
         System.out.println("\n");
 
 
         while ((!selectorEnding.equals("1") && !selectorEnding.equals("2") && !selectorEnding.equals("3"))) {
             System.out.print("What do you mean? Select 1, 2 or 3: ");
+            Main.logger.debug("Entry not valid.");
             selectorEnding = scan.nextLine();
+            Main.logger.debug("New choice @end of the game=" + selectorEnding);
+
         }
 
         switch (selectorEnding) {
@@ -196,6 +202,7 @@ public abstract class Games {
                 break;
             case "2":
                 Main.menu();
+                Main.startTheGame(Main.getChoiceGame(), Main.getChoiceMode());
                 break;
             case "3":
                 System.out.println("Bye bye, hope to see you soon!");

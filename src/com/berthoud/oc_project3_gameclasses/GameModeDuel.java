@@ -2,6 +2,8 @@ package com.berthoud.oc_project3_gameclasses;
 
 import com.berthoud.oc_project3_menu.Main;
 
+
+
 /**
  * The program GameModeDuel makes possible to play either the " + / - game" or the digit Mastermind in a duel mode.
  * In this mode the player tries to break computer's code and the computer tries to break player's code, both game runs at the same time.
@@ -125,9 +127,12 @@ public class GameModeDuel {
         }
 
         if ((!gameA.isCodeFound()) && (gameB.isCodeFound())) {
-            System.out.printf("%S", "Superbrain won!");
-        }
+            System.out.printf("%S", "Superbrain won! The secret code was: ");
+            for (int digit : gameA.getCodeToBeFound()) {
+                System.out.print(digit + " ");
+            }
 
+        }
     }
 }
 

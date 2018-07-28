@@ -1,10 +1,13 @@
 package com.berthoud.oc_project3_gameclasses;
 
+
 /**
  * The program Game1ModeChallenger implements the first game (+/-) in the mode challenger: the user tries to break the computer's code
  */
 
 public class Game1ModeChallenger extends Game1 {
+
+
 
 // _____________________________________________________________________________________________________________________
     //CONSTRUCTORS//
@@ -60,7 +63,7 @@ public class Game1ModeChallenger extends Game1 {
 
     /**
      * This method displays the result of the game at the end of the game.
-     * TThe implementation is different for each game and mode.
+     * The implementation is different for each game and mode.
      */
     @Override
     protected void messageEndOfTheGame() {

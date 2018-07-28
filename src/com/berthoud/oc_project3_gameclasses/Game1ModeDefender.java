@@ -1,6 +1,8 @@
 package com.berthoud.oc_project3_gameclasses;
 
 
+import com.berthoud.oc_project3_menu.Main;
+
 /**
  * The program Game1ModeDefender implements the first game (+/-) in the mode defender: the user chooses a code and the
  * computer tries to break it
@@ -8,15 +10,17 @@ package com.berthoud.oc_project3_gameclasses;
 
 public class Game1ModeDefender extends Game1 {
 
+
 // _____________________________________________________________________________________________________________________
     //INSTANCE FIELDS//
     /**
      * This field is need for the AI part of the program. It refers to the min and max possible value of each digit of the
      * {@link #codeToBeFound}
      */
-    private int[][] rangeCodeToBeFound = new int[2][getNbDigits()];// Array 1 = minValue, Array 2 = maxValue
+    private int[][] rangeCodeToBeFound ;// Array 1 = minValue, Array 2 = maxValue
     // Although the second part of the declaration is meant to be redundant by the IDE, the program throws a NullPointerException if I suppress it.
-    // Same happens if I replace it by initRangeCodeToBeFound().  Why?
+    // Same happens if I replace it by initRangeCodeToBeFound(). Why?
+    // UPDATE 17.17.18: initialisation has to happen somewhere, or in the declaration or in the method initRangeCodeToBeFound()
 
 // _____________________________________________________________________________________________________________________
     //CONSTRUCTORS//
@@ -29,7 +33,7 @@ public class Game1ModeDefender extends Game1 {
      */
     public Game1ModeDefender(int nbDigits, int maxGuesses) {
         super(nbDigits, maxGuesses);
-        rangeCodeToBeFound = initRangeCodeToBeFound();
+        this.rangeCodeToBeFound = initRangeCodeToBeFound();
     }
 
 // _____________________________________________________________________________________________________________________
@@ -104,11 +108,13 @@ public class Game1ModeDefender extends Game1 {
      * @see Game1ModeDefender#rangeCodeToBeFound   = X
      */
     private int[][] initRangeCodeToBeFound() {
+        int [] [] rangeCodeToBeFound = new int[2][getNbDigits()];
         for (int x = 0; x < getNbDigits(); x++) {
             rangeCodeToBeFound[0][x] = 0;
             rangeCodeToBeFound[1][x] = 9;
         }
         return rangeCodeToBeFound;
+
     }
 
 
@@ -140,6 +146,7 @@ public class Game1ModeDefender extends Game1 {
         System.out.print("Enter the validation code (<, >, =): ---------->  ");
 
         String validationByUser = scan.nextLine();
+        Main.logger.debug("Validation code = " + validationByUser);
         System.out.print("\n");
 
         String[] validationByComputerStringArray = validation(getCodeToBeFound(), getCodeProposal());
@@ -151,7 +158,10 @@ public class Game1ModeDefender extends Game1 {
 
         while (!validationByUser.equals(validationByComputer)) {
             System.out.println("Oops!... it looks like the validation code is wrong. Enter it again: ");
+            Main.logger.debug("Entry not valid.");
             validationByUser = scan.nextLine();
+            Main.logger.debug("New validation code = " + validationByUser);
+
             System.out.print("\n");
         }
 

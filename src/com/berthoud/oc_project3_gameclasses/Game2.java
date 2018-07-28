@@ -1,5 +1,7 @@
 package com.berthoud.oc_project3_gameclasses;
 
+import com.berthoud.oc_project3_menu.Main;
+
 import java.util.Arrays;
 
 
@@ -7,6 +9,8 @@ import java.util.Arrays;
  * Abstract class for Mastermind. It contains all the instance fields and methods required for all modes of Game2
  */
 public abstract class Game2 extends Games {
+
+
 
 // _____________________________________________________________________________________________________________________
     //INSTANCE FIELDS//
@@ -165,11 +169,14 @@ public abstract class Game2 extends Games {
     protected int[] codeInputUser() {
 
         String inputUser = scan.nextLine();
+        Main.logger.debug("Input user= " + inputUser);
 
         while ((inputUser.length() != getNbDigits()) || (!MyTools.isMyStringAnInt(inputUser)) || (!inputInsideRange(inputUser, getNbVariations()))) {
             int k = getNbVariations() - 1;
             System.out.println("What do you mean? Please enter a combination of " + getNbDigits() + " digits from 0 to " + k);
+            Main.logger.debug("Entry not valid.");
             inputUser = scan.nextLine();
+            Main.logger.debug("New input use= " + inputUser);
 
         }
 

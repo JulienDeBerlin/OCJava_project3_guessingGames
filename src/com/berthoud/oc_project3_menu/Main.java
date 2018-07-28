@@ -5,7 +5,6 @@ import com.berthoud.oc_project3_gameclasses.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
 import java.util.Scanner;
@@ -26,6 +25,7 @@ import java.util.Scanner;
  * @see Game2ModeDefender
  */
 public class Main {
+    public static Logger logger = LogManager.getLogger();
 
     // Default game parameters in case the configuration through the config.properties file doesn't work.
     private static int nbDigitsGame1 = 4;
@@ -43,9 +43,6 @@ public class Main {
 
     private static String choiceGame;
     private static String choiceMode;
-
-    static final Logger logger = LogManager.getLogger();
-
 
 
 // _____________________________________________________________________________________________________________________
@@ -77,51 +74,19 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        try {
-            Properties p = new Properties();
-            InputStream inputStream = new FileInputStream("config.properties");
-            p.load(inputStream);
-
-            if (Integer.parseInt(p.getProperty("nbDigitsGame1")) > 0) {
-                nbDigitsGame1 = Integer.parseInt(p.getProperty("nbDigitsGame1"));
-            }
-
-            if (Integer.parseInt(p.getProperty("maxGuessesGame1")) > 0) {
-                maxGuessesGame1 = Integer.parseInt(p.getProperty("maxGuessesGame1"));
-            }
-
-            if (Integer.parseInt(p.getProperty("nbDigitsGame2")) > 0) {
-                nbDigitsGame2 = Integer.parseInt(p.getProperty("nbDigitsGame2"));
-            }
-
-            if (Integer.parseInt(p.getProperty("maxGuessesGame2")) > 0) {
-                maxGuessesGame2 = Integer.parseInt(p.getProperty("maxGuessesGame2"));
-            }
-
-            if (Integer.parseInt(p.getProperty("nbVariationsGame2")) > 3 && (Integer.parseInt(p.getProperty("nbVariationsGame2")) < 11)) {
-                nbVariationsGame2 = Integer.parseInt(p.getProperty("nbVariationsGame2"));
-            }
-
-
-            // Activation of the developer mode through the config.properties file
-            if (p.getProperty("devMode").equals("Y")) {
-                devMode = true;
-            }
-
-        } catch (Exception e) {
-            System.out.println("The config properties file is missing or can not be imported correctly. " +
-                    "The program will be executed with the default parameters.\n\n");
-        }
 
         // Activation of the developer mode through the command line
         if (args.length > 0) {
             for (String arg : args) {
                 if (arg.equals("dev")) {
                     devMode = true;
+                    logger.info("Developer mode activated through command line");
                     break;
                 }
             }
         }
+
+        loadConfig();
 
         menu();
 
@@ -150,10 +115,13 @@ public class Main {
                 "Enter your selection: ");
         Scanner scanner = new Scanner(System.in);
         choiceGame = scanner.nextLine();
+        logger.debug("choiceGame = " + choiceGame);
 
         while (!choiceGame.equals("1") && !choiceGame.equals("2")) {
             System.out.print("What do you mean? Please enter 1 or 2: ");
+            logger.debug("Entry not valid.");
             choiceGame = scanner.nextLine();
+            logger.debug("New entry = "+ choiceGame);
         }
 
 
@@ -164,10 +132,14 @@ public class Main {
                 "Enter your selection: ");
 
         choiceMode = scanner.nextLine();
+        logger.debug("choiceMode = " + choiceMode);
 
         while (!choiceMode.equals("1") && !choiceMode.equals("2") && !choiceMode.equals("3")) {
             System.out.print("What do you mean? Please enter 1, 2 or 3: ");
+            logger.debug("Entry not valid.");
             choiceMode = scanner.nextLine();
+            logger.debug("New entry = "+ choiceMode);
+
         }
 
         System.out.println("\n");
@@ -219,6 +191,55 @@ public class Main {
 
 
         }
+    }
+
+    /**
+     * This method loads the config file
+     */
+    public static void loadConfig(){
+
+        Properties p = new Properties();
+
+        try {
+            InputStream inputStream = ClassLoader.getSystemResourceAsStream("config/config.properties");
+            p.load(inputStream);
+
+            if (Integer.parseInt(p.getProperty("nbDigitsGame1")) > 0) {
+                nbDigitsGame1 = Integer.parseInt(p.getProperty("nbDigitsGame1"));
+            }
+
+            if (Integer.parseInt(p.getProperty("maxGuessesGame1")) > 0) {
+                maxGuessesGame1 = Integer.parseInt(p.getProperty("maxGuessesGame1"));
+            }
+
+            if (Integer.parseInt(p.getProperty("nbDigitsGame2")) > 0) {
+                nbDigitsGame2 = Integer.parseInt(p.getProperty("nbDigitsGame2"));
+            }
+
+            if (Integer.parseInt(p.getProperty("maxGuessesGame2")) > 0) {
+                maxGuessesGame2 = Integer.parseInt(p.getProperty("maxGuessesGame2"));
+            }
+
+            if (Integer.parseInt(p.getProperty("nbVariationsGame2")) > 3 && (Integer.parseInt(p.getProperty("nbVariationsGame2")) < 11)) {
+                nbVariationsGame2 = Integer.parseInt(p.getProperty("nbVariationsGame2"));
+            }
+
+            logger.info("config file loaded");
+
+            // Activation of the developer mode through the config.properties file
+            if (p.getProperty("devMode").equals("Y")) {
+                devMode = true;
+                logger.info("Developer mode activated through config file");
+            }
+
+
+        } catch (Exception e) {
+            System.out.println("The config properties file is missing or can not be imported correctly. " +
+                    "The program will be executed with the default parameters.\n\n");
+            logger.error("Error, config file is missing.", e);
+        }
+
+
     }
 
 

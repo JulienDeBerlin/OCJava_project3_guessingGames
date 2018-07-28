@@ -1,6 +1,11 @@
 package com.berthoud.oc_project3_gameclasses;
 
 
+import com.berthoud.oc_project3_menu.Main;
+
+import java.util.Arrays;
+
+
 /**
  * Abstract class for "Game +/- ". It contains all the instance fields and methods required for all modes of Game1
  */
@@ -64,6 +69,8 @@ public abstract class Game1 extends Games {
         for (int i = 0; i < getNbDigits(); i++) {
             randomCode[i] = (int) (10 * Math.random());
         }
+
+        Main.logger.debug("random code = " + Arrays.toString(randomCode));
         return randomCode;
     }
 
@@ -77,10 +84,13 @@ public abstract class Game1 extends Games {
     @Override
     protected int[] codeInputUser() {
         String inputUser = scan.nextLine();
+        Main.logger.debug("User input: " + inputUser);
 
         while ((inputUser.length() != getNbDigits()) || (!MyTools.isMyStringAnInt(inputUser))) {
             System.out.println("What do you mean? Please enter a combination of " + getNbDigits() + " digits.");
+            Main.logger.debug("Entry not valid.");
             inputUser = scan.nextLine();
+            Main.logger.debug("New user input: " + inputUser);
         }
 
         // Conversion String into int array

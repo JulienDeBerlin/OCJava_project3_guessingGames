@@ -1,10 +1,13 @@
 package com.berthoud.oc_project3_gameclasses;
 
 
+import com.berthoud.oc_project3_menu.Main;
+
 /**
  * The program Game2ModeChallenger implements the Mastermind in the mode challenger: the user tries to break the computer's code
  */
 public class Game2ModeChallenger extends Game2 {
+
 
 
 // _____________________________________________________________________________________________________________________
@@ -73,6 +76,7 @@ public class Game2ModeChallenger extends Game2 {
     protected void messageEndOfTheGame() {
         if (this.isCodeFound()) {
             System.out.print("Well done!!!! You found out the secret combination!");
+
         } else {
             System.out.print("Sorry, you didn't make it this time... The combination was: ");
             for (int digit : getCodeToBeFound()) {
