@@ -9,10 +9,6 @@
     <list default="true" id="4d7e7b1c-ae00-4eb5-925e-f451e435921a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OC_Java_Projet3_Berthoud.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OC_Java_Projet3_Berthoud.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/all.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ressources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ressources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log4j2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.class" afterDir="false" />
@@ -23,16 +19,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/GameModeDuel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/GameModeDuel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Games.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Games.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_menu/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_menu/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeDefender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeChallenger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDefender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/GameModeDuel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Games.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/MyTools.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/berthoud/oc_project3_menu/Main.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,20 +32,7 @@
     <favorites_list name="OC_Java_Projet3_Berthoud" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/berthoud/oc_project3_menu/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="203" column="94" selection-start-line="203" selection-start-column="94" selection-end-line="203" selection-end-column="94" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -158,63 +131,7 @@
             <path>
               <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
               <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
               <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="berthoud" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="berthoud" type="462c0819:PsiDirectoryNode" />
-              <item name="oc_project3_gameclasses" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="berthoud" type="462c0819:PsiDirectoryNode" />
-              <item name="oc_project3_menu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="ressources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -351,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530974373860</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Refactoring the project structure. Creation of 2 directories, both declared as source: src/main/java and src/main/ressources">
+      <created>1533134076559</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1533134076559</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -365,7 +289,7 @@
       <window_info anchor="right" id="Capture Analysis" order="2" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003579" side_tool="true" weight="0.29946524" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.4996421" weight="0.32689655" />
+      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.4996421" visible="true" weight="0.32689655" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32921812" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info id="Capture Tool" order="2" />
@@ -442,7 +366,8 @@
     <MESSAGE value="Menu + code Jeu1Mode1, 2, 3 cleaned" />
     <MESSAGE value="Everything ok - only translation required + logging" />
     <MESSAGE value="Everything ok - only logging still to be implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Everything ok - only logging still to be implemented" />
+    <MESSAGE value="Refactoring the project structure. Creation of 2 directories, both declared as source: src/main/java and src/main/ressources" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring the project structure. Creation of 2 directories, both declared as source: src/main/java and src/main/ressources" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
