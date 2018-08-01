@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: com.berthoud.oc_project3_menu.Main
-
