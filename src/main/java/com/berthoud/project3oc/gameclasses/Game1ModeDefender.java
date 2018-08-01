@@ -1,7 +1,7 @@
-package com.berthoud.oc_project3_gameclasses;
+package com.berthoud.project3oc.gameclasses;
 
 
-import com.berthoud.oc_project3_menu.Main;
+import com.berthoud.project3oc.menu.Main;
 
 /**
  * The program Game1ModeDefender implements the first game (+/-) in the mode defender: the user chooses a code and the

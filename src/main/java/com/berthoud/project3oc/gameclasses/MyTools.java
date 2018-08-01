@@ -1,4 +1,4 @@
-package com.berthoud.oc_project3_gameclasses;
+package com.berthoud.project3oc.gameclasses;
 
 /**
  * This class contains static methods that can be useful in different contexts beyond the 2 games

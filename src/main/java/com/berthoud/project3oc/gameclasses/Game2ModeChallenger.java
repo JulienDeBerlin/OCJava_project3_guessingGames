@@ -1,7 +1,5 @@
-package com.berthoud.oc_project3_gameclasses;
+package com.berthoud.project3oc.gameclasses;
 
-
-import com.berthoud.oc_project3_menu.Main;
 
 /**
  * The program Game2ModeChallenger implements the Mastermind in the mode challenger: the user tries to break the computer's code

@@ -1,6 +1,6 @@
-package com.berthoud.oc_project3_gameclasses;
+package com.berthoud.project3oc.gameclasses;
 
-import com.berthoud.oc_project3_menu.Main;
+import com.berthoud.project3oc.menu.Main;
 
 import java.util.Arrays;
 

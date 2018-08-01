@@ -1,4 +1,4 @@
-package com.berthoud.oc_project3_gameclasses;
+package com.berthoud.project3oc.gameclasses;
 
 
 /**
