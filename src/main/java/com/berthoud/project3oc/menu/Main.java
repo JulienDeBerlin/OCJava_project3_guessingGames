@@ -1,7 +1,5 @@
 package com.berthoud.project3oc.menu;
 
-import com.berthoud.oc_project3_gameclasses.*;
-
 import com.berthoud.project3oc.gameclasses.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

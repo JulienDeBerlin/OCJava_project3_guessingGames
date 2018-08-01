@@ -16,6 +16,7 @@ public class MyTools {
         for (char c : tab) {
             if (!Character.isDigit(c))
                 k--;
+            break;
         }
 
         if (myString.equals("")) {
