@@ -105,8 +105,8 @@ public class GameModeDuel {
 
         gameB.setCodeFound(false);
         gameA.setCodeFound(false);
-        gameB.setNbGuesses(1);
-        gameA.setNbGuesses(1);
+        gameB.resetNbGuesses();
+        gameA.resetNbGuesses();
 
 
         gameA.endingMenu();

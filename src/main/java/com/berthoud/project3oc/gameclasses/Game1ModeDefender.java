@@ -17,7 +17,7 @@ public class Game1ModeDefender extends Game1 {
      * This field is need for the AI part of the program. It refers to the min and max possible value of each digit of the
      * {@link #codeToBeFound}
      */
-    private int[][] rangeCodeToBeFound ;// Array 1 = minValue, Array 2 = maxValue
+    private int[][] rangeCodeToBeFound;// Array 1 = minValue, Array 2 = maxValue
     // Although the second part of the declaration is meant to be redundant by the IDE, the program throws a NullPointerException if I suppress it.
     // Same happens if I replace it by initRangeCodeToBeFound(). Why?
     // UPDATE 17.17.18: initialisation has to happen somewhere, or in the declaration or in the method initRangeCodeToBeFound()
@@ -51,7 +51,6 @@ public class Game1ModeDefender extends Game1 {
     @Override
     public void play() {
 
-        setNbGuesses(1);
         setCodeFound(false);
 
         System.out.printf("%S", ">>>>> The +/- game, mode defender <<<<<\n");
@@ -108,7 +107,7 @@ public class Game1ModeDefender extends Game1 {
      * @see Game1ModeDefender#rangeCodeToBeFound   = X
      */
     private int[][] initRangeCodeToBeFound() {
-        int [] [] rangeCodeToBeFound = new int[2][getNbDigits()];
+        int[][] rangeCodeToBeFound = new int[2][getNbDigits()];
         for (int x = 0; x < getNbDigits(); x++) {
             rangeCodeToBeFound[0][x] = 0;
             rangeCodeToBeFound[1][x] = 9;
@@ -173,8 +172,7 @@ public class Game1ModeDefender extends Game1 {
 
         //   Conditions to exit the loop
         testIsCodeFound(validationByComputerStringArray);
-        setNbGuesses(getNbGuesses() + 1);
-
+        incrementNbGuesses();
 
         // HELP! I TRIED TO SPLIT THIS METHOD IN 2 METHODS (PART 1 AND PART 2), BUT THEN IT DIDN'T WORK ANYMORE. CAN'T UNDERSTAND WHY!
        /*

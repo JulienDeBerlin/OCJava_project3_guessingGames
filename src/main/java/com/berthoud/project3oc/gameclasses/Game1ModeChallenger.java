@@ -33,7 +33,6 @@ public class Game1ModeChallenger extends Game1 {
     @Override
     public void play() {
 
-        setNbGuesses(1);
         setCodeFound(false);
 
         setCodeToBeFound(randomCodeGenerator());
@@ -96,7 +95,7 @@ public class Game1ModeChallenger extends Game1 {
         System.out.println("Validation -----------------------> " + MyTools.arrayToString(validation) + "\n");
 
         testIsCodeFound(validation);
-        setNbGuesses(getNbGuesses() + 1);
+        incrementNbGuesses();
 
     }
 }

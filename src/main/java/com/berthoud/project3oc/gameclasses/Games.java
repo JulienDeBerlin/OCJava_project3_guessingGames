@@ -2,7 +2,6 @@ package com.berthoud.project3oc.gameclasses;
 
 import com.berthoud.project3oc.menu.Main;
 
-
 import java.util.Scanner;
 
 /**
@@ -117,12 +116,9 @@ public abstract class Games {
         return nbVariations;
     }
 
+
     void setCodeFound(boolean codeFound) {
         this.codeFound = codeFound;
-    }
-
-    void setNbGuesses(int nbGuesses) {
-        this.nbGuesses = nbGuesses;
     }
 
     void setCodeToBeFound(int[] codeToBeFound) {
@@ -238,6 +234,20 @@ public abstract class Games {
         } else {
             System.out.print("How does it feel to defeat Superbrain? ");
         }
+    }
+
+    /**
+     * This method increments the instance variable {@link #nbGuesses}
+     */
+    void incrementNbGuesses() {
+        nbGuesses++;
+    }
+
+    /**
+     * This method resets the instance variable {@link #nbGuesses} to 1
+     */
+    void resetNbGuesses() {
+        nbGuesses = 1;
     }
 
 

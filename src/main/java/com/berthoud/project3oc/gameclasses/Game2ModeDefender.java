@@ -1,4 +1,5 @@
 package com.berthoud.project3oc.gameclasses;
+
 import com.berthoud.project3oc.menu.Main;
 
 import java.util.Arrays;
@@ -8,7 +9,6 @@ import java.util.Arrays;
  * The program Game2ModeDefender implements the Mastermind in the mode defender: the computer tries to break the player's code
  */
 public class Game2ModeDefender extends Game2 {
-
 
 
     /**
@@ -44,8 +44,6 @@ public class Game2ModeDefender extends Game2 {
     @Override
     public void play() {
 
-
-        setNbGuesses(1);
         setCodeFound(false);
 
         System.out.printf("%S", ">>>>> The digit Mastermind, mode defender <<<<<\n");
@@ -101,7 +99,7 @@ public class Game2ModeDefender extends Game2 {
             answerComputer();
         }
 
-        setNbGuesses(getNbGuesses() + 1);
+        incrementNbGuesses();
     }
 
 
@@ -134,14 +132,14 @@ public class Game2ModeDefender extends Game2 {
         //*******************
         System.out.print("Enter the number of digits found = ");
         String digitsFoundPlayerString = scan.nextLine();
-        Main.logger.debug("Input user: number of digits found = "+ digitsFoundPlayerString);
+        Main.logger.debug("Input user: number of digits found = " + digitsFoundPlayerString);
 
         while (!MyTools.isMyStringAnInt(digitsFoundPlayerString)) {
             System.out.println("Oops, wrong entry. Enter again the number of digits found:");
             Main.logger.debug("Entry not valid.");
 
             digitsFoundPlayerString = scan.nextLine();
-            Main.logger.debug("New input user: number of digits found = "+ digitsFoundPlayerString);
+            Main.logger.debug("New input user: number of digits found = " + digitsFoundPlayerString);
 
         }
 
@@ -153,14 +151,14 @@ public class Game2ModeDefender extends Game2 {
 
             digitsFoundPlayerInt = scan.nextInt();
             scan.nextLine();
-            Main.logger.debug("New input user: number of digits found = "+ digitsFoundPlayerString);
+            Main.logger.debug("New input user: number of digits found = " + digitsFoundPlayerString);
 
         }
 
         //********************
         System.out.print("Enter the number of digits present = ");
         String digitsPresentPlayerString = scan.nextLine();
-        Main.logger.debug("Input user: number of digits present = "+ digitsPresentPlayerString);
+        Main.logger.debug("Input user: number of digits present = " + digitsPresentPlayerString);
 
 
         while (!MyTools.isMyStringAnInt(digitsPresentPlayerString)) {
@@ -168,7 +166,7 @@ public class Game2ModeDefender extends Game2 {
             Main.logger.debug("Entry not valid.");
 
             digitsPresentPlayerString = scan.nextLine();
-            Main.logger.debug("New input user: number of digits present = "+ digitsPresentPlayerString);
+            Main.logger.debug("New input user: number of digits present = " + digitsPresentPlayerString);
 
         }
 
@@ -180,7 +178,7 @@ public class Game2ModeDefender extends Game2 {
 
             digitsPresentPlayerInt = scan.nextInt();
             scan.nextLine();
-            Main.logger.debug("New input user: number of digits present = "+ digitsPresentPlayerString);
+            Main.logger.debug("New input user: number of digits present = " + digitsPresentPlayerString);
 
         }
 
@@ -208,7 +206,6 @@ public class Game2ModeDefender extends Game2 {
      * of combination. To identify the combinations put aside the program overides their first digit with the value -1
      * <p>
      * 5. For the next guess, the program takes the first combination of the pool which do not start with -1
-     *
      */
     private void answerComputer() {
 

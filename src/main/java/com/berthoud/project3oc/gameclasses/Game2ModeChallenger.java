@@ -7,7 +7,6 @@ package com.berthoud.project3oc.gameclasses;
 public class Game2ModeChallenger extends Game2 {
 
 
-
 // _____________________________________________________________________________________________________________________
     //CONSTRUCTORS//
 
@@ -34,7 +33,6 @@ public class Game2ModeChallenger extends Game2 {
     @Override
     public void play() {
 
-        setNbGuesses(1);
         setCodeFound(false);
 
         setCodeToBeFound(randomCodeGenerator());
@@ -102,8 +100,7 @@ public class Game2ModeChallenger extends Game2 {
         System.out.println("--------------------------------->  " + getDigitsFound() + " digit(s) found and " + getDigitsPresent() + " digit(s) present\n");
 
         testIsCodeFound();
-        setNbGuesses(getNbGuesses() + 1);
-
+        incrementNbGuesses();
     }
 
 
