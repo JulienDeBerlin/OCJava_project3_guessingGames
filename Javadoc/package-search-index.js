@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"com.berthoud.oc_project3_gameclasses"},{"l":"com.berthoud.oc_project3_menu"}]
+packageSearchIndex = [{"l":"com.berthoud.project3oc.gameclasses"},{"l":"com.berthoud.project3oc.menu"}]
