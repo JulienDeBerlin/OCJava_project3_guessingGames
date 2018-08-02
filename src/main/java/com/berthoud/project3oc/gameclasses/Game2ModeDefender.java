@@ -1,7 +1,5 @@
 package com.berthoud.project3oc.gameclasses;
 
-import com.berthoud.project3oc.menu.Main;
-
 import java.util.Arrays;
 
 
@@ -92,7 +90,15 @@ public class Game2ModeDefender extends Game2 {
 
         displayProposalComputer(getCodeProposal());
 
-        inputValidation();
+        int[] validationComputer = validation(getCodeToBeFound(), getCodeProposal());
+
+        System.out.print("Enter the number of digits found = ");
+        inputValidation(validationComputer[0]);
+
+        System.out.print("Enter the number of digits present = ");
+        inputValidation(validationComputer[1]);
+
+        System.out.print("\n");
 
         testIsCodeFound();
         if (!testIsCodeFound()) {
@@ -123,67 +129,19 @@ public class Game2ModeDefender extends Game2 {
 
 
     /**
-     * This method inputs and tests the validation code entered by the user.
+     * This method takes a scanner entry that must be identical with the int value entered as parameter.
+     * If the entry is different, the program enters a loop until and exit only when the right value is entered.
+     *
+     * @param myInt the int value that the scanner input must be identical to
      */
-    private void inputValidation() {
+    private void inputValidation(int myInt) {
 
-        int[] validationComputer = validation(getCodeToBeFound(), getCodeProposal());
+        String inputUser = scan.nextLine();
 
-        //*******************
-        System.out.print("Enter the number of digits found = ");
-        String digitsFoundPlayerString = scan.nextLine();
-        Main.logger.debug("Input user: number of digits found = " + digitsFoundPlayerString);
-
-        while (!MyTools.isMyStringAnInt(digitsFoundPlayerString)) {
-            System.out.println("Oops, wrong entry. Enter again the number of digits found:");
-            Main.logger.debug("Entry not valid.");
-
-            digitsFoundPlayerString = scan.nextLine();
-            Main.logger.debug("New input user: number of digits found = " + digitsFoundPlayerString);
-
+        while (!inputUser.equals(String.valueOf(myInt))) {
+            System.out.println("Oops, wrong entry! Try again:");
+            inputUser = scan.nextLine();
         }
-
-        int digitsFoundPlayerInt = Integer.parseInt(digitsFoundPlayerString);
-
-        while (digitsFoundPlayerInt != validationComputer[0]) {
-            System.out.println("Oops, wrong entry. Enter again the number of digits found:");
-            Main.logger.debug("Entry not valid.");
-
-            digitsFoundPlayerInt = scan.nextInt();
-            scan.nextLine();
-            Main.logger.debug("New input user: number of digits found = " + digitsFoundPlayerString);
-
-        }
-
-        //********************
-        System.out.print("Enter the number of digits present = ");
-        String digitsPresentPlayerString = scan.nextLine();
-        Main.logger.debug("Input user: number of digits present = " + digitsPresentPlayerString);
-
-
-        while (!MyTools.isMyStringAnInt(digitsPresentPlayerString)) {
-            System.out.println("Oops, wrong entry. Enter again the number of digits present:");
-            Main.logger.debug("Entry not valid.");
-
-            digitsPresentPlayerString = scan.nextLine();
-            Main.logger.debug("New input user: number of digits present = " + digitsPresentPlayerString);
-
-        }
-
-        int digitsPresentPlayerInt = Integer.parseInt(digitsPresentPlayerString);
-
-        while (digitsPresentPlayerInt != validationComputer[1]) {
-            System.out.println("Oops, wrong entry. Enter again the number of digits present:");
-            Main.logger.debug("Entry not valid.");
-
-            digitsPresentPlayerInt = scan.nextInt();
-            scan.nextLine();
-            Main.logger.debug("New input user: number of digits present = " + digitsPresentPlayerString);
-
-        }
-
-        System.out.println();
-
     }
 
 
@@ -197,7 +155,7 @@ public class Game2ModeDefender extends Game2 {
      * {@link #fillingPoolCombinations(byte[])}
      * <p>
      * 2. Computer makes a 1st guess and receives a validation answer by user
-     * {@link #inputValidation()}
+     * {@link #inputValidation(int)}
      * <p>
      * 3. the next step is to check which validation this same guess would have return for each combination of the pool.
      * <p>
