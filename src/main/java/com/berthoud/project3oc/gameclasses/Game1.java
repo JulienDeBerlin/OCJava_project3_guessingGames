@@ -46,9 +46,9 @@ public abstract class Game1 extends Games {
             String[] validation = new String[getNbDigits()];
             for (int i = 0; i < getNbDigits(); i++) {
                 if (codeToBeFound[i] > codeProposal[i]) {
-                    validation[i] = ">";
+                    validation[i] = "+";
                 } else if (codeToBeFound[i] < codeProposal[i]) {
-                    validation[i] = "<";
+                    validation[i] = "-";
                 } else {
                     validation[i] = "=";
                 }
@@ -111,7 +111,7 @@ public abstract class Game1 extends Games {
     void testIsCodeFound(String[] validation) {
         int k = 0;
         for (String elementValidation : validation) {
-            if ((elementValidation.equals(">")) || (elementValidation.equals("<"))) {
+            if ((elementValidation.equals("+")) || (elementValidation.equals("-"))) {
                 k++;
             }
         }

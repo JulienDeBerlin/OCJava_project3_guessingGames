@@ -43,7 +43,7 @@ public class Game1ModeChallenger extends Game1 {
 
         System.out.println("Your goal is to find a mystery code made of " + getNbDigits() + " digits. " +
                 "You have a maximum of " + getMaxGuesses() + " guesses. \nFor each guess the computer will return a validation code indicating if the digits of the" +
-                " mystery code are bigger(>) or smaller(<) than your proposal.\n");
+                " mystery code are bigger(+) or smaller(-) than your proposal.\n");
 
         displayModeDev(getCodeToBeFound());
 

@@ -60,7 +60,7 @@ public class Game1ModeDefender extends Game1 {
         System.out.print("You choose a mystery code made of " + getNbDigits() + " digits. " +
                 "Superbrain the computer will try to break it, with a maximum of " + getMaxGuesses() + " guesses. " +
                 "\nFor each guess please return a validation code indicating if the digits of the" +
-                " mystery code are correct (=), bigger(>) or smaller(<).\n\n");
+                " mystery code are correct (=), bigger(+) or smaller(-).\n\n");
 
         System.out.print("Choose a secret code made of " + getNbDigits() + " digit: ");
         setCodeToBeFound(codeInputUser());
@@ -142,7 +142,7 @@ public class Game1ModeDefender extends Game1 {
 
         // PART 1: INPUT AND TEST
 
-        System.out.print("Enter the validation code (<, >, =): ---------->  ");
+        System.out.print("Enter the validation code (+, -, =): ---------->  ");
 
         String validationByUser = scan.nextLine();
         Main.logger.debug("Validation code = " + validationByUser);
@@ -196,10 +196,10 @@ public class Game1ModeDefender extends Game1 {
      */
     private int[][] updateRangeCodeToBeFound(int[][] range, int[] proposal, String[] validation) {
         for (int x = 0; x < getNbDigits(); x++) {
-            if (validation[x].equals(">")) {
+            if (validation[x].equals("+")) {
                 range[0][x] = proposal[x] + 1;
             }
-            if (validation[x].equals("<")) {
+            if (validation[x].equals("-")) {
                 range[1][x] = proposal[x] - 1;
             }
         }
