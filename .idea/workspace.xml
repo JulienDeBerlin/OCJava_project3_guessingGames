@@ -2,23 +2,19 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="BrouillonProjet3:jar" />
+      <artifact name="OCJavaProject3Berthoud:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d7e7b1c-ae00-4eb5-925e-f451e435921a" name="Default" comment="">
+    <list default="true" id="4d7e7b1c-ae00-4eb5-925e-f451e435921a" name="Default" comment="Replacement of method &quot;setNbGuesses()&quot; in Games through 2 other methods: &quot;incrementNbGuesses()&quot; and &quot;resetNbGuesses()&quot;">
+      <change afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/BrouillonProjet3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OC_Java_Projet3_Berthoud.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OC_Java_Projet3_Berthoud.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game1ModeDefender.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game1ModeDefender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game2ModeChallenger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game2ModeChallenger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game2ModeDefender.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Game2ModeDefender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/GameModeDuel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/GameModeDuel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Games.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_gameclasses/Games.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_menu/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OC_Java_Projet3_Berthoud/com/berthoud/oc_project3_menu/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OC_Java_Projet3_Berthoud.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OC_Java_Project3_Berthoud.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,11 +24,27 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="OC_Java_Projet3_Berthoud" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/menu/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="26" column="57" lean-forward="true" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -43,6 +55,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="JulienDeBerlin &lt;julien_berthoud@yahoo.fr&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -54,13 +71,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu+-.java" />
-        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu1ModeDefense.java" />
-        <option value="$PROJECT_DIR$/src/com/berthoud/Game.java" />
-        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu1ModeAttaque.java" />
-        <option value="$PROJECT_DIR$/src/com/berthoud/Jeu1.java" />
-        <option value="$PROJECT_DIR$/src/com/berthoud/Game1ModeAttaque.java" />
-        <option value="$PROJECT_DIR$/src/com/berthoud/Game1ModeDefense.java" />
         <option value="$PROJECT_DIR$/src/com/berthoud/Game1UserDefender.java" />
         <option value="$PROJECT_DIR$/src/com/berthoud/Game1ComputerChallenger.java" />
         <option value="$PROJECT_DIR$/src/com/berthoud/Game1UserChallenger.java" />
@@ -101,14 +111,25 @@
         <option value="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Games.java" />
         <option value="$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/berthoud/oc_project3_menu/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/berthoud/oc_project3_gameclasses/Game1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/MyTools.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/Game2ModeChallenger.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/GameModeDuel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/Games.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/Game2ModeDefender.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/Game1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/Game1ModeChallenger.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/Game1ModeDefender.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/menu/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="44" />
+    <option name="x" value="5" />
     <option name="y" value="23" />
     <option name="width" value="1396" />
-    <option name="height" value="799" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -119,24 +140,62 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
+              <item name="OC_Java_Project3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="OC_Java_Projet3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OC_Java_Projet3_Berthoud" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="OC_Java_Project3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OC_Java_Project3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OC_Java_Project3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="project3oc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OC_Java_Project3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="project3oc" type="462c0819:PsiDirectoryNode" />
+              <item name="gameclasses" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OC_Java_Project3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="project3oc" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OC_Java_Project3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="OC_Java_Project3_Berthoud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="JShell Console" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -145,11 +204,11 @@
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="brouillonprojet3" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -174,11 +233,21 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.berthoud.oc_project3_menu.Main" />
-      <module name="OC_Java_Projet3_Berthoud" />
+      <option name="MAIN_CLASS_NAME" value="com.berthoud.project3oc.menu.Main" />
+      <module name="Main" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -275,68 +344,110 @@
       <option name="project" value="LOCAL" />
       <updated>1533134076559</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Change packages'names">
+      <created>1533137368545</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1533137368545</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Optimization of method &quot;isMyStringAnInt&quot; in MyTools">
+      <created>1533139272559</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1533139272559</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Replacement of method &quot;setNbGuesses()&quot; in Games through 2 other methods: &quot;incrementNbGuesses()&quot; and &quot;resetNbGuesses()&quot;">
+      <created>1533184277364</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1533184277364</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Transformation of the long method &quot;inputValidation()&quot; in Game2ModeDefender into a much shorter method &quot;inputValidation(int i)&quot;">
+      <created>1533232391139</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1533232391139</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Update Javadoc">
+      <created>1533232647647</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1533232647647</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Game 1 : replacement of &lt; and &gt; through - and +">
+      <created>1533298810300</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1533298810300</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="44" y="23" width="1396" height="799" extended-state="0" />
+    <frame x="5" y="23" width="1396" height="797" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="TODO" order="9" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32551724" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.3250346" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003579" side_tool="true" weight="0.29946524" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.4996421" visible="true" weight="0.32689655" />
+      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.4996421" visible="true" weight="0.3305671" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32921812" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" x="534" y="172" width="350" height="459" id="Project" order="5" sideWeight="0.4969325" visible="true" weight="0.21489972" />
+      <window_info active="true" content_ui="combo" x="534" y="172" width="350" height="459" id="Project" order="5" sideWeight="0.49590164" visible="true" weight="0.26647565" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
-      <window_info id="Favorites" order="4" sideWeight="0.5030675" side_tool="true" weight="0.21513665" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.39972338" />
+      <window_info id="Favorites" order="4" sideWeight="0.50409836" side_tool="true" weight="0.26862463" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.329429" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32689655" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="4" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info active="true" anchor="bottom" id="Run" order="10" sideWeight="0.4996421" visible="true" weight="0.32689655" />
+      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.4996421" weight="0.3305671" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32551724" />
-      <window_info content_ui="combo" x="534" y="172" width="350" height="459" id="Project" order="5" sideWeight="0.4969325" visible="true" weight="0.21489972" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info active="true" content_ui="combo" x="534" y="172" width="350" height="459" id="Project" order="5" sideWeight="0.49590164" visible="true" weight="0.26647565" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="9" />
-      <window_info anchor="bottom" id="Version Control" order="2" weight="0.32921812" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.329429" />
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32689655" />
-      <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.39972338" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003579" side_tool="true" weight="0.29946524" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="2" weight="0.32921812" />
       <window_info id="Capture Tool" order="2" />
-      <window_info anchor="bottom" id="Message" order="4" />
       <window_info id="Image Layers" order="1" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.3250346" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info id="Favorites" order="4" sideWeight="0.5030675" side_tool="true" weight="0.21513665" />
+      <window_info id="Favorites" order="4" sideWeight="0.50409836" side_tool="true" weight="0.26862463" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -367,38 +478,63 @@
     <MESSAGE value="Everything ok - only translation required + logging" />
     <MESSAGE value="Everything ok - only logging still to be implemented" />
     <MESSAGE value="Refactoring the project structure. Creation of 2 directories, both declared as source: src/main/java and src/main/ressources" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring the project structure. Creation of 2 directories, both declared as source: src/main/java and src/main/ressources" />
+    <MESSAGE value="Change packages'names" />
+    <MESSAGE value="Optimization of method &quot;isMyStringAnInt&quot; in MyTools" />
+    <MESSAGE value="Replacement of method &quot;setNbGuesses()&quot; in Games through 2 other methods: &quot;incrementNbGuesses()&quot; and &quot;resetNbGuesses()&quot;" />
+    <MESSAGE value="Transformation of the long method &quot;inputValidation()&quot; in Game2ModeDefender into a much shorter method &quot;inputValidation(int i)&quot;" />
+    <MESSAGE value="Update Javadoc" />
+    <MESSAGE value="Game 1 : replacement of &lt; and &gt; through - and +" />
+    <option name="LAST_COMMIT_MESSAGE" value="Game 1 : replacement of &lt; and &gt; through - and +" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="32" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="51" />
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="digitsFoundPlayer!=validationComputer[0]" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>digitsFoundPlayer!=validationComputer[0]</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string />
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>((int[])((Game2ModeDefender)this).codeToBeFound)[0]</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>int[],com.berthoud.project3oc.gameclasses.Game2ModeDefender</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="breakpointLogExpression">
       <expression>
-        <expression-string>/*
-        rotected void inputValidationAndAnswerComputer(){</expression-string>
+        <expression-string />
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDuel.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_menu/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeDefender.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeDuel.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeChallenger.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDefender.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDuel.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeChallenger.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeDefender.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/menu/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="57" lean-forward="true" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game1ModeDuel.java" />
     <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeChallenger.java" />
     <entry file="file://$PROJECT_DIR$/src/com/berthoud/oc_project3_gameclasses/Game2ModeDefender.java" />
@@ -459,10 +595,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/berthoud/oc_project3_menu/Main.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="203" column="94" selection-start-line="203" selection-start-column="94" selection-end-line="203" selection-end-column="94" />
+        <state relative-caret-position="233">
+          <caret line="2690" column="18" selection-start-line="2690" selection-start-column="18" selection-end-line="2690" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/MyTools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="246" column="5" selection-start-line="246" selection-start-column="5" selection-end-line="246" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/Game2ModeChallenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="95" column="14" selection-start-line="95" selection-start-column="14" selection-end-line="95" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/Game2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hs_err_pid743.log" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/Games.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="217" column="20" selection-start-line="217" selection-start-column="20" selection-end-line="217" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6771#6772#0" expanded="true" />
+            <element signature="e#6798#6799#0" expanded="true" />
+            <element signature="e#6915#6916#0" expanded="true" />
+            <element signature="e#6944#6945#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/Game2ModeDefender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/GameModeDuel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/Game1ModeChallenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="45" column="57" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/Game1ModeDefender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="201" column="39" selection-start-line="201" selection-start-column="39" selection-end-line="201" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/gameclasses/Game1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="113" column="79" selection-start-line="113" selection-start-column="79" selection-end-line="113" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/berthoud/project3oc/menu/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="26" column="57" lean-forward="true" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -474,8 +705,13 @@
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <artifact-editor />
-          <last-edited>BrouillonProjet3:jar</last-edited>
+          <artifact-editor>
+            <show-content>
+              <type id="artifact" />
+              <type id="library" />
+            </show-content>
+          </artifact-editor>
+          <last-edited>OCJavaProject3Berthoud:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -523,7 +759,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>OC_Java_Projet3_Berthoud</last-edited>
+          <last-edited>Main</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
