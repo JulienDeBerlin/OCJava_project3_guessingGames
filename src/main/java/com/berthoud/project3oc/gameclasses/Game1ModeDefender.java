@@ -1,6 +1,7 @@
 package com.berthoud.project3oc.gameclasses;
 
 
+import com.berthoud.project3oc.MyTools;
 import com.berthoud.project3oc.menu.Main;
 
 /**
@@ -85,7 +86,7 @@ public class Game1ModeDefender extends Game1 {
      * This method takes a guess and display the validation code
      */
     @Override
-    public void guessValidationUnit() {
+    protected void guessValidationUnit() {
         if (getNbGuesses() == 1) {
             setCodeProposal(randomCodeGenerator()); //1st answer of computer is random
         }
@@ -223,5 +224,6 @@ public class Game1ModeDefender extends Game1 {
         }
         return proposal;
     }
+
 
 }

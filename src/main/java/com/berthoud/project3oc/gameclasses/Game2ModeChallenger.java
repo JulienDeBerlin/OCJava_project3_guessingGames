@@ -1,10 +1,17 @@
 package com.berthoud.project3oc.gameclasses;
 
 
+import com.berthoud.project3oc.Duration;
+import com.berthoud.project3oc.MyTools;
+
 /**
  * The program Game2ModeChallenger implements the Mastermind in the mode challenger: the user tries to break the computer's code
  */
-public class Game2ModeChallenger extends Game2 {
+public class Game2ModeChallenger extends Game2 implements Duration {
+
+    private int startTime;
+
+    private int endTime;
 
 
 // _____________________________________________________________________________________________________________________
@@ -33,6 +40,9 @@ public class Game2ModeChallenger extends Game2 {
     @Override
     public void play() {
 
+        startTime = (int) System.currentTimeMillis();
+
+
         setCodeFound(false);
 
         setCodeToBeFound(randomCodeGenerator());
@@ -55,6 +65,8 @@ public class Game2ModeChallenger extends Game2 {
 
         }
 
+        endTime = (int) System.currentTimeMillis();
+
         messageEndOfTheGame();
 
         MyTools.makeABreak(800);
@@ -69,9 +81,9 @@ public class Game2ModeChallenger extends Game2 {
      * TThe implementation is different for each game and mode.
      */
     @Override
-    protected void messageEndOfTheGame() {
+    void messageEndOfTheGame() {
         if (this.isCodeFound()) {
-            System.out.print("Well done!!!! You found out the secret combination!");
+            System.out.print("Well done!!!! You found out the secret combination in " + duration() + " seconds!");
 
         } else {
             System.out.print("Sorry, you didn't make it this time... The combination was: ");
@@ -87,7 +99,7 @@ public class Game2ModeChallenger extends Game2 {
      * This method takes a guess and displays the validation code
      */
     @Override
-    public void guessValidationUnit() {
+    protected void guessValidationUnit() {
         System.out.print("Your guess #" + getNbGuesses() + ". Enter your proposal: ");
 
         setCodeProposal(codeInputUser());
@@ -103,5 +115,11 @@ public class Game2ModeChallenger extends Game2 {
         incrementNbGuesses();
     }
 
+
+
+    @Override
+    public int duration() {
+        return ((endTime-startTime) /1000);
+    }
 
 }

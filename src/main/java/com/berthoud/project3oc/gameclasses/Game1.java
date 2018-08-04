@@ -1,6 +1,7 @@
 package com.berthoud.project3oc.gameclasses;
 
 
+import com.berthoud.project3oc.MyTools;
 import com.berthoud.project3oc.menu.Main;
 
 import java.util.Arrays;
@@ -21,7 +22,7 @@ public abstract class Game1 extends Games {
      * @param nbDigits   number of digits
      * @param maxGuesses max number of guesses allowed
      */
-    protected Game1(int nbDigits, int maxGuesses) {
+     Game1(int nbDigits, int maxGuesses) {
         super(nbDigits, maxGuesses);
     }
 
@@ -37,7 +38,8 @@ public abstract class Game1 extends Games {
      * @param codeProposal  the code attempt made by the challenger
      * @return +/- validation code
      */
-    protected String[] validation(int[] codeToBeFound, int[] codeProposal) {
+
+     String[] validation(int[] codeToBeFound, int[] codeProposal) {
         if ((codeToBeFound.length) != (codeProposal.length)) {
             System.out.println("Input arrays must have same length!");
             return null;
@@ -106,7 +108,7 @@ public abstract class Game1 extends Games {
     /**
      * This method sets the instance field {@link #isCodeFound} to true if the validation code is only made of = signs
      *
-     * @param validation the ouput of the method {@link #validation(int[], int[])}
+     * @param validation the output of the method {@link #validation(int[], int[])}
      */
     void testIsCodeFound(String[] validation) {
         int k = 0;
@@ -122,8 +124,4 @@ public abstract class Game1 extends Games {
     }
 
 
-// _____________________________________________________________________________________________________________________
-
-
 }
-

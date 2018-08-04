@@ -1,4 +1,4 @@
-package com.berthoud.project3oc.gameclasses;
+package com.berthoud.project3oc;
 
 /**
  * This class contains static methods that can be useful in different contexts beyond the 2 games
@@ -51,7 +51,6 @@ public class MyTools {
         }
         return myString;
     }
-
 
 
 

@@ -1,13 +1,18 @@
 package com.berthoud.project3oc.gameclasses;
+import com.berthoud.project3oc.Duration;
+import com.berthoud.project3oc.MyTools;
 
 
 /**
  * The program Game1ModeChallenger implements the first game (+/-) in the mode challenger: the user tries to break the computer's code
  */
 
-public class Game1ModeChallenger extends Game1 {
+public class Game1ModeChallenger extends Game1 implements Duration {
 
 
+    private int startTime;
+
+    private int endTime;
 
 // _____________________________________________________________________________________________________________________
     //CONSTRUCTORS//
@@ -33,6 +38,8 @@ public class Game1ModeChallenger extends Game1 {
     @Override
     public void play() {
 
+        startTime = (int) System.currentTimeMillis();
+
         setCodeFound(false);
 
         setCodeToBeFound(randomCodeGenerator());
@@ -52,6 +59,10 @@ public class Game1ModeChallenger extends Game1 {
             guessValidationUnit();
         }
 
+        endTime = (int) System.currentTimeMillis();
+
+        duration();
+
         messageEndOfTheGame();
 
         MyTools.makeABreak(800);
@@ -65,10 +76,10 @@ public class Game1ModeChallenger extends Game1 {
      * The implementation is different for each game and mode.
      */
     @Override
-    protected void messageEndOfTheGame() {
+    void messageEndOfTheGame() {
 
         if (this.isCodeFound()) {
-            System.out.print("Congratulations!!!! You found out the mystery code!");
+            System.out.print("Congratulations!!!! You found out the mystery code in " + duration() + " seconds.");
         } else {
             System.out.print("It looks like you couldn't find out the mystery code... It was: ");
             for (int digit : getCodeToBeFound()) {
@@ -77,14 +88,19 @@ public class Game1ModeChallenger extends Game1 {
         }
     }
 
+    @Override
+    public int duration() {
 
-// _____________________________________________________________________________________________________________________
+        return ((endTime-startTime) /1000);
+    }
+
+    // _____________________________________________________________________________________________________________________
     //LOCAL METHOD(S)//
 
     /**
      * This method takes a guess and displays the validation code
      */
-    public void guessValidationUnit() {
+    protected void guessValidationUnit() {
         System.out.print("Your guess #" + getNbGuesses() + ". Enter your proposal: ");
 
         setCodeProposal(codeInputUser());
@@ -98,7 +114,8 @@ public class Game1ModeChallenger extends Game1 {
         incrementNbGuesses();
 
     }
+
+
+
 }
-
-
 

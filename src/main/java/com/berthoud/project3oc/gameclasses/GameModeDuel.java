@@ -1,5 +1,6 @@
 package com.berthoud.project3oc.gameclasses;
 
+import com.berthoud.project3oc.MyTools;
 import com.berthoud.project3oc.menu.Main;
 
 
@@ -15,8 +16,8 @@ public class GameModeDuel {
 // _____________________________________________________________________________________________________________________
     //INSTANCE FIELDS//
 
-    private Games gameA; // mode challenger
-    private Games gameB; // mode defender
+    private final Games gameA; // mode challenger
+    private final Games gameB; // mode defender
 
 
 // _____________________________________________________________________________________________________________________

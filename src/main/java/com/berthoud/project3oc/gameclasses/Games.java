@@ -54,7 +54,8 @@ public abstract class Games {
     /**
      * Object scanner, need for user inputs
      */
-    public static Scanner scan = new Scanner(System.in);
+    static final Scanner scan = new Scanner(System.in);
+
 
 
 // _____________________________________________________________________________________________________________________
@@ -115,7 +116,6 @@ public abstract class Games {
     int getNbVariations() {
         return nbVariations;
     }
-
 
     void setCodeFound(boolean codeFound) {
         this.codeFound = codeFound;
@@ -228,7 +228,7 @@ public abstract class Games {
     /**
      * This method displays the result of the game at the end of the game.
      */
-    protected void messageEndOfTheGame() {
+    void messageEndOfTheGame() {
         if (this.isCodeFound()) {
             System.out.print("Superbrain made it!");
         } else {
@@ -249,6 +249,12 @@ public abstract class Games {
     void resetNbGuesses() {
         nbGuesses = 1;
     }
+
+
+
+
+
+
 
 
 }

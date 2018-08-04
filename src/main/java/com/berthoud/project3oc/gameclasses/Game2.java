@@ -1,5 +1,6 @@
 package com.berthoud.project3oc.gameclasses;
 
+import com.berthoud.project3oc.MyTools;
 import com.berthoud.project3oc.menu.Main;
 
 import java.util.Arrays;
@@ -69,7 +70,7 @@ public abstract class Game2 extends Games {
      * @param codeProposal  the code attempt
      * @return a two dimensional int array. 1st array for number of digits found and 2nd array for numbers of digit present
      */
-    protected int[] validation(int[] codeToBeFound, int[] codeProposal) {
+    int[] validation(int[] codeToBeFound, int[] codeProposal) {
 
         int[] copyCodeToBeFound = Arrays.copyOf(codeToBeFound, getNbDigits());
 
@@ -97,13 +98,13 @@ public abstract class Game2 extends Games {
 
 
     /**
-     * This method overloads {@link #validation(int[], int[])} and takes as parameter codetobefound as a byte array instead of int array.
+     * This method overloads {@link #validation(int[], int[])} and takes as parameter {@link #codeToBeFound} as a byte array instead of int array.
      *
      * @param codeToBeFound the secret code
      * @param codeProposal  the code attempt
      * @return a two dimensional int array. 1st array for number of digits found and 2nd array for numbers of digit present
      */
-    protected int[] validation(byte[] codeToBeFound, int[] codeProposal) {
+    int[] validation(byte[] codeToBeFound, int[] codeProposal) {
 
         byte[] copyCodeToBeFound = Arrays.copyOf(codeToBeFound, getNbDigits());
 
@@ -208,6 +209,5 @@ public abstract class Game2 extends Games {
         return k == 0;
     }
 
-// _____________________________________________________________________________________________________________________
-
+    
 }

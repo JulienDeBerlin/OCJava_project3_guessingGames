@@ -24,7 +24,7 @@ import java.util.Scanner;
  * @see Game2ModeDefender
  */
 public class Main {
-    public static Logger logger = LogManager.getLogger();
+    public static final Logger logger = LogManager.getLogger();
 
     // Default game parameters in case the configuration through the config.properties file doesn't work.
     private static int nbDigitsGame1 = 4;
@@ -186,8 +186,8 @@ public class Main {
                     GameModeDuel gameModeDuel = new GameModeDuel(nbDigitsGame2, maxGuessesGame2, nbVariationsGame2);
                     gameModeDuel.play();
                     break;
-            }
 
+            }
 
         }
     }
@@ -195,7 +195,7 @@ public class Main {
     /**
      * This method loads the config file
      */
-    public static void loadConfig(){
+    private static void loadConfig(){
 
         Properties p = new Properties();
 
@@ -240,7 +240,6 @@ public class Main {
 
 
     }
-
 
 }
 

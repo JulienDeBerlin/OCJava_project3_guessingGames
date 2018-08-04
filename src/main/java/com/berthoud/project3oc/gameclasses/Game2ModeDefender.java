@@ -1,5 +1,7 @@
 package com.berthoud.project3oc.gameclasses;
 
+import com.berthoud.project3oc.MyTools;
+
 import java.util.Arrays;
 
 
@@ -161,7 +163,7 @@ public class Game2ModeDefender extends Game2 {
      * <p>
      * 4. all these hypothetical validations are compared to the original user validation. If they are different, it means that
      * the hypothetical combination that returned the validation can not be the right combination. It is also put aside from the pool
-     * of combination. To identify the combinations put aside the program overides their first digit with the value -1
+     * of combination. To identify the combinations put aside the program overrides their first digit with the value -1
      * <p>
      * 5. For the next guess, the program takes the first combination of the pool which do not start with -1
      */
@@ -235,7 +237,7 @@ public class Game2ModeDefender extends Game2 {
 
 
     /**
-     * This method is used for the AI part. It is used for creating {@link #creationPoolCombinations()}, a multidimentional byte array
+     * This method is used for the AI part. It is used for creating {@link #creationPoolCombinations()}, a multidimensional byte array
      * storing all the combinations possible.
      *
      * @param tab the method is based on recursivity. It takes one combination stored as a byte array
@@ -256,5 +258,6 @@ public class Game2ModeDefender extends Game2 {
 
         return nextTab;
     }
+
 
 }
