@@ -1,0 +1,9 @@
+2018-08-09 19:37:18.323 [main] INFO  com.berthoud.project3oc.menu.Main - config file loaded
+2018-08-09 19:37:24.371 [main] DEBUG com.berthoud.project3oc.menu.Main - choiceGame = 1
+2018-08-09 19:37:26.394 [main] DEBUG com.berthoud.project3oc.menu.Main - choiceMode = 1
+2018-08-09 19:37:26.397 [main] DEBUG com.berthoud.project3oc.menu.Main - random code = [8, 2, 8, 6]
+2018-08-09 19:37:33.042 [main] DEBUG com.berthoud.project3oc.menu.Main - User input: 4r4r
+2018-08-09 19:38:31.300 [main] DEBUG com.berthoud.project3oc.menu.Main - Entry not valid.
+2018-08-09 19:38:47.580 [main] DEBUG com.berthoud.project3oc.menu.Main - New user input: 3333
+2018-08-09 19:39:30.967 [main] DEBUG com.berthoud.project3oc.menu.Main - User input: t453
+2018-08-09 19:39:49.537 [main] DEBUG com.berthoud.project3oc.menu.Main - Entry not valid.
